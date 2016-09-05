@@ -22,50 +22,35 @@ func _ready():
 	self.set_process_input(true)
 	root = get_tree().get_root().get_node("Game")
 	anim = get_node("BodyAnimation")
-	# var c = get_node("Camera2D")
-	# if c:
-	# 	c.set_pos(get_pos())
-	# connect("moved", self, "Camera2D")
-	# var cam = get_node("Camera2D")
-	# cam.connect("moved", self, "sprite_moved")
 
 func _draw():
 	pass
-		# var pos = Vector2(self.get_parent().get_rect().size.width/2, self.get_parent().get_rect().size.height/2)
 
 func _input(event):
-	pass
+	if event.is_action_pressed("MOVE_UP"):
+		vel.y = vel.y - max_vel
+	elif event.is_action_released("MOVE_UP"):
+		vel.y = vel.y + max_vel
+	if event.is_action_pressed("MOVE_DOWN"):
+		vel.y = vel.y + max_vel
+	elif event.is_action_released("MOVE_DOWN"):
+		vel.y = vel.y - max_vel
+	if event.is_action_pressed("MOVE_LEFT"):
+		vel.x = vel.x - max_vel
+	elif event.is_action_released("MOVE_LEFT"):
+		vel.x = vel.x + max_vel
+	if event.is_action_pressed("MOVE_RIGHT"):
+		vel.x = vel.x + max_vel
+	elif event.is_action_released("MOVE_RIGHT"):
+		vel.x = vel.x - max_vel
 
 func _process(delta):
 	# print(rand_range(0, 1))
-	vel = Vector2(0, 0)
-	cur_vel = max_vel
+	# vel = Vector2(0, 0)
 	
-	if Input.is_action_pressed("SPRINT"):
-		print("Sprint!")
-		cur_vel = max_vel * sprint_factor
-	else:
-		cur_vel = max_vel
 
 	if Input.is_action_just_pressed("ATTACK"):
 		emit_signal("attack")
-
-	if Input.is_action_pressed("MOVE_UP") and Input.is_action_pressed("MOVE_DOWN"):
-		vel.y = 0
-	elif Input.is_action_pressed("MOVE_UP"):
-		vel.y = -cur_vel
-	elif Input.is_action_pressed("MOVE_DOWN"):
-		vel.y = cur_vel
-	else:
-		vel.y = 0
-	if Input.is_action_pressed("MOVE_LEFT") and Input.is_action_pressed("MOVE_RIGHT"):
-		vel.x = 0
-	elif Input.is_action_pressed("MOVE_LEFT"):
-		vel.x = -cur_vel
-	elif Input.is_action_pressed("MOVE_RIGHT"):
-		vel.x = cur_vel
-	else:
-		vel.x = 0
 
 	if Input.is_action_pressed("MOVE_JUMP"):
 		self.jump()
@@ -74,13 +59,21 @@ func _process(delta):
 		var r = get_angle_to(root.get_global_mouse_pos()) * (rot_spd * delta)
 		rotate(r)
 
-	self.move_and_slide(vel * 50 * delta)
+	if Input.is_action_pressed("SPRINT"):
+		self.move_and_slide(vel * 75 * delta)
+	else:
+		self.move_and_slide(vel * 50 * delta)
 
 	self.emit_signal("moved", self.get_pos())
 	if anim:
 		if vel.x > 0.0 or vel.x < 0.0 or vel.y > 0.0 or vel.y < 0.0:
 			if not anim.is_playing():
 				anim.play("Walk")
+			else:
+				if Input.is_action_pressed("SPRINT"):
+					anim.set_speed(sprint_factor)
+				else:
+					anim.set_speed(1)
 				# print("Starting")
 		else:
 			if anim.is_playing():
