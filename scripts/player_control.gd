@@ -47,10 +47,6 @@ func _input(event):
 		vel.x = vel.x - max_vel
 
 func _process(delta):
-	# print(rand_range(0, 1))
-	# vel = Vector2(0, 0)
-	
-
 	if Input.is_action_pressed("ATTACK"):
 		if not attacking:
 			emit_signal("attack")
