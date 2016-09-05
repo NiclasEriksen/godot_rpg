@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=1]
+[gd_scene load_steps=19 format=1]
 
 [ext_resource path="res://scripts/player_control.gd" type="Script" id=1]
 [ext_resource path="res://resources/sfx/dunk.wav" type="Sample" id=2]
@@ -10,7 +10,8 @@
 [ext_resource path="res://resources/creatures/lumberjack_hand.tex" type="Texture" id=8]
 [ext_resource path="res://scripts/player_hands.gd" type="Script" id=9]
 [ext_resource path="res://resources/equipment/axe_bloody.tex" type="Texture" id=10]
-[ext_resource path="res://scripts/player_animation.gd" type="Script" id=11]
+[ext_resource path="res://scripts/weapon.gd" type="Script" id=11]
+[ext_resource path="res://scripts/player_animation.gd" type="Script" id=12]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -26,6 +27,11 @@ samples/dunk = { "db":0.0, "pitch":1.0, "sample":ExtResource( 2 ) }
 
 offsets = FloatArray( 0, 0.391813, 0.74269, 1 )
 colors = ColorArray( 1, 0.09375, 0, 1, 1, 0.477814, 0.0585938, 1, 0.96875, 1, 0, 1, 1, 1, 1, 0 )
+
+[sub_resource type="ColorRamp" id=6]
+
+offsets = FloatArray( 0, 0.481481, 1 )
+colors = ColorArray( 0.6875, 0, 0, 1, 0.824219, 0, 0, 1, 1, 1, 1, 0 )
 
 [sub_resource type="Animation" id=4]
 
@@ -43,6 +49,11 @@ tracks/1/path = NodePath("RightHand:transform/rot")
 tracks/1/interp = 1
 tracks/1/imported = false
 tracks/1/keys = { "times":FloatArray( 0, 0.1, 0.5 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ 0.0, 90.0, 0.0 ] }
+tracks/2/type = "value"
+tracks/2/path = NodePath("RightHand/Weapon/Particles2D:config/emitting")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = { "times":FloatArray( 0, 0.1 ), "transitions":FloatArray( 1, 1 ), "update":1, "values":[ true, false ] }
 
 [sub_resource type="Animation" id=5]
 
@@ -168,6 +179,33 @@ script/script = ExtResource( 9 )
 transform/pos = Vector2( 0, 13 )
 transform/rot = 45.0
 texture = ExtResource( 10 )
+script/script = ExtResource( 11 )
+
+[node name="Particles2D" type="Particles2D" parent="RightHand/Weapon"]
+
+config/amount = 64
+config/lifetime = 0.5
+config/emitting = false
+config/offset = Vector2( -5, 0 )
+config/local_space = false
+params/direction = 180.0
+params/spread = 25.0
+params/linear_velocity = 40.0
+params/spin_velocity = 20.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 0.0
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 1.0
+params/final_size = 1.0
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+color/color = Color( 0.738281, 0.00576782, 0.00576782, 1 )
+color/color_ramp = SubResource( 6 )
 
 [node name="LeftHand" type="Sprite" parent="."]
 
@@ -188,7 +226,7 @@ playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = ""
-script/script = ExtResource( 11 )
+script/script = ExtResource( 12 )
 
 [node name="BodyAnimation" type="AnimationPlayer" parent="."]
 
