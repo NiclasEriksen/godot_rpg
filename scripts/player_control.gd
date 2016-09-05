@@ -9,6 +9,8 @@ var jump_cd = false
 signal moved(pos)
 signal jump
 signal attack
+var attacking = false
+var sprinting = false
 var vel = Vector2(0, 0)
 var cur_vel = 0
 var max_vel = 150
@@ -49,8 +51,12 @@ func _process(delta):
 	# vel = Vector2(0, 0)
 	
 
-	if Input.is_action_just_pressed("ATTACK"):
-		emit_signal("attack")
+	if Input.is_action_pressed("ATTACK"):
+		if not attacking:
+			emit_signal("attack")
+			attacking = true
+	else:
+		attacking = false
 
 	if Input.is_action_pressed("MOVE_JUMP"):
 		self.jump()
