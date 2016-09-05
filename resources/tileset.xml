@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resource_file type="TileSet" subresource_count="16" version="2.2" version_name="Godot Engine v2.2.alpha.custom_build">
-	<ext_resource path="res://resources/blank.png" type="Texture" index="0"></ext_resource>
+	<ext_resource path="res://resources/blank.png" type="Texture" index="1"></ext_resource>
 	<ext_resource path="res://resources/mountain_landscape_23.tex" type="Texture" index="2"></ext_resource>
-	<ext_resource path="res://resources/spritesheet.tex" type="Texture" index="1"></ext_resource>
+	<ext_resource path="res://resources/spritesheet.tex" type="Texture" index="0"></ext_resource>
+	<resource type="OccluderPolygon2D" path="local://8">
+		<bool name="closed"> True </bool>
+		<int name="cull_mode"> 0 </int>
+		<vector2_array name="polygon" len="5"> 			32, 32, 32, 0, 9, 0, 3, 6, 3, 32 </vector2_array>
+
+	</resource>
+	<resource type="ConvexPolygonShape2D" path="local://7">
+		<real name="custom_solver_bias"> 0 </real>
+		<vector2_array name="points" len="5"> 			3, 32, 3, 6, 9, 0, 32, 0, 32, 32 </vector2_array>
+
+	</resource>
 	<resource type="NavigationPolygon" path="local://1">
 		<vector2_array name="vertices" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 		<array name="polygons" len="1" shared="false">
@@ -22,17 +33,6 @@
 	<resource type="ConvexPolygonShape2D" path="local://2">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="7"> 			8.54842, -15.1517, 14.9562, -7.88955, 15.0986, 8.48596, 9.82998, 15.321, -12.2414, 14.3242, -16.086, 1.93576, -4.2672, -13.7278 </vector2_array>
-
-	</resource>
-	<resource type="OccluderPolygon2D" path="local://8">
-		<bool name="closed"> True </bool>
-		<int name="cull_mode"> 0 </int>
-		<vector2_array name="polygon" len="5"> 			32, 32, 32, 0, 9, 0, 3, 6, 3, 32 </vector2_array>
-
-	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://7">
-		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="5"> 			3, 32, 3, 6, 9, 0, 32, 0, 32, 32 </vector2_array>
 
 	</resource>
 	<resource type="OccluderPolygon2D" path="local://10">
@@ -85,58 +85,58 @@
 
 	</resource>
 	<main_resource>
-		<string name="0/name"> "blank" </string>
+		<string name="0/name"> "wood_wall_l" </string>
 		<resource name="0/texture" external="0">  </resource>
 		<vector2 name="0/tex_offset"> 0, 0 </vector2>
 		<resource name="0/material"></resource>		<rect2 name="0/region"> 0, 0, 32, 32 </rect2>
-		<vector2 name="0/occluder_offset"> 16, 16 </vector2>
-		<resource name="0/occluder"></resource>		<vector2 name="0/navigation_offset"> 16, 16 </vector2>
-		<resource name="0/navigation" resource_type="NavigationPolygon" path="local://1">  </resource>
-		<vector2 name="0/shape_offset"> 0, 0 </vector2>
-		<array name="0/shapes" len="0" shared="false">
+		<vector2 name="0/occluder_offset"> -0, -0 </vector2>
+		<resource name="0/occluder" resource_type="OccluderPolygon2D" path="local://8">  </resource>
+		<vector2 name="0/navigation_offset"> -0, -0 </vector2>
+		<resource name="0/navigation"></resource>		<vector2 name="0/shape_offset"> -0, -0 </vector2>
+		<array name="0/shapes" len="1" shared="false">
+			<resource  resource_type="Shape2D" path="local://7">  </resource>
 		</array>
-		<string name="1/name"> "ground_stone" </string>
+		<string name="1/name"> "blank" </string>
 		<resource name="1/texture" external="1">  </resource>
 		<vector2 name="1/tex_offset"> 0, 0 </vector2>
-		<resource name="1/material"></resource>		<rect2 name="1/region"> 32, 32, 32, 32 </rect2>
-		<vector2 name="1/occluder_offset"> -0, -0 </vector2>
-		<resource name="1/occluder"></resource>		<vector2 name="1/navigation_offset"> -0, -0 </vector2>
-		<resource name="1/navigation"></resource>		<vector2 name="1/shape_offset"> 0, 0 </vector2>
+		<resource name="1/material"></resource>		<rect2 name="1/region"> 0, 0, 32, 32 </rect2>
+		<vector2 name="1/occluder_offset"> 16, 16 </vector2>
+		<resource name="1/occluder"></resource>		<vector2 name="1/navigation_offset"> 16, 16 </vector2>
+		<resource name="1/navigation" resource_type="NavigationPolygon" path="local://1">  </resource>
+		<vector2 name="1/shape_offset"> 0, 0 </vector2>
 		<array name="1/shapes" len="0" shared="false">
 		</array>
-		<string name="2/name"> "ground_grass" </string>
-		<resource name="2/texture" external="1">  </resource>
+		<string name="2/name"> "ground_stone" </string>
+		<resource name="2/texture" external="0">  </resource>
 		<vector2 name="2/tex_offset"> 0, 0 </vector2>
-		<resource name="2/material"></resource>		<rect2 name="2/region"> 0, 32, 32, 32 </rect2>
-		<vector2 name="2/occluder_offset"> 16, 16 </vector2>
-		<resource name="2/occluder"></resource>		<vector2 name="2/navigation_offset"> 16, 16 </vector2>
+		<resource name="2/material"></resource>		<rect2 name="2/region"> 32, 32, 32, 32 </rect2>
+		<vector2 name="2/occluder_offset"> -0, -0 </vector2>
+		<resource name="2/occluder"></resource>		<vector2 name="2/navigation_offset"> -0, -0 </vector2>
 		<resource name="2/navigation"></resource>		<vector2 name="2/shape_offset"> 0, 0 </vector2>
 		<array name="2/shapes" len="0" shared="false">
 		</array>
-		<string name="3/name"> "static_rock" </string>
-		<resource name="3/texture" external="2">  </resource>
+		<string name="3/name"> "ground_grass" </string>
+		<resource name="3/texture" external="0">  </resource>
 		<vector2 name="3/tex_offset"> 0, 0 </vector2>
-		<resource name="3/material"></resource>		<rect2 name="3/region"> 384, 480, 32, 32 </rect2>
+		<resource name="3/material"></resource>		<rect2 name="3/region"> 0, 32, 32, 32 </rect2>
 		<vector2 name="3/occluder_offset"> 16, 16 </vector2>
-		<resource name="3/occluder" resource_type="OccluderPolygon2D" path="local://3">  </resource>
-		<vector2 name="3/navigation_offset"> 16, 16 </vector2>
-		<resource name="3/navigation"></resource>		<vector2 name="3/shape_offset"> 16, 16 </vector2>
-		<array name="3/shapes" len="1" shared="false">
+		<resource name="3/occluder"></resource>		<vector2 name="3/navigation_offset"> 16, 16 </vector2>
+		<resource name="3/navigation"></resource>		<vector2 name="3/shape_offset"> 0, 0 </vector2>
+		<array name="3/shapes" len="0" shared="false">
+		</array>
+		<string name="4/name"> "static_rock" </string>
+		<resource name="4/texture" external="2">  </resource>
+		<vector2 name="4/tex_offset"> 0, 0 </vector2>
+		<resource name="4/material"></resource>		<rect2 name="4/region"> 384, 480, 32, 32 </rect2>
+		<vector2 name="4/occluder_offset"> 16, 16 </vector2>
+		<resource name="4/occluder" resource_type="OccluderPolygon2D" path="local://3">  </resource>
+		<vector2 name="4/navigation_offset"> 16, 16 </vector2>
+		<resource name="4/navigation"></resource>		<vector2 name="4/shape_offset"> 16, 16 </vector2>
+		<array name="4/shapes" len="1" shared="false">
 			<resource  resource_type="Shape2D" path="local://2">  </resource>
 		</array>
-		<string name="4/name"> "wood_wall_l" </string>
-		<resource name="4/texture" external="1">  </resource>
-		<vector2 name="4/tex_offset"> 0, 0 </vector2>
-		<resource name="4/material"></resource>		<rect2 name="4/region"> 0, 0, 32, 32 </rect2>
-		<vector2 name="4/occluder_offset"> -0, -0 </vector2>
-		<resource name="4/occluder" resource_type="OccluderPolygon2D" path="local://8">  </resource>
-		<vector2 name="4/navigation_offset"> -0, -0 </vector2>
-		<resource name="4/navigation"></resource>		<vector2 name="4/shape_offset"> -0, -0 </vector2>
-		<array name="4/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://7">  </resource>
-		</array>
 		<string name="5/name"> "wood_wall_m" </string>
-		<resource name="5/texture" external="1">  </resource>
+		<resource name="5/texture" external="0">  </resource>
 		<vector2 name="5/tex_offset"> 0, 0 </vector2>
 		<resource name="5/material"></resource>		<rect2 name="5/region"> 32, 0, 32, 32 </rect2>
 		<vector2 name="5/occluder_offset"> -0, -0 </vector2>
@@ -147,7 +147,7 @@
 			<resource  resource_type="Shape2D" path="local://9">  </resource>
 		</array>
 		<string name="6/name"> "wood_wall_r" </string>
-		<resource name="6/texture" external="1">  </resource>
+		<resource name="6/texture" external="0">  </resource>
 		<vector2 name="6/tex_offset"> 0, 0 </vector2>
 		<resource name="6/material"></resource>		<rect2 name="6/region"> 64, 0, 32, 32 </rect2>
 		<vector2 name="6/occluder_offset"> -0, -0 </vector2>

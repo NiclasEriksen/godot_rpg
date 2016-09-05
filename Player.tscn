@@ -151,7 +151,8 @@ transform/pos = Vector2( -16, 3 )
 z/z = 2
 texture = ExtResource( 8 )
 centered = false
-region_rect = Rect2( 0, 0, 9, 5 )
+region = true
+region_rect = Rect2( 0, 0, 9, 7 )
 
 [node name="LeftHand" type="Sprite" parent="."]
 
@@ -159,6 +160,8 @@ transform/pos = Vector2( 7, 3 )
 z/z = 2
 texture = ExtResource( 8 )
 centered = false
+region = true
+region_rect = Rect2( 0, 0, 9, 7 )
 
 [node name="HandAnimation" type="AnimationPlayer" parent="."]
 
