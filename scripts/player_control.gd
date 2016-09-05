@@ -8,17 +8,20 @@ extends Node2D
 var jump_cd = false
 signal moved(pos)
 signal jump
+signal attack
 var vel = Vector2(0, 0)
 var cur_vel = 0
 var max_vel = 150
 var sprint_factor = 1.5
 var rot_spd = 5
 var root = null
+var anim = null
 
 func _ready():
 	self.set_process(true)
 	self.set_process_input(true)
-	var root = get_tree().get_root().get_node("Game")
+	root = get_tree().get_root().get_node("Game")
+	anim = get_node("BodyAnimation")
 	# var c = get_node("Camera2D")
 	# if c:
 	# 	c.set_pos(get_pos())
@@ -44,7 +47,8 @@ func _process(delta):
 	else:
 		cur_vel = max_vel
 
-	print(cur_vel, max_vel)
+	if Input.is_action_just_pressed("ATTACK"):
+		emit_signal("attack")
 
 	if Input.is_action_pressed("MOVE_UP") and Input.is_action_pressed("MOVE_DOWN"):
 		vel.y = 0
@@ -69,17 +73,11 @@ func _process(delta):
 	if root:
 		var r = get_angle_to(root.get_global_mouse_pos()) * (rot_spd * delta)
 		rotate(r)
-	else:
-		root = get_tree().get_root().get_node("Game")
 
 	self.move_and_slide(vel * 50 * delta)
 
 	self.emit_signal("moved", self.get_pos())
-	var anim = get_node("Sprite 2/AnimationPlayer")
 	if anim:
-		if not anim.is_active():
-			# print("Not active.")
-			anim.set_active(true)
 		if vel.x > 0.0 or vel.x < 0.0 or vel.y > 0.0 or vel.y < 0.0:
 			if not anim.is_playing():
 				anim.play("Walk")
@@ -87,7 +85,7 @@ func _process(delta):
 		else:
 			if anim.is_playing():
 				# print("Stopping")
-				anim.stop()
+				anim.stop(true)
 		
 
 func jump():

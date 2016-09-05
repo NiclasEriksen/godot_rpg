@@ -360,6 +360,7 @@ script/script = ExtResource( 18 )
 [node name="Camera2D" type="Camera2D" parent="."]
 
 transform/pos = Vector2( 363.22, 228.543 )
+offset = Vector2( 0, -10 )
 anchor_mode = 1
 rotating = false
 current = true

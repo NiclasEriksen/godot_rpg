@@ -1,4 +1,3 @@
-
 extends TileMap
 
 const mg = preload("mapgen.gd")
@@ -22,5 +21,3 @@ func _ready():
 				if randi()%2 == 1:
 					flip_x = true
 				self.set_cell(x, y, grass, flip_x)
-	# print(ts.find_tile_by_name("ground_grass"))
-
