@@ -10,9 +10,3 @@ func _ready():
 	# Initialization here
 	pass
 
-
-
-
-func _on_Mob_moved():
-	# self.set_pos(self.get_parent().get_pos())
-	pass
