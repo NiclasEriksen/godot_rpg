@@ -1,0 +1,273 @@
+[gd_scene load_steps=16 format=1]
+
+[ext_resource path="res://resources/blank.png" type="Texture" id=1]
+[ext_resource path="res://resources/spritesheet.tex" type="Texture" id=2]
+[ext_resource path="res://resources/mountain_landscape_23.tex" type="Texture" id=3]
+
+[sub_resource type="NavigationPolygon" id=1]
+
+vertices = Vector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
+polygons = [ IntArray( 0, 1, 2, 3, 0 ) ]
+outlines = [ Vector2Array( -16, -16, 16, -16, 16, 16, -16, 16, -16, -16 ) ]
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 8.54842, -15.1517, 14.9562, -7.88955, 15.0986, 8.48596, 9.82998, 15.321, -12.2414, 14.3242, -16.086, 1.93576, -4.2672, -13.7278 )
+
+[sub_resource type="OccluderPolygon2D" id=3]
+
+closed = true
+cull_mode = 0
+polygon = Vector2Array( 8.54842, -15.1517, 14.9562, -7.88955, 15.0986, 8.48596, 9.82998, 15.321, -12.2414, 14.3242, -16.086, 1.93576, -4.2672, -13.7278 )
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 3, 32, 3, 6, 9, 0, 32, 0, 32, 32 )
+
+[sub_resource type="OccluderPolygon2D" id=8]
+
+closed = true
+cull_mode = 0
+polygon = Vector2Array( 32, 32, 32, 0, 9, 0, 3, 6, 3, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=9]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 0, 32, 0, 0, 32, 0, 32, 32 )
+
+[sub_resource type="OccluderPolygon2D" id=10]
+
+closed = true
+cull_mode = 0
+polygon = Vector2Array( 32, 32, 32, 0, 0, 0, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=13]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 0, 0, 24, 0, 24, 28, 20, 32, 0, 32 )
+
+[sub_resource type="OccluderPolygon2D" id=12]
+
+closed = true
+cull_mode = 0
+polygon = Vector2Array( 0, 32, 20, 32, 24, 28, 24, 0, 0, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -8.46092, 2.72348, 12.7057, 3.43697, 31.494, 48.1485, 13.8948, 63.6072, -9.17441, 64.0829, -27.7249, 51.7159, -27.9627, 33.1654 )
+
+[sub_resource type="OccluderPolygon2D" id=5]
+
+closed = true
+cull_mode = 0
+polygon = Vector2Array( -8.46092, 2.72348, 12.7057, 3.43697, 31.494, 48.1485, 13.8948, 63.6072, -9.17441, 64.0829, -27.7249, 51.7159, -27.9627, 33.1654 )
+
+[sub_resource type="NavigationPolygon" id=6]
+
+vertices = Vector2Array( -28.4133, 51.7268, -10.018, 64.2823, -16, 64, 48, 64, 13.6331, 63.9904, 32.0284, 48.223, -48, 64, 48, -64, 13.0491, 3.54865, -48, -64, -27.8294, 33.0395, -9.14204, 3.25665 )
+polygons = [ IntArray( 0, 1, 2 ), IntArray( 3, 4, 5 ), IntArray( 0, 2, 6 ), IntArray( 7, 3, 5, 8 ), IntArray( 0, 6, 9, 10 ), IntArray( 11, 10, 9 ), IntArray( 11, 9, 7, 8 ) ]
+outlines = [ Vector2Array( -48, -64, -48, 64, -16, 64, -10.018, 64.2823, -28.4133, 51.7268, -27.8294, 33.0395, -9.14204, 3.25665, 13.0491, 3.54865, 32.0284, 48.223, 13.6331, 63.9904, 48, 64, 48, -64 ) ]
+
+[node name="Node" type="Node"]
+
+[node name="blank" type="Sprite" parent="."]
+
+transform/pos = Vector2( 48, 48 )
+texture = ExtResource( 1 )
+region_rect = Rect2( 32, 32, 32, 32 )
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="blank"]
+
+navpoly = SubResource( 1 )
+enabled = true
+
+[node name="ground_stone" type="Sprite" parent="."]
+
+texture = ExtResource( 2 )
+centered = false
+region = true
+region_rect = Rect2( 32, 32, 32, 32 )
+
+[node name="ground_grass" type="Sprite" parent="."]
+
+transform/pos = Vector2( 16, 48 )
+texture = ExtResource( 2 )
+region = true
+region_rect = Rect2( 0, 32, 32, 32 )
+
+[node name="static_rock" type="Sprite" parent="."]
+
+transform/pos = Vector2( 48, 16 )
+texture = ExtResource( 3 )
+region = true
+region_rect = Rect2( 384, 480, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="static_rock"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="static_rock/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( 8.54842, -15.1517, 14.9562, -7.88955, 15.0986, 8.48596, 9.82998, 15.321, -12.2414, 14.3242, -16.086, 1.93576, -4.2672, -13.7278 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="static_rock"]
+
+transform/pos = Vector2( 0, -0.358482 )
+occluder = SubResource( 3 )
+light_mask = 1
+
+[node name="wood_wall_l" type="Sprite" parent="."]
+
+transform/pos = Vector2( 64, 0 )
+texture = ExtResource( 2 )
+centered = false
+region = true
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="wood_wall_l"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 7 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D 2" type="CollisionPolygon2D" parent="wood_wall_l/StaticBody2D"]
+
+transform/scale = Vector2( 1, 1 )
+build_mode = 0
+polygon = Vector2Array( 32, 32, 32, 0, 9, 0, 3, 6, 3, 32 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="wood_wall_l"]
+
+occluder = SubResource( 8 )
+light_mask = 1
+
+[node name="wood_wall_m" type="Sprite" parent="."]
+
+transform/pos = Vector2( 96, 0 )
+texture = ExtResource( 2 )
+centered = false
+region = true
+region_rect = Rect2( 32, 0, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="wood_wall_m"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 9 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D 2" type="CollisionPolygon2D" parent="wood_wall_m/StaticBody2D"]
+
+transform/scale = Vector2( 1, 1 )
+build_mode = 0
+polygon = Vector2Array( 32, 32, 32, 0, 0, 0, 0, 32 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="wood_wall_m"]
+
+occluder = SubResource( 10 )
+light_mask = 1
+
+[node name="wood_wall_r" type="Sprite" parent="."]
+
+transform/pos = Vector2( 128, 0 )
+texture = ExtResource( 2 )
+centered = false
+region = true
+region_rect = Rect2( 64, 0, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="wood_wall_r"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 13 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D 2" type="CollisionPolygon2D" parent="wood_wall_r/StaticBody2D"]
+
+transform/scale = Vector2( 1, 1 )
+build_mode = 0
+polygon = Vector2Array( 0, 32, 20, 32, 24, 28, 24, 0, 0, 0 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="wood_wall_r"]
+
+occluder = SubResource( 12 )
+light_mask = 1
+
+[node name="static_tree" type="Sprite" parent="."]
+
+transform/pos = Vector2( 48, 128 )
+texture = ExtResource( 3 )
+region = true
+region_rect = Rect2( 128, 386, 96, 128 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="static_tree"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 4 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="static_tree/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( -8.46092, 2.72348, 12.7057, 3.43697, 31.494, 48.1485, 13.8948, 63.6072, -9.17441, 64.0829, -27.7249, 51.7159, -27.9627, 33.1654 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="LightOccluder2D1" type="LightOccluder2D" parent="static_tree"]
+
+occluder = SubResource( 5 )
+light_mask = 1
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="static_tree"]
+
+navpoly = SubResource( 6 )
+enabled = true
+
+
