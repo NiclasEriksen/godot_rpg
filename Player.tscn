@@ -37,7 +37,12 @@ tracks/0/type = "value"
 tracks/0/path = NodePath("RightHand:transform/pos")
 tracks/0/interp = 1
 tracks/0/imported = false
-tracks/0/keys = { "times":FloatArray( 0, 0.1, 0.5 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ Vector2( -16, 3 ), Vector2( -16, 10 ), Vector2( -16, 3 ) ] }
+tracks/0/keys = { "times":FloatArray( 0, 0.1, 0.5 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ Vector2( -16, 3 ), Vector2( -16, 14 ), Vector2( -16, 3 ) ] }
+tracks/1/type = "value"
+tracks/1/path = NodePath("RightHand:transform/rot")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = { "times":FloatArray( 0, 0.1, 0.5 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ 0.0, 45.0, 0.0 ] }
 
 [sub_resource type="Animation" id=5]
 
@@ -160,7 +165,7 @@ script/script = ExtResource( 9 )
 
 [node name="Weapon" type="Sprite" parent="RightHand"]
 
-transform/pos = Vector2( 0, 12 )
+transform/pos = Vector2( 0, 13 )
 transform/rot = 45.0
 texture = ExtResource( 10 )
 
