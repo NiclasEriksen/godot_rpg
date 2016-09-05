@@ -62,9 +62,11 @@ func _process(delta):
 		rotate(r)
 
 	if Input.is_action_pressed("SPRINT"):
-		self.move_and_slide(vel * 75 * delta)
+		# self.move_and_slide(vel * 75 * delta)
+		self.move(vel * 1.5 * delta)
 	else:
-		self.move_and_slide(vel * 50 * delta)
+		# self.move_and_slide(vel * 50 * delta)
+		self.move(vel * delta)
 
 	self.emit_signal("moved", self.get_pos())
 	if anim:
