@@ -30,21 +30,21 @@ func _draw():
 
 func _input(event):
 	if event.is_action_pressed("MOVE_UP"):
-		vel.y = vel.y - max_vel
+		vel.y = vel.y + max_vel
 	elif event.is_action_released("MOVE_UP"):
-		vel.y = vel.y + max_vel
-	if event.is_action_pressed("MOVE_DOWN"):
-		vel.y = vel.y + max_vel
-	elif event.is_action_released("MOVE_DOWN"):
 		vel.y = vel.y - max_vel
+	if event.is_action_pressed("MOVE_DOWN"):
+		vel.y = vel.y - max_vel
+	elif event.is_action_released("MOVE_DOWN"):
+		vel.y = vel.y + max_vel
 	if event.is_action_pressed("MOVE_LEFT"):
-		vel.x = vel.x - max_vel
+		vel.x = vel.x + max_vel
 	elif event.is_action_released("MOVE_LEFT"):
-		vel.x = vel.x + max_vel
-	if event.is_action_pressed("MOVE_RIGHT"):
-		vel.x = vel.x + max_vel
-	elif event.is_action_released("MOVE_RIGHT"):
 		vel.x = vel.x - max_vel
+	if event.is_action_pressed("MOVE_RIGHT"):
+		vel.x = vel.x - max_vel
+	elif event.is_action_released("MOVE_RIGHT"):
+		vel.x = vel.x + max_vel
 
 func _process(delta):
 	if Input.is_action_pressed("ATTACK"):
@@ -65,8 +65,9 @@ func _process(delta):
 		# self.move_and_slide(vel * 75 * delta)
 		self.move(vel * 1.5 * delta)
 	else:
+		print(vel.rotated(get_rot()), vel)
 		# self.move_and_slide(vel * 50 * delta)
-		self.move(vel * delta)
+		self.move(vel.rotated(get_rot()) * delta)
 
 	self.emit_signal("moved", self.get_pos())
 	if anim:
