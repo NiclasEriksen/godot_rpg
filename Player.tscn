@@ -23,7 +23,7 @@ height = 10.0119
 
 samples/dunk = { "db":0.0, "pitch":1.0, "sample":ExtResource( 2 ) }
 
-[sub_resource type="ColorRamp" id=6]
+[sub_resource type="ColorRamp" id=3]
 
 offsets = FloatArray( 0, 0.481481, 1 )
 colors = ColorArray( 0.6875, 0, 0, 1, 0.824219, 0, 0, 1, 1, 1, 1, 0 )
@@ -175,7 +175,7 @@ params/hue_variation = 0.0
 params/anim_speed_scale = 1.0
 params/anim_initial_pos = 0.0
 color/color = Color( 0.738281, 0.00576782, 0.00576782, 1 )
-color/color_ramp = SubResource( 6 )
+color/color_ramp = SubResource( 3 )
 
 [node name="LeftHand" type="Sprite" parent="."]
 
