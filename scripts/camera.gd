@@ -25,8 +25,9 @@ func _input(event):
 func get_translated_pos(pos):
 	return (pos - get_viewport_rect().size / 2) * get_zoom() + get_camera_pos()
 
-func _on_Player_object_moved( pos ):
+func _on_Player_object_moved(pos, rot):
 	self.set_pos(pos)
+	self.set_rot(rot + PI)
 
 
 func _on_Player_object_jump():

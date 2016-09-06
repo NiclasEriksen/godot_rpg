@@ -6,7 +6,7 @@ extends Node2D
 # var b="textvar"
 
 var jump_cd = false
-signal moved(pos)
+signal moved(pos, rot)
 signal jump
 signal attack
 var attacking = false
@@ -69,7 +69,7 @@ func _process(delta):
 		# self.move_and_slide(vel * 50 * delta)
 		self.move(vel.rotated(get_rot()) * delta)
 
-	self.emit_signal("moved", self.get_pos())
+	self.emit_signal("moved", get_pos(), get_rot())
 	if anim:
 		if vel.x > 0.0 or vel.x < 0.0 or vel.y > 0.0 or vel.y < 0.0:
 			if not anim.is_playing():
@@ -88,4 +88,4 @@ func _process(delta):
 
 func jump():
 	self.emit_signal("jump")
-	self.emit_signal("moved", self.get_pos())
+	self.emit_signal("moved", get_pos(), get_rot())

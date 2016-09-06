@@ -1,0 +1,17 @@
+digraph {
+    graph [fontname="helvetica", fillcolor="orange2"]
+    node [
+        shape="box",
+        fontname="helvetica",
+        style=filled,
+        fillcolor="orange2", color="grey10"
+    ]
+    label="Scene instancing layout"
+    root[label="TestScene", fillcolor="olivedrab1"]
+    Player -> root
+    Mob -> root
+	Weapon -> Player
+    HUD -> UI -> root
+    StaticObject -> root
+    Weapon -> Projectile -> root
+}
