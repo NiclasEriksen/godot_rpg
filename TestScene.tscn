@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=1]
+[gd_scene load_steps=24 format=1]
 
 [ext_resource path="res://scripts/thescript.gd" type="Script" id=1]
 [ext_resource path="res://resources/tileset.xml" type="TileSet" id=2]
@@ -10,7 +10,7 @@
 [ext_resource path="res://resources/light1.tex" type="Texture" id=8]
 [ext_resource path="res://scripts/mob_light.gd" type="Script" id=9]
 [ext_resource path="res://resources/light1.png" type="Texture" id=10]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=11]
+[ext_resource path="res://entities/Player.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scripts/game_ui.gd" type="Script" id=12]
 [ext_resource path="res://resources/mono_font.fnt" type="BitmapFont" id=13]
 [ext_resource path="res://scripts/seconds_script.gd" type="Script" id=14]
@@ -19,9 +19,7 @@
 [ext_resource path="res://resources/music/bgm01.ogg" type="AudioStream" id=17]
 [ext_resource path="res://scripts/music_plauer-gd.gd" type="Script" id=18]
 [ext_resource path="res://scripts/camera.gd" type="Script" id=19]
-[ext_resource path="res://resources/spritesheet.tex" type="Texture" id=20]
-[ext_resource path="res://resources/sfx/dunk.wav" type="Sample" id=21]
-[ext_resource path="res://scripts/test_sampleplayer.gd" type="Script" id=22]
+[ext_resource path="res://static_objects/Bush.tscn" type="PackedScene" id=20]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -44,10 +42,6 @@ tracks/0/path = NodePath(".:offset")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = { "times":FloatArray( 0, 0.05, 0.1, 0.15, 0.2 ), "transitions":FloatArray( 1, 1, 1, 1, 1 ), "update":0, "values":[ Vector2( 0, 0 ), Vector2( 5, 6 ), Vector2( 10, 0 ), Vector2( -8, -5 ), Vector2( 0, -10 ) ] }
-
-[sub_resource type="SampleLibrary" id=4]
-
-samples/dunk = { "db":0.0, "pitch":1.0, "sample":ExtResource( 21 ) }
 
 [node name="Game" type="Control"]
 
@@ -416,30 +410,9 @@ collision/mask = 1
 occluder/light_mask = 1
 tile_data = IntArray(  )
 
-[node name="Bush" type="Sprite" parent="RogerTest"]
+[node name="Bush" parent="RogerTest" instance=ExtResource( 20 )]
 
-texture = ExtResource( 20 )
-region = true
-region_rect = Rect2( 64, 32, 40, 32 )
-
-[node name="SamplePlayer2D" type="SamplePlayer2D" parent="RogerTest/Bush"]
-
-params/volume_db = 0.0
-params/pitch_scale = 1.0
-params/attenuation/min_distance = 1.0
-params/attenuation/max_distance = 500.0
-params/attenuation/distance_exp = 1.0
-config/polyphony = 1
-config/samples = SubResource( 4 )
-config/pitch_random = 0.0
-script/script = ExtResource( 22 )
-
-[node name="Timer" type="Timer" parent="RogerTest/Bush/SamplePlayer2D"]
-
-process_mode = 1
-wait_time = 1.0
-one_shot = false
-autostart = true
+transform/pos = Vector2( 161.721, 319.031 )
 
 [connection signal="jump" from="Player_object" to="Camera2D" method="_on_Player_object_jump"]
 
@@ -450,7 +423,5 @@ autostart = true
 [connection signal="toggled" from="CanvasLayer/HUD/VBoxContainer 2/HBoxContainer/PauseButton" to="." method="_on_Button_2_toggled"]
 
 [connection signal="toggled" from="CanvasLayer/HUD/VBoxContainer 2/HBoxContainer/MusicButton" to="CanvasLayer/HUD/VBoxContainer 2/HBoxContainer/StreamPlayer" method="_on_MusicButton_toggled"]
-
-[connection signal="timeout" from="RogerTest/Bush/SamplePlayer2D/Timer" to="RogerTest/Bush/SamplePlayer2D" method="_on_Timer_timeout"]
 
 

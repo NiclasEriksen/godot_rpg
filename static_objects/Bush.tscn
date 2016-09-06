@@ -4,37 +4,37 @@
 [ext_resource path="res://resources/sfx/dunk.wav" type="Sample" id=2]
 [ext_resource path="res://scripts/test_sampleplayer.gd" type="Script" id=3]
 
-[sub_resource type="SampleLibrary" id=4]
+[sub_resource type="SampleLibrary" id=1]
 
 samples/dunk = { "db":0.0, "pitch":1.0, "sample":ExtResource( 2 ) }
 
-[node name="Node" type="Node"]
+[node name="Bush" type="Node2D"]
 
-[node name="Bush" type="Sprite" parent="."]
+[node name="Sprite" type="Sprite" parent="."]
 
 texture = ExtResource( 1 )
 region = true
 region_rect = Rect2( 64, 32, 40, 32 )
 
-[node name="SamplePlayer2D" type="SamplePlayer2D" parent="Bush"]
+[node name="SoundEffects" type="SamplePlayer2D" parent="."]
 
 params/volume_db = 0.0
 params/pitch_scale = 1.0
 params/attenuation/min_distance = 1.0
-params/attenuation/max_distance = 2048.0
+params/attenuation/max_distance = 512.0
 params/attenuation/distance_exp = 1.0
 config/polyphony = 1
-config/samples = SubResource( 4 )
+config/samples = SubResource( 1 )
 config/pitch_random = 0.0
 script/script = ExtResource( 3 )
 
-[node name="Timer" type="Timer" parent="Bush/SamplePlayer2D"]
+[node name="Timer" type="Timer" parent="SoundEffects"]
 
 process_mode = 1
 wait_time = 1.0
 one_shot = false
-autostart = false
+autostart = true
 
-[connection signal="timeout" from="Bush/SamplePlayer2D/Timer" to="Bush/SamplePlayer2D" method="_on_Timer_timeout"]
+[connection signal="timeout" from="SoundEffects/Timer" to="SoundEffects" method="_on_Timer_timeout"]
 
 
