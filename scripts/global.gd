@@ -8,8 +8,8 @@ var MAP_WIDTH = 40
 var MAP_HEIGHT = 30
 
 func _ready():
+	# print(currentScene, "hei")
 	currentScene = get_tree().get_root().get_child(get_tree().get_root().get_child_count() -1)
-	Globals.set("MAX_POWER_LEVEL", 9000)
 
 func set_scene(scene):
 	currentScene.queue_free()

@@ -65,7 +65,7 @@ func _process(delta):
 		# self.move_and_slide(vel * 75 * delta)
 		self.move(vel * 1.5 * delta)
 	else:
-		print(vel.rotated(get_rot()), vel)
+		# print(vel.rotated(get_rot()), vel)
 		# self.move_and_slide(vel * 50 * delta)
 		self.move(vel.rotated(get_rot()) * delta)
 
