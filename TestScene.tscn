@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=1]
+[gd_scene load_steps=29 format=1]
 
 [ext_resource path="res://scripts/thescript.gd" type="Script" id=1]
 [ext_resource path="res://resources/bg.tex" type="Texture" id=2]
@@ -13,15 +13,16 @@
 [ext_resource path="res://resources/light1.png" type="Texture" id=11]
 [ext_resource path="res://entities/Player.tscn" type="PackedScene" id=12]
 [ext_resource path="res://scripts/game_ui.gd" type="Script" id=13]
-[ext_resource path="res://resources/mono_font.fnt" type="BitmapFont" id=14]
-[ext_resource path="res://scripts/seconds_script.gd" type="Script" id=15]
-[ext_resource path="res://resources/ui/pause.png" type="Texture" id=16]
-[ext_resource path="res://icon.png" type="Texture" id=17]
-[ext_resource path="res://resources/music/bgm01.ogg" type="AudioStream" id=18]
-[ext_resource path="res://scripts/music_plauer-gd.gd" type="Script" id=19]
-[ext_resource path="res://scripts/camera.gd" type="Script" id=20]
-[ext_resource path="res://static_objects/Bush.tscn" type="PackedScene" id=21]
-[ext_resource path="res://static_objects/Potion.tscn" type="PackedScene" id=22]
+[ext_resource path="res://scripts/hud.gd" type="Script" id=14]
+[ext_resource path="res://resources/mono_font.fnt" type="BitmapFont" id=15]
+[ext_resource path="res://scripts/seconds_script.gd" type="Script" id=16]
+[ext_resource path="res://resources/ui/pause.png" type="Texture" id=17]
+[ext_resource path="res://icon.png" type="Texture" id=18]
+[ext_resource path="res://resources/music/bgm01.ogg" type="AudioStream" id=19]
+[ext_resource path="res://scripts/music_plauer-gd.gd" type="Script" id=20]
+[ext_resource path="res://scripts/camera.gd" type="Script" id=21]
+[ext_resource path="res://static_objects/Bush.tscn" type="PackedScene" id=22]
+[ext_resource path="res://static_objects/Potion.tscn" type="PackedScene" id=23]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -32,6 +33,32 @@ radius = 13.3077
 
 offsets = FloatArray( 0, 0.391813, 0.74269, 1 )
 colors = ColorArray( 1, 0.09375, 0, 1, 1, 0.477814, 0.0585938, 1, 0.96875, 1, 0, 1, 1, 1, 1, 0 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+bg_color = Color( 1, 0, 0, 1 )
+light_color = Color( 1, 0.511719, 0.511719, 1 )
+dark_color = Color( 0.441406, 0, 0, 1 )
+border_size = 0
+border_blend = true
+draw_bg = true
+
+[sub_resource type="StyleBoxFlat" id=5]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+bg_color = Color( 0.065918, 0.318089, 0.5625, 1 )
+light_color = Color( 0.8, 0.8, 0.8, 1 )
+dark_color = Color( 0.8, 0.8, 0.8, 1 )
+border_size = 0
+border_blend = true
+draw_bg = true
 
 [sub_resource type="Animation" id=3]
 
@@ -262,6 +289,7 @@ script/script = ExtResource( 13 )
 [node name="HUD" type="Node2D" parent="CanvasLayer"]
 
 z/z = 50
+script/script = ExtResource( 14 )
 
 [node name="VBoxContainer 2" type="VBoxContainer" parent="CanvasLayer/HUD"]
 
@@ -286,11 +314,11 @@ margin/left = 0.0
 margin/top = 0.0
 margin/right = 200.0
 margin/bottom = 60.0
-custom_fonts/normal_font = ExtResource( 14 )
+custom_fonts/normal_font = ExtResource( 15 )
 bbcode/enabled = false
 bbcode/bbcode = ""
 visible_characters = -1
-script/script = ExtResource( 15 )
+script/script = ExtResource( 16 )
 
 [node name="Timer" type="Timer" parent="CanvasLayer/HUD/VBoxContainer 2/RichTextLabel"]
 
@@ -324,7 +352,7 @@ margin/bottom = 70.0
 toggle_mode = true
 enabled_focus_mode = 2
 shortcut = null
-icon = ExtResource( 16 )
+icon = ExtResource( 17 )
 flat = false
 
 [node name="Button" type="Button" parent="CanvasLayer/HUD/VBoxContainer 2/HBoxContainer"]
@@ -341,7 +369,7 @@ margin/bottom = 70.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-icon = ExtResource( 17 )
+icon = ExtResource( 18 )
 flat = true
 
 [node name="MusicButton" type="Button" parent="CanvasLayer/HUD/VBoxContainer 2/HBoxContainer"]
@@ -357,12 +385,12 @@ margin/bottom = 70.0
 toggle_mode = true
 enabled_focus_mode = 2
 shortcut = null
-icon = ExtResource( 17 )
+icon = ExtResource( 18 )
 flat = true
 
 [node name="StreamPlayer" type="StreamPlayer" parent="CanvasLayer/HUD/VBoxContainer 2/HBoxContainer"]
 
-stream/stream = ExtResource( 18 )
+stream/stream = ExtResource( 19 )
 stream/play = true
 stream/loop = true
 stream/volume_db = 0.0
@@ -370,7 +398,63 @@ stream/autoplay = false
 stream/paused = true
 stream/loop_restart_time = 0.0
 stream/buffering_ms = 500
-script/script = ExtResource( 19 )
+script/script = ExtResource( 20 )
+
+[node name="ResourceBars" type="HBoxContainer" parent="CanvasLayer/HUD"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 500.0
+margin/top = 0.0
+margin/right = 900.0
+margin/bottom = 40.0
+alignment = 0
+
+[node name="HealthBar" type="ProgressBar" parent="CanvasLayer/HUD/ResourceBars"]
+
+rect/min_size = Vector2( 200, 20 )
+hint/tooltip = "Current health for player."
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 10.0
+margin/right = 200.0
+margin/bottom = 30.0
+custom_styles/fg = SubResource( 4 )
+range/min = 0.0
+range/max = 100.0
+range/step = 0.1
+range/page = 0.0
+range/value = 1.0
+range/exp_edit = false
+range/rounded = false
+percent/visible = true
+
+[node name="ManaBar" type="ProgressBar" parent="CanvasLayer/HUD/ResourceBars"]
+
+rect/min_size = Vector2( 200, 20 )
+hint/tooltip = "Current mana for player."
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 204.0
+margin/top = 10.0
+margin/right = 404.0
+margin/bottom = 30.0
+custom_styles/fg = SubResource( 5 )
+range/min = 0.0
+range/max = 100.0
+range/step = 0.1
+range/page = 0.0
+range/value = 100.0
+range/exp_edit = false
+range/rounded = false
+percent/visible = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -393,7 +477,7 @@ drag_margin/left = 0.0
 drag_margin/top = 0.0
 drag_margin/right = 0.0
 drag_margin/bottom = 0.0
-script/script = ExtResource( 20 )
+script/script = ExtResource( 21 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D"]
 
@@ -424,39 +508,39 @@ collision/mask = 1
 occluder/light_mask = 1
 tile_data = IntArray(  )
 
-[node name="Bush" parent="RogerTest" instance=ExtResource( 21 )]
+[node name="Bush" parent="RogerTest" instance=ExtResource( 22 )]
 
 transform/pos = Vector2( 161.721, 319.031 )
 
-[node name="Potion" parent="." instance=ExtResource( 22 )]
+[node name="Potion" parent="." instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 337.374, 284.319 )
 
-[node name="Potion1" parent="." instance=ExtResource( 22 )]
+[node name="Potion1" parent="." instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 533.268, 322.41 )
 
-[node name="Potion3" parent="." instance=ExtResource( 22 )]
+[node name="Potion3" parent="." instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 589.044, 315.608 )
 
-[node name="Potion4" parent="." instance=ExtResource( 22 )]
+[node name="Potion4" parent="." instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 659.784, 296.562 )
 
-[node name="Potion5" parent="." instance=ExtResource( 22 )]
+[node name="Potion5" parent="." instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 627.134, 194.534 )
 
-[node name="Potion6" parent="." instance=ExtResource( 22 )]
+[node name="Potion6" parent="." instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 489.736, 134.677 )
 
-[node name="Potion7" parent="." instance=ExtResource( 22 )]
+[node name="Potion7" parent="." instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 485.655, 259.832 )
 
-[node name="Potion2" parent="." instance=ExtResource( 22 )]
+[node name="Potion2" parent="." instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 440.763, 349.617 )
 

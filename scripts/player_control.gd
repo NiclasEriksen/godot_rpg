@@ -19,14 +19,34 @@ var rot_spd = 5
 var root = null
 var anim = null
 
+# Actual game data
+var max_hp = 10
+var cur_hp = max_hp
+var max_mp = 5
+var cur_mp = max_mp
+
 func _ready():
+	set("cur_hp", get("max_hp") / 5)
 	self.set_process(true)
 	self.set_process_input(true)
 	root = get_tree().get_root().get_node("Game")
 	anim = get_node("BodyAnimation")
 
-func _draw():
-	pass
+func apply_stat(effect, attr, amount):
+	print("cur_" + attr)
+	if get("cur_" + attr):
+		if effect == "increase":
+			if get("max_" + attr):
+				var m = get("max_" + attr)
+				if get("cur_" + attr) + amount < m:
+					set("cur_" + attr, get("cur_" + attr) + amount)
+				else:
+					set("cur_" + attr, m)
+			else:
+				set("cur_" + attr, get("cur_" + attr) + amount)
+		if effect == "decrease":
+			set("cur_" + attr, get("cur_" + attr) - amount)
+
 
 func _input(event):
 	if event.is_action_pressed("MOVE_UP"):
