@@ -7,9 +7,14 @@ func _input(event):
 		get_tree().quit()
 
 
-func _on_MenuButton_pressed():
+func _on_NewGame_released():
 	get_node("/root/globals").set_scene("res://TestScene.tscn")
 
 
-func _on_MenuButton_3_pressed():
+func _on_TestScene_released():
+	get_node("/root/globals").set_scene("res://TestScene.tscn")
+
+
+func _on_Quit_released():
 	get_tree().quit()
+
