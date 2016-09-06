@@ -8,10 +8,13 @@ digraph {
     ]
     label="Scene instancing layout"
     root[label="TestScene", fillcolor="olivedrab1"]
+    MainMenu[fillcolor="pink2"]
     Player -> root
     Mob -> root
 	Weapon -> Player
     HUD -> UI -> root
     StaticObject -> root
-    Weapon -> Projectile -> root
+    Projectile -> Weapon
+    Projectile -> root [color="grey60", style=dashed]
+    root -> MainMenu [dir=both, fillcolor="pink1"]
 }
