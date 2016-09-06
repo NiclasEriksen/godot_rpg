@@ -5,4 +5,5 @@ It will have a focus on traditional MMO combat (threat systems, rare items/gear,
 
 ### Scene layout
 *will be updated as project grows in complexity*
+
 ![Scene layout](graph.png?raw=true "Scene layout graph")
