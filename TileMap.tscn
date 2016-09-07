@@ -96,6 +96,12 @@ centered = false
 region = true
 region_rect = Rect2( 32, 32, 32, 32 )
 
+[node name="NavigationPolygonInstance1" type="NavigationPolygonInstance" parent="ground_stone"]
+
+transform/pos = Vector2( 16, 16 )
+navpoly = SubResource( 3 )
+enabled = true
+
 [node name="static_bush" type="Sprite" parent="."]
 
 transform/pos = Vector2( 64, 32 )
@@ -121,6 +127,11 @@ transform/pos = Vector2( 16, 48 )
 texture = ExtResource( 1 )
 region = true
 region_rect = Rect2( 0, 32, 32, 32 )
+
+[node name="NavigationPolygonInstance2" type="NavigationPolygonInstance" parent="ground_grass"]
+
+navpoly = SubResource( 3 )
+enabled = true
 
 [node name="wood_wall_m" type="Sprite" parent="."]
 

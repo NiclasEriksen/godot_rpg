@@ -33,7 +33,7 @@ script/script = ExtResource( 3 )
 process_mode = 1
 wait_time = 1.0
 one_shot = false
-autostart = true
+autostart = false
 
 [connection signal="timeout" from="SoundEffects/Timer" to="SoundEffects" method="_on_Timer_timeout"]
 

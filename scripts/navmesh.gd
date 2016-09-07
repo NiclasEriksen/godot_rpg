@@ -8,17 +8,17 @@ var closestPos = Vector2(0,0)
 func _ready():
 	font = load("res://resources/mono_font.fnt")
 	set_process_input(true)
-	var n = get_node("Genmap1")
-	var w = get_node("/root/globals").MAP_WIDTH
-	var h = get_node("/root/globals").MAP_HEIGHT
-	var clear_tile = n.get_tileset().find_tile_by_name("blank")
-	for x in range(w):
-		for y in range(h):
-			n.set_cell(x, y, clear_tile)
-	n.set_cell(4, 5, n.get_tileset().find_tile_by_name("wood_wall_l"))
-	n.set_cell(25, 5, n.get_tileset().find_tile_by_name("wood_wall_r"))
-	for x in range(20):
-		n.set_cell(5 + x, 5, n.get_tileset().find_tile_by_name("wood_wall_m"))
+	# var n = get_node("Genmap1")
+	#var w = get_node("/root/globals").MAP_WIDTH
+	#var h = get_node("/root/globals").MAP_HEIGHT
+	#var clear_tile = n.get_tileset().find_tile_by_name("blank")
+	#for x in range(w):
+	#	for y in range(h):
+	#		n.set_cell(x, y, clear_tile)
+	#n.set_cell(4, 5, n.get_tileset().find_tile_by_name("wood_wall_l"))
+	#n.set_cell(25, 5, n.get_tileset().find_tile_by_name("wood_wall_r"))
+	#for x in range(20):
+	#	n.set_cell(5 + x, 5, n.get_tileset().find_tile_by_name("wood_wall_m"))
 
 func _draw():
 	if(path.size()):

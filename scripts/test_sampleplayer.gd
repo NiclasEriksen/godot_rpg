@@ -11,6 +11,4 @@ func _ready():
 
 func _on_Timer_timeout():
 	play("dunk")
-	
-func _on_Player_attack():
-	play("dunk")
+
