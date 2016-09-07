@@ -6,15 +6,24 @@ digraph {
         style=filled,
         fillcolor="orange2", color="grey10"
     ]
-    label="Scene instancing layout"
+    # label="Scene instancing layout"
     root[label="TestScene", fillcolor="olivedrab1"]
     MainMenu[fillcolor="pink2"]
-    Player -> root
-    Mob -> root
+    Body -> Player -> root
+    Body -> Mob -> root
+    Weapon -> Mob
 	Weapon -> Player
+    Inventory -> HUD [color="grey60", style=dashed]
+    Inventory -> StaticObject [color="grey60", style=dashed]
+    Inventory -> Player
+    Ability -> Player
+    TiledMap -> root
     HUD -> UI -> root
     StaticObject -> root
     Projectile -> Weapon
+    Projectile -> Ability
+    SpellEffect -> Ability
     Projectile -> root [color="grey60", style=dashed]
+    SpellEffect -> root [color="grey60", style=dashed]
     root -> MainMenu [dir=both, fillcolor="pink1"]
 }
