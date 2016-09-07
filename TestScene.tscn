@@ -1,36 +1,37 @@
-[gd_scene load_steps=23 format=1]
+[gd_scene load_steps=24 format=1]
 
 [ext_resource path="res://scripts/thescript.gd" type="Script" id=1]
 [ext_resource path="res://scripts/parallax.gd" type="Script" id=2]
 [ext_resource path="res://resources/bg.tex" type="Texture" id=3]
 [ext_resource path="res://resources/tileset.xml" type="TileSet" id=4]
 [ext_resource path="res://scripts/TilemapGenerator.gd" type="Script" id=5]
-[ext_resource path="res://scripts/navmesh.gd" type="Script" id=6]
-[ext_resource path="res://scripts/path_follow.gd" type="Script" id=7]
-[ext_resource path="res://resources/creatures/player_body.tex" type="Texture" id=8]
-[ext_resource path="res://scripts/sprite.tres.gd" type="Script" id=9]
-[ext_resource path="res://resources/light1.tex" type="Texture" id=10]
-[ext_resource path="res://scripts/mob_light.gd" type="Script" id=11]
-[ext_resource path="res://resources/light1.png" type="Texture" id=12]
-[ext_resource path="res://entities/Player.tscn" type="PackedScene" id=13]
-[ext_resource path="res://scripts/game_ui.gd" type="Script" id=14]
-[ext_resource path="res://HUD.tscn" type="PackedScene" id=15]
-[ext_resource path="res://scripts/camera.gd" type="Script" id=16]
-[ext_resource path="res://static_objects/Bush.tscn" type="PackedScene" id=17]
-[ext_resource path="res://static_objects/Potion.tscn" type="PackedScene" id=18]
-[ext_resource path="res://entities/Creature.tscn" type="PackedScene" id=19]
+[ext_resource path="res://maps/Test1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scripts/navmesh.gd" type="Script" id=7]
+[ext_resource path="res://scripts/path_follow.gd" type="Script" id=8]
+[ext_resource path="res://resources/creatures/player_body.tex" type="Texture" id=9]
+[ext_resource path="res://scripts/sprite.tres.gd" type="Script" id=10]
+[ext_resource path="res://resources/light1.tex" type="Texture" id=11]
+[ext_resource path="res://scripts/mob_light.gd" type="Script" id=12]
+[ext_resource path="res://resources/light1.png" type="Texture" id=13]
+[ext_resource path="res://entities/Player.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scripts/game_ui.gd" type="Script" id=15]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=16]
+[ext_resource path="res://scripts/camera.gd" type="Script" id=17]
+[ext_resource path="res://static_objects/Bush.tscn" type="PackedScene" id=18]
+[ext_resource path="res://static_objects/Potion.tscn" type="PackedScene" id=19]
+[ext_resource path="res://entities/Creature.tscn" type="PackedScene" id=20]
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 13.3077
 
-[sub_resource type="ColorRamp" id=4]
+[sub_resource type="ColorRamp" id=2]
 
 offsets = FloatArray( 0, 0.391813, 0.74269, 1 )
 colors = ColorArray( 1, 0.09375, 0, 1, 1, 0.477814, 0.0585938, 1, 0.96875, 1, 0, 1, 1, 1, 1, 0 )
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=3]
 
 length = 0.3
 loop = false
@@ -104,9 +105,11 @@ occluder/light_mask = 1
 tile_data = IntArray(  )
 script/script = ExtResource( 5 )
 
+[node name="TestMap" parent="." instance=ExtResource( 6 )]
+
 [node name="Navigation2D" type="Navigation2D" parent="."]
 
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
 
 [node name="Genmap1" type="TileMap" parent="Navigation2D"]
 
@@ -131,7 +134,7 @@ tile_data = IntArray(  )
 
 transform/pos = Vector2( 86.2664, 142 )
 input/pickable = false
-shapes/0/shape = SubResource( 3 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 0.877208, 0, 0, 1, -0.234357, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -140,21 +143,21 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
-script/script = ExtResource( 7 )
+script/script = ExtResource( 8 )
 
 [node name="Sprite 2" type="Sprite" parent="Mob 2"]
 
 transform/rot = -90.0
 z/z = 1
-texture = ExtResource( 8 )
-script/script = ExtResource( 9 )
+texture = ExtResource( 9 )
+script/script = ExtResource( 10 )
 
 [node name="Light2D" type="Light2D" parent="Mob 2/Sprite 2"]
 
 visibility/visible = false
 visibility/behind_parent = true
 enabled = false
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 offset = Vector2( 0, 0 )
 scale = 2.0
 color = Color( 1, 1, 1, 1 )
@@ -171,7 +174,7 @@ shadow/color = Color( 1, 1, 1, 0 )
 shadow/buffer_size = 2048
 shadow/esm_multiplier = 80.0
 shadow/item_mask = 1
-script/script = ExtResource( 11 )
+script/script = ExtResource( 12 )
 
 [node name="Path2D" type="Path2D" parent="Mob 2"]
 
@@ -193,7 +196,7 @@ lookahead = 4.0
 
 transform/pos = Vector2( -0.234357, 0 )
 transform/scale = Vector2( 0.877208, 1 )
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -219,13 +222,13 @@ params/hue_variation = 0.0
 params/anim_speed_scale = 1.0
 params/anim_initial_pos = 0.0
 color/color = Color( 1, 1, 1, 0 )
-color/color_ramp = SubResource( 4 )
+color/color_ramp = SubResource( 2 )
 
 [node name="Light2D" type="Light2D" parent="Mob 2"]
 
 visibility/visible = false
 enabled = true
-texture = ExtResource( 12 )
+texture = ExtResource( 13 )
 offset = Vector2( 0, 0 )
 scale = 2.0
 color = Color( 1, 0.796539, 0.558594, 1 )
@@ -243,7 +246,7 @@ shadow/buffer_size = 2048
 shadow/esm_multiplier = 80.0
 shadow/item_mask = 1
 
-[node name="Player_object" parent="." instance=ExtResource( 13 )]
+[node name="Player_object" parent="." instance=ExtResource( 14 )]
 
 transform/pos = Vector2( 236.705, 370.022 )
 
@@ -254,9 +257,9 @@ layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
-script/script = ExtResource( 14 )
+script/script = ExtResource( 15 )
 
-[node name="HUD" parent="CanvasLayer" instance=ExtResource( 15 )]
+[node name="HUD" parent="CanvasLayer" instance=ExtResource( 16 )]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -279,14 +282,14 @@ drag_margin/left = 0.0
 drag_margin/top = 0.0
 drag_margin/right = 0.0
 drag_margin/bottom = 0.0
-script/script = ExtResource( 16 )
+script/script = ExtResource( 17 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/ScreenShake = SubResource( 5 )
+anims/ScreenShake = SubResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -310,46 +313,45 @@ collision/mask = 1
 occluder/light_mask = 1
 tile_data = IntArray(  )
 
-[node name="Bush" parent="RogerTest" instance=ExtResource( 17 )]
+[node name="Bush" parent="RogerTest" instance=ExtResource( 18 )]
 
 transform/pos = Vector2( 161.721, 319.031 )
 
-[node name="Potion" parent="." instance=ExtResource( 18 )]
+[node name="Potion" parent="." instance=ExtResource( 19 )]
 
 transform/pos = Vector2( 335, 285 )
 
-[node name="Potion1" parent="." instance=ExtResource( 18 )]
+[node name="Potion1" parent="." instance=ExtResource( 19 )]
 
 transform/pos = Vector2( 218.586, 323.518 )
 
-[node name="Potion3" parent="." instance=ExtResource( 18 )]
+[node name="Potion3" parent="." instance=ExtResource( 19 )]
 
 transform/pos = Vector2( 589.044, 315.608 )
 
-[node name="Potion4" parent="." instance=ExtResource( 18 )]
+[node name="Potion4" parent="." instance=ExtResource( 19 )]
 
 transform/pos = Vector2( 659.784, 296.562 )
 
-[node name="Potion5" parent="." instance=ExtResource( 18 )]
+[node name="Potion5" parent="." instance=ExtResource( 19 )]
 
 transform/pos = Vector2( 627.134, 194.534 )
 
-[node name="Potion6" parent="." instance=ExtResource( 18 )]
+[node name="Potion6" parent="." instance=ExtResource( 19 )]
 
 transform/pos = Vector2( 489.736, 134.677 )
 
-[node name="Potion7" parent="." instance=ExtResource( 18 )]
+[node name="Potion7" parent="." instance=ExtResource( 19 )]
 
 transform/pos = Vector2( 485.655, 259.832 )
 
-[node name="Potion2" parent="." instance=ExtResource( 18 )]
+[node name="Potion2" parent="." instance=ExtResource( 19 )]
 
 transform/pos = Vector2( 440.763, 349.617 )
 
-[node name="Creature" parent="." instance=ExtResource( 19 )]
+[node name="Creature" parent="." instance=ExtResource( 20 )]
 
 transform/pos = Vector2( 505.264, 378.948 )
-transform/scale = Vector2( 1, 1 )
 
 [connection signal="jump" from="Player_object" to="Camera2D" method="_on_Player_object_jump"]
 
