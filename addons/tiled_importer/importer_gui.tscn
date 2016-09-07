@@ -1,0 +1,237 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://addons/tiled_importer/importer.gd" type="Script" id=1]
+
+[node name="Node2D" type="Control"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 0.0
+margin/bottom = 0.0
+script/script = ExtResource( 1 )
+
+[node name="Dialog" type="ConfirmationDialog" parent="."]
+
+anchor/left = 3
+anchor/top = 3
+anchor/right = 3
+anchor/bottom = 3
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -250.5
+margin/top = -38.5
+margin/right = -709.5
+margin/bottom = -497.5
+popup/exclusive = false
+window/title = "Import tile map"
+dialog/hide_on_ok = false
+__meta__ = { "_edit_group_":true, "_edit_lock_":true, "_editor_collapsed":true }
+
+[node name="VBox" type="VBoxContainer" parent="Dialog"]
+
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 10.0
+margin/top = 10.0
+margin/right = 10.0
+margin/bottom = 45.0
+alignment = 0
+
+[node name="Label 2" type="Label" parent="Dialog/VBox"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 439.0
+margin/bottom = 13.0
+text = "Tile map file generate by Tiled"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Input" type="HBoxContainer" parent="Dialog/VBox"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 17.0
+margin/right = 439.0
+margin/bottom = 40.0
+alignment = 0
+__meta__ = { "_editor_collapsed":true }
+
+[node name="LineEdit" type="LineEdit" parent="Dialog/VBox/Input"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 408.0
+margin/bottom = 23.0
+focus_mode = 2
+
+[node name="Button" type="Button" parent="Dialog/VBox/Input"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 412.0
+margin/top = 0.0
+margin/right = 439.0
+margin/bottom = 23.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = " ... "
+flat = false
+
+[node name="Label3" type="Label" parent="Dialog/VBox"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+margin/left = 0.0
+margin/top = 44.0
+margin/right = 439.0
+margin/bottom = 57.0
+text = "Save as scene"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Output" type="HBoxContainer" parent="Dialog/VBox"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 61.0
+margin/right = 439.0
+margin/bottom = 84.0
+alignment = 0
+__meta__ = { "_editor_collapsed":true }
+
+[node name="LineEdit" type="LineEdit" parent="Dialog/VBox/Output"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 408.0
+margin/bottom = 23.0
+focus_mode = 2
+
+[node name="Button" type="Button" parent="Dialog/VBox/Output"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 412.0
+margin/top = 0.0
+margin/right = 439.0
+margin/bottom = 23.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = " ... "
+flat = false
+
+[node name="Label4" type="Label" parent="Dialog/VBox"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+margin/left = 0.0
+margin/top = 88.0
+margin/right = 439.0
+margin/bottom = 101.0
+text = "Map informations"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Info" type="TextEdit" parent="Dialog/VBox"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 3
+margin/left = 0.0
+margin/top = 105.0
+margin/right = 439.0
+margin/bottom = 387.0
+caret/caret_blink = false
+caret/caret_blink_speed = 0.65
+
+[node name="Warning" type="Label" parent="Dialog/VBox"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+margin/left = 0.0
+margin/top = 391.0
+margin/right = 439.0
+margin/bottom = 404.0
+custom_colors/font_color = Color( 0.929688, 0.323552, 0.138, 1 )
+text = "Output file must under project folder!"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="FileDialog" type="FileDialog" parent="Dialog"]
+
+visibility/visible = false
+anchor/left = 3
+anchor/top = 3
+anchor/right = 3
+anchor/bottom = 3
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 198.5
+margin/top = 194.5
+margin/right = -198.5
+margin/bottom = -224.5
+popup/exclusive = false
+window/title = "Save a File"
+dialog/hide_on_ok = false
+
+[node name="Alter" type="AcceptDialog" parent="Dialog"]
+
+visibility/visible = false
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 20.0
+margin/top = 180.0
+margin/right = 434.0
+margin/bottom = 277.0
+popup/exclusive = false
+window/title = "Alert!"
+dialog/hide_on_ok = true
+
+
