@@ -134,7 +134,7 @@ func _check(unused):
 	var outDir = outputPath.substr(0, outputPath.find_last("/"))
 	if not file.file_exists(inputPath):
 		warning.set_text("The input file does not exists!")
-		passed = true
+		passed = false
 	if passed:
 		if not map.loadFromFile(inputPath):
 			warning.set_text("Parse map file failed!")
@@ -155,7 +155,7 @@ func _check(unused):
 			info.set_text(infoTex)
 	if not outputPath.begins_with("res://") or outputPath == "res://":
 		warning.set_text("Output file must under project folder!")
-		passed = true
+		passed = false
 	elif not dir.dir_exists(outDir):
 		if outDir != "res:/":
 			warning.set_text("Output directory does not exists!")

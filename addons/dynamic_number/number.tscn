@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://number_frames.res" type="SpriteFrames" id=1]
+
+[node name="Number" type="AnimatedSprite"]
+
+frames = ExtResource( 1 )
+animation = "default"
+frame = 8
+
+

@@ -202,8 +202,6 @@ config/samples = SubResource( 5 )
 config/pitch_random = 0.0
 script/script = ExtResource( 12 )
 
-[connection signal="attack" from="." to="SamplePlayer2D" method="_on_Player_attack"]
-
 [connection signal="attack" from="." to="HandAnimation" method="_on_Player_attack"]
 
 
