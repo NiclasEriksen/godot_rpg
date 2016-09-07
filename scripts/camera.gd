@@ -3,6 +3,7 @@ extends Camera2D
 var zoom_rate = Vector2(0.02, 0.02)
 var min_zoom = Vector2(0.1, 0.1)
 var max_zoom = Vector2(1, 1)
+signal rotated(angle)
 
 func _ready():
 	set_process_input(true)
@@ -28,6 +29,7 @@ func get_translated_pos(pos):
 func _on_Player_object_moved(pos, rot):
 	self.set_pos(pos)
 	self.set_rot(rot + PI)
+	emit_signal("rotated", -rot)
 
 
 func _on_Player_object_jump():

@@ -10,8 +10,9 @@ var last_attack = "left"
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
-	animation_set_next("PunchRight", "Rest")
-	animation_set_next("PunchLeft", "Rest")
+	pass
+	# animation_set_next("PunchRight", "Rest")
+	# animation_set_next("PunchLeft", "Rest")
 
 
 

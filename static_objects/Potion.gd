@@ -14,6 +14,7 @@ func _ready():
 
 func pick_up(picker):
 	get_node("AnimationPlayer").play("pick_up")
+	get_node("Area2D").call_deferred("set_enable_monitoring", false)
 	# get_node("Area2D").set_enable_monitoring(false)	# Disable collision check
 	picker.apply_stat("increase", attr, amount)
 

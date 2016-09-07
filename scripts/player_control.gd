@@ -15,7 +15,7 @@ var vel = Vector2(0, 0)
 var cur_vel = 0
 var max_vel = 150
 var sprint_factor = 1.5
-var rot_spd = 5
+var rot_spd = 3
 var root = null
 var anim = null
 
@@ -33,7 +33,6 @@ func _ready():
 	anim = get_node("BodyAnimation")
 
 func apply_stat(effect, attr, amount):
-	print("cur_" + attr)
 	if get("cur_" + attr):
 		if effect == "increase":
 			if get("max_" + attr):
@@ -50,23 +49,26 @@ func apply_stat(effect, attr, amount):
 
 func _input(event):
 	if event.is_action_pressed("MOVE_UP"):
-		vel.y = vel.y + max_vel
+		vel.y = vel.y - max_vel
 	elif event.is_action_released("MOVE_UP"):
-		vel.y = vel.y - max_vel
-	if event.is_action_pressed("MOVE_DOWN"):
-		vel.y = vel.y - max_vel
-	elif event.is_action_released("MOVE_DOWN"):
 		vel.y = vel.y + max_vel
+	if event.is_action_pressed("MOVE_DOWN"):
+		vel.y = vel.y + max_vel
+	elif event.is_action_released("MOVE_DOWN"):
+		vel.y = vel.y - max_vel
 	if event.is_action_pressed("MOVE_LEFT"):
-		vel.x = vel.x + max_vel
+		vel.x = vel.x - max_vel
+		# set_rot(get_rot() - 0.01)
 	elif event.is_action_released("MOVE_LEFT"):
-		vel.x = vel.x - max_vel
-	if event.is_action_pressed("MOVE_RIGHT"):
-		vel.x = vel.x - max_vel
-	elif event.is_action_released("MOVE_RIGHT"):
 		vel.x = vel.x + max_vel
+	if event.is_action_pressed("MOVE_RIGHT"):
+		vel.x = vel.x + max_vel
+		# set_rot(get_rot() + 0.01)
+	elif event.is_action_released("MOVE_RIGHT"):
+		vel.x = vel.x - max_vel
 
 func _process(delta):
+	# var r = get_rot()
 	if Input.is_action_pressed("ATTACK"):
 		if not attacking:
 			emit_signal("attack")
@@ -77,9 +79,22 @@ func _process(delta):
 	if Input.is_action_pressed("MOVE_JUMP"):
 		self.jump()
 	
+	var r = 0
+	
 	if root:
-		var r = get_angle_to(root.get_global_mouse_pos()) * (rot_spd * delta)
+		r = get_angle_to(root.get_global_mouse_pos()) * (rot_spd * delta)
 		rotate(r)
+		# if Input.is_action_pressed("MOUSE_ROTATE"):
+		# 	r = get_angle_to(root.get_global_mouse_pos()) * (rot_spd * delta)
+		#	if Input.is_action_pressed("MOVE_LEFT"):
+		#		vel.x = max_vel
+		#	elif Input.is_action_pressed("MOVE_RIGHT"):
+		#		vel.x = -max_vel
+		#else:
+		#	if Input.is_action_pressed("MOVE_LEFT"):
+		#		rotate(rot_spd * delta)
+		#	if Input.is_action_pressed("MOVE_RIGHT"):
+		#		rotate(-(rot_spd * delta))
 
 	if Input.is_action_pressed("SPRINT"):
 		# self.move_and_slide(vel * 75 * delta)
@@ -87,7 +102,8 @@ func _process(delta):
 	else:
 		# print(vel.rotated(get_rot()), vel)
 		# self.move_and_slide(vel * 50 * delta)
-		self.move(vel.rotated(get_rot()) * delta)
+		# self.move(vel.rotated(get_rot()) * delta)
+		self.move(vel * delta)
 
 	self.emit_signal("moved", get_pos(), get_rot())
 	if anim:
