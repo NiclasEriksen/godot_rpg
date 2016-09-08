@@ -95,15 +95,16 @@ func _process(delta):
 		#		rotate(rot_spd * delta)
 		#	if Input.is_action_pressed("MOVE_RIGHT"):
 		#		rotate(-(rot_spd * delta))
-
-	if Input.is_action_pressed("SPRINT"):
-		# self.move_and_slide(vel * 75 * delta)
-		self.move(vel * 1.5 * delta)
-	else:
 		# print(vel.rotated(get_rot()), vel)
 		# self.move_and_slide(vel * 50 * delta)
 		# self.move(vel.rotated(get_rot()) * delta)
-		self.move(vel * delta)
+		var motion = vel * delta
+		motion = move(motion)
+		if (is_colliding()):
+        	var n = get_collision_normal()
+        	motion = n.slide(motion)
+        	# vel = n.slide(vel)
+        	move(motion)
 
 	self.emit_signal("moved", get_pos(), get_rot())
 	if anim:
