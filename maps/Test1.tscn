@@ -81,6 +81,26 @@ collision/bounce = 0.0
 collision/layers = 1
 collision/mask = 1
 occluder/light_mask = 1
-tile_data = IntArray( 262157, 1073741827, 262158, 1073741828, 327695, 1610612747, 327696, 1610612746, 393226, 536870920, 393232, 1073741834, 458761, 4, 458763, 536870923, 458764, 536870922, 524297, 10, 589832, 0, 589833, 1, 655371, 536870922, 851980, 1073741834 )
+tile_data = IntArray( 262157, 1073741827, 262158, 1073741828, 327695, 1610612747, 327696, 1610612746, 393226, 536870920, 393232, 1073741834, 458761, 4, 458763, 536870923, 458764, 536870922, 458768, 43, 524297, 10, 524304, 51, 589832, 0, 589833, 1, 655371, 536870922, 851980, 1073741834 )
+
+[node name="FG3" type="TileMap" parent="."]
+
+z/z = 7
+z/relative = false
+mode = 0
+tile_set = ExtResource( 2 )
+cell/size = Vector2( 32, 32 )
+cell/quadrant_size = 16
+cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+cell/half_offset = 2
+cell/tile_origin = 0
+cell/y_sort = false
+collision/use_kinematic = false
+collision/friction = 1.0
+collision/bounce = 0.0
+collision/layers = 1
+collision/mask = 1
+occluder/light_mask = 1
+tile_data = IntArray( 458760, 536870956, 458767, 0, 458768, 1, 524296, 536870964 )
 
 
