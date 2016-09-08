@@ -312,10 +312,18 @@ transform/pos = Vector2( 440.763, 349.617 )
 
 transform/pos = Vector2( 505.264, 378.948 )
 
+[connection signal="attack" from="Player_object" to="Player_object/HandAnimation" method="_on_Player_attack"]
+
 [connection signal="jump" from="Player_object" to="Camera2D" method="_on_Player_object_jump"]
 
 [connection signal="moved" from="Player_object" to="Camera2D" method="_on_Player_object_moved"]
 
 [connection signal="rotated" from="Camera2D" to="ParallaxBackground" method="_on_Camera2D_rotated"]
+
+[connection signal="attack" from="Creature" to="Creature/ArmAnimation" method="_on_Creature_attack"]
+
+[connection signal="moving" from="Creature" to="Creature/AnimationTreePlayer" method="_on_Creature_moving"]
+
+[connection signal="stopped" from="Creature" to="Creature/AnimationTreePlayer" method="_on_Creature_stopped"]
 
 

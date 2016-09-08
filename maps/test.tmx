@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="32" tileheight="32" nextobjectid="1">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="32" tileheight="32" nextobjectid="11">
  <tileset firstgid="1" name="forest" tilewidth="32" tileheight="32" tilecount="64" columns="8">
   <image source="../resources/spritesheet2.png" width="256" height="256"/>
+  <terraintypes>
+   <terrain name="Collidable" tile="-1"/>
+  </terraintypes>
+  <tile id="2" terrain="0,,0,0"/>
  </tileset>
  <layer name="Tile Layer 1" width="30" height="20">
   <data encoding="csv">
@@ -27,7 +31,23 @@
 14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14
 </data>
  </layer>
+ <objectgroup name="Test">
+  <object id="1" x="163.846" y="194.028" width="24.7925" height="25.8704"/>
+  <object id="2" x="226.366" y="355.718" width="25.8704" height="24.7925"/>
+  <object id="3" x="385.901" y="326.614" width="24.7925" height="18.3249"/>
+  <object id="4" x="135.82" y="578.851" width="19.4028" height="24.7925"/>
+  <object id="5" x="708.203" y="483.993" width="23.7146" height="24.7925"/>
+  <object id="6" x="739.463" y="164.924" width="24.7925" height="22.6366"/>
+  <object id="10" gid="13" x="437.81" y="162.599" width="32" height="32">
+   <properties>
+    <property name="occlude" type="bool" value="true"/>
+   </properties>
+  </object>
+ </objectgroup>
  <layer name="Tile Layer 2" width="30" height="20">
+  <properties>
+   <property name="Occludes" type="bool" value="true"/>
+  </properties>
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
