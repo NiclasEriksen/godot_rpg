@@ -13,16 +13,16 @@ var attacking = false
 var sprinting = false
 var vel = Vector2(0, 0)
 var cur_vel = 0
-var max_vel = 100
+export(int) var max_vel = 100
 var sprint_factor = 1.5
 var rot_spd = 3
 var root = null
 var anim = null
 
 # Actual game data
-var max_hp = 10
+export(int) var max_hp = 10
 var cur_hp = max_hp
-var max_mp = 5
+export(int) var max_mp = 5
 var cur_mp = max_mp
 
 func _ready():

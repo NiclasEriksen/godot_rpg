@@ -17,6 +17,10 @@ digraph {
     Inventory -> StaticObject [color="grey60", style=dashed]
     Inventory -> Player
     Ability -> Player
+    Animations -> Player
+    Animations -> Mob
+    Animations -> StaticObject
+    Animations -> root [color="grey60", style=dashed]
     TiledMap -> root
     HUD -> UI -> root
     StaticObject -> root

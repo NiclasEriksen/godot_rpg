@@ -4,7 +4,7 @@ extends Node2D
 # var a = 2
 # var b = "textvar"
 var attr = "hp"
-var amount = 2.0
+export(float) var amount = 2.0
 
 func _ready():
 	# Called every time the node is added to the scene.

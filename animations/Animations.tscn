@@ -3,7 +3,7 @@
 [ext_resource path="res://resources/poison.png" type="Texture" id=1]
 [ext_resource path="res://resources/poison_particle.png" type="Texture" id=2]
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=1]
 
 length = 0.7
 loop = true
@@ -19,12 +19,12 @@ tracks/1/interp = 2
 tracks/1/imported = false
 tracks/1/keys = { "times":FloatArray( 0, 0.15, 0.6 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ Vector2( 1, 1 ), Vector2( 1.5, 1.5 ), Vector2( 1, 1 ) ] }
 
-[sub_resource type="ColorRamp" id=6]
+[sub_resource type="ColorRamp" id=2]
 
 offsets = FloatArray( 0, 0.892857, 1 )
 colors = ColorArray( 0.859375, 0, 0, 1, 0.753906, 0, 0, 0.454082, 0.300781, 0, 0, 0.262677 )
 
-[sub_resource type="ColorRamp" id=7]
+[sub_resource type="ColorRamp" id=3]
 
 offsets = FloatArray( 0, 1 )
 colors = ColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
@@ -45,7 +45,7 @@ frame = 12
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/Poof = SubResource( 5 )
+anims/Poof = SubResource( 1 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -79,7 +79,7 @@ params/hue_variation = 0.0
 params/anim_speed_scale = 1.0
 params/anim_initial_pos = 0.0
 color/color = Color( 1, 0, 0, 1 )
-color/color_ramp = SubResource( 6 )
+color/color_ramp = SubResource( 2 )
 
 [node name="Particles2D3" type="Particles2D" parent="BloodDrip"]
 
@@ -105,7 +105,7 @@ params/hue_variation = 0.0
 params/anim_speed_scale = 1.0
 params/anim_initial_pos = 0.0
 color/color = Color( 1, 0, 0, 1 )
-color/color_ramp = SubResource( 6 )
+color/color_ramp = SubResource( 2 )
 
 [node name="Particles2D4" type="Particles2D" parent="BloodDrip"]
 
@@ -131,7 +131,7 @@ params/hue_variation = 0.0
 params/anim_speed_scale = 1.0
 params/anim_initial_pos = 0.0
 color/color = Color( 1, 0, 0, 1 )
-color/color_ramp = SubResource( 6 )
+color/color_ramp = SubResource( 2 )
 
 [node name="PoisonCloud" type="Particles2D" parent="."]
 
@@ -159,6 +159,6 @@ randomness/direction = 10.0
 randomness/linear_velocity = 1.0
 randomness/gravity_direction = 1.0
 randomness/initial_angle = 1.0
-color/color_ramp = SubResource( 7 )
+color/color_ramp = SubResource( 3 )
 
 
