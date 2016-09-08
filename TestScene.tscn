@@ -339,6 +339,7 @@ transform/pos = Vector2( 505.264, 378.948 )
 [node name="Particles2D" type="Particles2D" parent="."]
 
 transform/pos = Vector2( 277, 262 )
+z/z = 6
 config/amount = 32
 config/lifetime = 2.0
 config/texture = ExtResource( 20 )
