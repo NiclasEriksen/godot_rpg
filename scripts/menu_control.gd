@@ -3,6 +3,7 @@ extends VBoxContainer
 
 func _ready():
 	set_process_input(true)
+	set_focus_mode(2)
 
 func _input(event):
 	if event.is_action("QUIT"):
