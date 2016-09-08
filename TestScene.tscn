@@ -53,6 +53,11 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = { "times":FloatArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6 ), "transitions":FloatArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ), "update":1, "values":[ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ] }
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:transform/scale")
+tracks/1/interp = 2
+tracks/1/imported = false
+tracks/1/keys = { "times":FloatArray( 0, 0.15, 0.6 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ Vector2( 1, 1 ), Vector2( 1.5, 1.5 ), Vector2( 1, 1 ) ] }
 
 [node name="Game" type="Control"]
 
