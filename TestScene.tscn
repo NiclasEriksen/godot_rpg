@@ -84,7 +84,6 @@ script/script = ExtResource( 2 )
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
-transform/pos = Vector2( -1000, -1000 )
 motion/scale = Vector2( 0.2, 0.2 )
 motion/offset = Vector2( 0, 0 )
 motion/mirroring = Vector2( 0, 0 )
