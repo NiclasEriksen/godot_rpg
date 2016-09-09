@@ -5,7 +5,7 @@ extends StaticBody2D
 # var a=2
 # var b="textvar"
 var going = true
-var speed = 150
+var speed = 100
 
 func _ready():
 	# print("!!!")

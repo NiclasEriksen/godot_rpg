@@ -11,18 +11,18 @@
 [ext_resource path="res://resources/light1.tex" type="Texture" id=9]
 [ext_resource path="res://scripts/mob_light.gd" type="Script" id=10]
 [ext_resource path="res://resources/light1.png" type="Texture" id=11]
-[ext_resource path="res://entities/Player.tscn" type="PackedScene" id=12]
-[ext_resource path="res://scripts/game_ui.gd" type="Script" id=13]
-[ext_resource path="res://HUD.tscn" type="PackedScene" id=14]
-[ext_resource path="res://scripts/camera.gd" type="Script" id=15]
-[ext_resource path="res://resources/tileset.xml" type="TileSet" id=16]
-[ext_resource path="res://static_objects/Bush.tscn" type="PackedScene" id=17]
-[ext_resource path="res://static_objects/Potion.tscn" type="PackedScene" id=18]
-[ext_resource path="res://entities/Creature.tscn" type="PackedScene" id=19]
-[ext_resource path="res://resources/poison_particle.png" type="Texture" id=20]
-[ext_resource path="res://resources/poison.png" type="Texture" id=21]
-[ext_resource path="res://scripts/aoe_damage.gd" type="Script" id=22]
-[ext_resource path="res://entities/ScelCraig.tscn" type="PackedScene" id=23]
+[ext_resource path="res://entities/ScelCraig.tscn" type="PackedScene" id=12]
+[ext_resource path="res://entities/Player.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scripts/game_ui.gd" type="Script" id=14]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scripts/camera.gd" type="Script" id=16]
+[ext_resource path="res://resources/tileset.xml" type="TileSet" id=17]
+[ext_resource path="res://static_objects/Bush.tscn" type="PackedScene" id=18]
+[ext_resource path="res://static_objects/Potion.tscn" type="PackedScene" id=19]
+[ext_resource path="res://entities/Creature.tscn" type="PackedScene" id=20]
+[ext_resource path="res://resources/poison_particle.png" type="Texture" id=21]
+[ext_resource path="res://resources/poison.png" type="Texture" id=22]
+[ext_resource path="res://scripts/aoe_damage.gd" type="Script" id=23]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -141,6 +141,7 @@ script/script = ExtResource( 6 )
 
 [node name="Sprite 2" type="Sprite" parent="Mob 2"]
 
+visibility/visible = false
 transform/rot = -90.0
 z/z = 1
 texture = ExtResource( 7 )
@@ -196,6 +197,7 @@ _update_shape_index = 0
 
 [node name="Particles2D" type="Particles2D" parent="Mob 2"]
 
+visibility/visible = false
 config/amount = 25
 config/lifetime = 1.0
 config/local_space = false
@@ -240,7 +242,11 @@ shadow/buffer_size = 2048
 shadow/esm_multiplier = 80.0
 shadow/item_mask = 1
 
-[node name="Player_object" parent="." instance=ExtResource( 12 )]
+[node name="SceletonCraig" parent="Mob 2" instance=ExtResource( 12 )]
+
+transform/rot = 90.0
+
+[node name="Player_object" parent="." instance=ExtResource( 13 )]
 
 transform/pos = Vector2( 236.705, 370.022 )
 
@@ -251,9 +257,9 @@ layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
-script/script = ExtResource( 13 )
+script/script = ExtResource( 14 )
 
-[node name="HUD" parent="CanvasLayer" instance=ExtResource( 14 )]
+[node name="HUD" parent="CanvasLayer" instance=ExtResource( 15 )]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -276,7 +282,7 @@ drag_margin/left = 0.0
 drag_margin/top = 0.0
 drag_margin/right = 0.0
 drag_margin/bottom = 0.0
-script/script = ExtResource( 15 )
+script/script = ExtResource( 16 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D"]
 
@@ -292,7 +298,7 @@ autoplay = ""
 [node name="RogerTest" type="TileMap" parent="."]
 
 mode = 0
-tile_set = ExtResource( 16 )
+tile_set = ExtResource( 17 )
 cell/size = Vector2( 32, 32 )
 cell/quadrant_size = 16
 cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -307,43 +313,43 @@ collision/mask = 1
 occluder/light_mask = 1
 tile_data = IntArray(  )
 
-[node name="Bush" parent="RogerTest" instance=ExtResource( 17 )]
+[node name="Bush" parent="RogerTest" instance=ExtResource( 18 )]
 
 transform/pos = Vector2( 159, 319 )
 
-[node name="Potion" parent="." instance=ExtResource( 18 )]
+[node name="Potion" parent="." instance=ExtResource( 19 )]
 
 transform/pos = Vector2( 206, 275 )
 
-[node name="Potion1" parent="." instance=ExtResource( 18 )]
+[node name="Potion1" parent="." instance=ExtResource( 19 )]
 
 transform/pos = Vector2( 219, 324 )
 
-[node name="Potion3" parent="." instance=ExtResource( 18 )]
+[node name="Potion3" parent="." instance=ExtResource( 19 )]
 
 transform/pos = Vector2( 396, 214 )
 
-[node name="Potion4" parent="." instance=ExtResource( 18 )]
+[node name="Potion4" parent="." instance=ExtResource( 19 )]
 
 transform/pos = Vector2( 338, 88 )
 
-[node name="Potion5" parent="." instance=ExtResource( 18 )]
+[node name="Potion5" parent="." instance=ExtResource( 19 )]
 
 transform/pos = Vector2( 362, 169 )
 
-[node name="Potion6" parent="." instance=ExtResource( 18 )]
+[node name="Potion6" parent="." instance=ExtResource( 19 )]
 
 transform/pos = Vector2( 49, 273 )
 
-[node name="Potion7" parent="." instance=ExtResource( 18 )]
+[node name="Potion7" parent="." instance=ExtResource( 19 )]
 
 transform/pos = Vector2( 472, 265 )
 
-[node name="Potion2" parent="." instance=ExtResource( 18 )]
+[node name="Potion2" parent="." instance=ExtResource( 19 )]
 
 transform/pos = Vector2( 529, 180 )
 
-[node name="Creature" parent="." instance=ExtResource( 19 )]
+[node name="Creature" parent="." instance=ExtResource( 20 )]
 
 transform/pos = Vector2( 505.264, 378.948 )
 
@@ -353,7 +359,7 @@ transform/pos = Vector2( 277, 262 )
 z/z = 6
 config/amount = 32
 config/lifetime = 2.0
-config/texture = ExtResource( 20 )
+config/texture = ExtResource( 21 )
 params/direction = 0.0
 params/spread = 30.0
 params/linear_velocity = -10.0
@@ -462,9 +468,9 @@ color/color_ramp = SubResource( 5 )
 
 transform/pos = Vector2( 90, 420 )
 z/z = 5
-texture = ExtResource( 21 )
+texture = ExtResource( 22 )
 hframes = 13
-script/script = ExtResource( 22 )
+script/script = ExtResource( 23 )
 damage = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PoisonExplode"]
@@ -501,10 +507,6 @@ process_mode = 1
 wait_time = 0.5
 one_shot = false
 autostart = true
-
-[node name="SceletonCraig" parent="." instance=ExtResource( 23 )]
-
-transform/pos = Vector2( 314, 405 )
 
 [connection signal="jump" from="Player_object" to="Camera2D" method="_on_Player_object_jump"]
 
