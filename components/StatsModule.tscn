@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://scripts/StatsModule.gd" type="Script" id=1]
+
+[node name="StatsModule" type="Node"]
+
+script/script = ExtResource( 1 )
+primary_stat = "str"
+strength = 0
+intelligence = 0
+agility = 0
+spirit = 0
+stamina = 0
+hp = 10
+mp = 5
+base_damage = 1
+spell_power = 0
+movement_speed = 100
+
+

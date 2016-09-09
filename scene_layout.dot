@@ -13,10 +13,14 @@ digraph {
     Body -> Mob -> root
     Weapon -> Mob
 	Weapon -> Player
-    Inventory -> HUD [color="grey60", style=dashed]
-    Inventory -> StaticObject [color="grey60", style=dashed]
+    InventoryScreen -> HUD
+    Inventory -> StaticObject
+    Inventory -> InventoryScreen [color="grey60", style=dashed]
     Inventory -> Player
+    Inventory -> Mob
     Ability -> Player
+    StatsModule -> Player
+    StatsModule -> Mob
     Animations -> Player
     Animations -> Mob
     Animations -> StaticObject

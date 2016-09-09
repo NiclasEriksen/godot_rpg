@@ -4,6 +4,7 @@ extends KinematicBody2D
 signal attack
 signal moving
 signal stopped
+onready var stats = get_node("StatsModule")
 var last_pos = null
 var moving = false
 

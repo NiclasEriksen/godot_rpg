@@ -4,7 +4,7 @@ extends Node2D
 # var a = 2
 # var b = "textvar"
 var attr = "hp"
-export(float) var amount = 2.0
+export(int) var amount = 2
 
 func _ready():
 	# Called every time the node is added to the scene.
@@ -13,11 +13,12 @@ func _ready():
 
 
 func pick_up(picker):
-	get_node("AnimationPlayer").play("pick_up")
-	get_node("Area2D").call_deferred("set_enable_monitoring", false)
-	# get_node("Area2D").set_enable_monitoring(false)	# Disable collision check
-	picker.apply_stat("increase", attr, amount)
-
+	if picker.get_node("StatsModule"):
+		get_node("AnimationPlayer").play("pick_up")
+		get_node("Area2D").call_deferred("set_enable_monitoring", false)
+		# get_node("Area2D").set_enable_monitoring(false)	# Disable collision check
+		# picker.apply_stat("increase", attr, amount)
+		picker.get_node("StatsModule").apply_effect([["hp", amount]], null)
 
 
 func _on_Area2D_body_enter( body ):

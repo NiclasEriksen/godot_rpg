@@ -1,14 +1,11 @@
 
 extends Node2D
 
-# member variables here, example:
-# var a=2
-# var b="textvar"
-
 var jump_cd = false
 signal moved(pos, rot)
 signal jump
 signal attack
+onready var stats = get_node("StatsModule")
 var attacking = false
 var sprinting = false
 var vel = Vector2(0, 0)
@@ -72,6 +69,7 @@ func _process(delta):
 	if Input.is_action_pressed("ATTACK"):
 		if not attacking:
 			emit_signal("attack")
+			get_node("StatsModule").apply_effect([["mp", -1]], null)
 			attacking = true
 	else:
 		attacking = false

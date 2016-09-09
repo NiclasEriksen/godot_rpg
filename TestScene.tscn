@@ -244,7 +244,6 @@ limit/left = -10000000
 limit/top = -10000000
 limit/right = 10000000
 limit/bottom = 10000000
-limit/smoothed = false
 drag_margin/h_enabled = true
 drag_margin/v_enabled = true
 smoothing/enable = true
@@ -291,42 +290,34 @@ transform/pos = Vector2( 159, 319 )
 [node name="Potion" parent="." instance=ExtResource( 18 )]
 
 transform/pos = Vector2( 206, 275 )
-amount = 2.0
 
 [node name="Potion1" parent="." instance=ExtResource( 18 )]
 
 transform/pos = Vector2( 219, 324 )
-amount = 2.0
 
 [node name="Potion3" parent="." instance=ExtResource( 18 )]
 
 transform/pos = Vector2( 396, 214 )
-amount = 2.0
 
 [node name="Potion4" parent="." instance=ExtResource( 18 )]
 
 transform/pos = Vector2( 338, 88 )
-amount = 2.0
 
 [node name="Potion5" parent="." instance=ExtResource( 18 )]
 
 transform/pos = Vector2( 362, 169 )
-amount = 2.0
 
 [node name="Potion6" parent="." instance=ExtResource( 18 )]
 
 transform/pos = Vector2( 49, 273 )
-amount = 2.0
 
 [node name="Potion7" parent="." instance=ExtResource( 18 )]
 
 transform/pos = Vector2( 472, 265 )
-amount = 2.0
 
 [node name="Potion2" parent="." instance=ExtResource( 18 )]
 
 transform/pos = Vector2( 529, 180 )
-amount = 2.0
 
 [node name="Creature" parent="." instance=ExtResource( 19 )]
 
@@ -448,5 +439,11 @@ color/color_ramp = SubResource( 5 )
 [connection signal="moved" from="Player_object" to="Camera2D" method="_on_Player_object_moved"]
 
 [connection signal="rotated" from="Camera2D" to="ParallaxBackground" method="_on_Camera2D_rotated"]
+
+[connection signal="attack" from="Creature" to="Creature/ArmAnimation" method="_on_Creature_attack"]
+
+[connection signal="moving" from="Creature" to="Creature/AnimationTreePlayer" method="_on_Creature_moving"]
+
+[connection signal="stopped" from="Creature" to="Creature/AnimationTreePlayer" method="_on_Creature_stopped"]
 
 
