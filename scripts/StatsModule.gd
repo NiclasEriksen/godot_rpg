@@ -11,23 +11,27 @@ export(int) var max_hp = 10
 export(int) var max_mp = 5
 export(float) var base_damage = 1.0
 export(float) var spell_power = 0.0
+export(float) var phys_crit = 0.0
+export(float) var spell_crit = 0.0
+export(int) var hit_rate = 0
+export(int) var armor = 0
+export(int) var magic_resist = 0
 export(int) var movement_speed = 100
 var hp = max_hp
 var mp = max_mp
 
-
 func _ready():
-    set_process(true)
+	set_process(true)
 
 func _process(delta):
-    if hp > max_hp:
-        hp = max_hp
-    elif hp < 0:
-        hp = 0
-    if mp > max_mp:
-        mp = max_mp
-    elif mp < 0 :
-        mp = 0
+	if hp > max_hp:
+		hp = max_hp
+	elif hp < 0:
+		hp = 0
+	if mp > max_mp:
+		mp = max_mp
+	elif mp < 0 :
+		mp = 0
 
 func apply_effect(effect_list, originmodule): # Recieves a list of lists, like [["hp", -20], ["mp", 10]], and another optional statsmodule for calculating final effects.
 	for e in effect_list:
@@ -35,3 +39,17 @@ func apply_effect(effect_list, originmodule): # Recieves a list of lists, like [
 			set(e[0], get(e[0]) + e[1])
 		else:
 			print("StatsModule does not recognize that attribute: ", e[0])
+
+func get_actual(stat):
+	pass
+
+# Scaling and modifier functions #
+
+func sp_modifier():
+	return spell_power + (float(intelligence) * 1.5)
+
+func dmg_modifier():
+	return base_damage + (float(strength) * 1.25)
+
+func armor_modifier():
+	return armor

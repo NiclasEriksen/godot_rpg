@@ -44,7 +44,7 @@ tracks/4/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "updat
 
 z/z = 50
 script/script = ExtResource( 1 )
-amount = 2.0
+amount = 2
 
 [node name="Area2D" type="Area2D" parent="."]
 
