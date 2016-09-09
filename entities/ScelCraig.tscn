@@ -1,0 +1,185 @@
+[gd_scene load_steps=12 format=1]
+
+[ext_resource path="res://scripts/Creature.gd" type="Script" id=1]
+[ext_resource path="res://resources/creatures/skelcraig.png" type="Texture" id=2]
+[ext_resource path="res://scripts/sprite.tres.gd" type="Script" id=3]
+[ext_resource path="res://animations/creature_walk.tres" type="Animation" id=4]
+[ext_resource path="res://animations/creature_idle.tres" type="Animation" id=5]
+[ext_resource path="res://entities/CreatureAnimTree.gd" type="Script" id=6]
+[ext_resource path="res://entities/CreatureArmAnim.gd" type="Script" id=7]
+[ext_resource path="res://animations/creature_punch_right.tres" type="Animation" id=8]
+[ext_resource path="res://animations/creature_punch_left.tres" type="Animation" id=9]
+[ext_resource path="res://components/StatsModule.tscn" type="PackedScene" id=10]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 8.0
+height = 8.0
+
+[node name="SceletonCraig" type="KinematicBody2D"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( -4.37114e-08, -1, 1, -4.37114e-08, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.0
+script/script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+transform/rot = 90.0
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Torso" type="Sprite" parent="."]
+
+z/z = 2
+texture = ExtResource( 2 )
+hframes = 2
+region = true
+region_rect = Rect2( 32, 0, 32, 32 )
+script/script = ExtResource( 3 )
+__meta__ = { "_edit_bone_":true }
+
+[node name="Head" type="Sprite" parent="Torso"]
+
+texture = ExtResource( 2 )
+region = true
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[node name="RightShoulder" type="Sprite" parent="Torso"]
+
+transform/pos = Vector2( -10, -1 )
+transform/rot = -81.4371
+texture = ExtResource( 2 )
+centered = false
+offset = Vector2( -5, -1 )
+region = true
+region_rect = Rect2( 10, 43, 10, 10 )
+__meta__ = { "_edit_bone_":true, "_edit_ik_":true }
+
+[node name="RightArm" type="Sprite" parent="Torso/RightShoulder"]
+
+visibility/behind_parent = true
+transform/pos = Vector2( -1, 4 )
+transform/rot = 45.8559
+texture = ExtResource( 2 )
+centered = false
+offset = Vector2( -4, -2 )
+region = true
+region_rect = Rect2( 42, 42, 10, 10 )
+__meta__ = { "_edit_bone_":true }
+
+[node name="RightHand" type="Sprite" parent="Torso/RightShoulder/RightArm"]
+
+transform/pos = Vector2( 0, 7 )
+transform/rot = 35.6
+texture = ExtResource( 2 )
+centered = false
+offset = Vector2( -4, -1 )
+hframes = 2
+region = true
+region_rect = Rect2( 12, 75, 10, 10 )
+__meta__ = { "_edit_bone_":true }
+
+[node name="end" type="Position2D" parent="Torso/RightShoulder/RightArm/RightHand"]
+
+transform/pos = Vector2( 0, 4 )
+__meta__ = { "_edit_bone_":true }
+
+[node name="LeftShoulder" type="Sprite" parent="Torso"]
+
+transform/pos = Vector2( 10, -1 )
+transform/rot = 81.4
+texture = ExtResource( 2 )
+centered = false
+offset = Vector2( -5, -1 )
+region = true
+region_rect = Rect2( 10, 43, 10, 10 )
+__meta__ = { "_edit_bone_":true, "_edit_ik_":true }
+
+[node name="LeftArm" type="Sprite" parent="Torso/LeftShoulder"]
+
+visibility/behind_parent = true
+transform/pos = Vector2( 1, 4 )
+transform/rot = -45.9
+texture = ExtResource( 2 )
+centered = false
+offset = Vector2( -4, -2 )
+region = true
+region_rect = Rect2( 42, 42, 10, 10 )
+__meta__ = { "_edit_bone_":true }
+
+[node name="LeftHand" type="Sprite" parent="Torso/LeftShoulder/LeftArm"]
+
+transform/pos = Vector2( 0, 6 )
+transform/rot = -35.6
+texture = ExtResource( 2 )
+centered = false
+offset = Vector2( -5, -1 )
+hframes = 2
+region = true
+region_rect = Rect2( 41, 75, 9, 7 )
+__meta__ = { "_edit_bone_":true }
+
+[node name="end" type="Position2D" parent="Torso/LeftShoulder/LeftArm/LeftHand"]
+
+transform/pos = Vector2( 0, 4 )
+__meta__ = { "_edit_bone_":true }
+
+[node name="AnimationTreePlayer" type="AnimationTreePlayer" parent="."]
+
+playback/process_mode = 1
+base_path = NodePath("..")
+master_player = NodePath("")
+data = { "active":false, "connections":[ "anim 2", "state", 0, "anim", "state", 1, "state", "out", 0 ], "master":NodePath(""), "nodes":[ { "id":"state", "pos":Vector2( 807, 57 ), "transitions":[ { "auto_advance":false }, { "auto_advance":false } ], "type":"transition", "xfade":0.3 }, { "animation":ExtResource( 4 ), "filter":[  ], "id":"anim", "pos":Vector2( 508, 120 ), "type":"animation" }, { "id":"out", "pos":Vector2( 1100, 76 ), "type":"output" }, { "animation":ExtResource( 5 ), "filter":[  ], "id":"anim 2", "pos":Vector2( 517, 5 ), "type":"animation" } ] }
+script/script = ExtResource( 6 )
+
+[node name="ArmAnimation" type="Node" parent="."]
+
+script/script = ExtResource( 7 )
+
+[node name="RightArmPlayer" type="AnimationPlayer" parent="ArmAnimation"]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/creature_punch_right = ExtResource( 8 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = ""
+
+[node name="LeftArmPlayer" type="AnimationPlayer" parent="ArmAnimation"]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/creature_punch_left = ExtResource( 9 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = ""
+
+[node name="StatsModule" parent="." instance=ExtResource( 10 )]
+
+level = 1
+max_hp = 10
+max_mp = 5
+phys_crit = 0.0
+spell_crit = 0.0
+hit_rate = 0
+armor = 0
+magic_resist = 0
+
+[connection signal="attack" from="." to="ArmAnimation" method="_on_Creature_attack"]
+
+[connection signal="moving" from="." to="AnimationTreePlayer" method="_on_Creature_moving"]
+
+[connection signal="stopped" from="." to="AnimationTreePlayer" method="_on_Creature_stopped"]
+
+

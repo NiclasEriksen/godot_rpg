@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=1]
+[gd_scene load_steps=31 format=1]
 
 [ext_resource path="res://scripts/thescript.gd" type="Script" id=1]
 [ext_resource path="res://scripts/parallax.gd" type="Script" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://resources/poison_particle.png" type="Texture" id=20]
 [ext_resource path="res://resources/poison.png" type="Texture" id=21]
 [ext_resource path="res://scripts/aoe_damage.gd" type="Script" id=22]
+[ext_resource path="res://entities/ScelCraig.tscn" type="PackedScene" id=23]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -500,6 +501,10 @@ process_mode = 1
 wait_time = 0.5
 one_shot = false
 autostart = true
+
+[node name="SceletonCraig" parent="." instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 314, 405 )
 
 [connection signal="jump" from="Player_object" to="Camera2D" method="_on_Player_object_jump"]
 
