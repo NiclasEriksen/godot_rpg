@@ -244,6 +244,7 @@ limit/left = -10000000
 limit/top = -10000000
 limit/right = 10000000
 limit/bottom = 10000000
+limit/smoothed = false
 drag_margin/h_enabled = true
 drag_margin/v_enabled = true
 smoothing/enable = true
@@ -439,11 +440,5 @@ color/color_ramp = SubResource( 5 )
 [connection signal="moved" from="Player_object" to="Camera2D" method="_on_Player_object_moved"]
 
 [connection signal="rotated" from="Camera2D" to="ParallaxBackground" method="_on_Camera2D_rotated"]
-
-[connection signal="attack" from="Creature" to="Creature/ArmAnimation" method="_on_Creature_attack"]
-
-[connection signal="moving" from="Creature" to="Creature/AnimationTreePlayer" method="_on_Creature_moving"]
-
-[connection signal="stopped" from="Creature" to="Creature/AnimationTreePlayer" method="_on_Creature_stopped"]
 
 
