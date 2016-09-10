@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=1]
+
+[sub_resource type="ImageTexture" id=1]
+
+flags = 7
+image = Image()
+size = Vector2( 0, 0 )
+storage = 0
+lossy_quality = 0.7
+
+[node name="Node2D" type="Node2D"]
+
+[node name="grass" type="Sprite" parent="."]
+
+texture = SubResource( 1 )
+
+
