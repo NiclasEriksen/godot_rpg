@@ -206,6 +206,8 @@ percent/visible = true
 
 [connection signal="timeout" from="VBoxContainer 2/RichTextLabel/Timer" to="VBoxContainer 2/RichTextLabel" method="_on_Timer_timeout"]
 
+[connection signal="toggled" from="VBoxContainer 2/HBoxContainer/PauseButton" to="." method="_on_PauseButton_toggled"]
+
 [connection signal="toggled" from="VBoxContainer 2/HBoxContainer/MusicButton" to="VBoxContainer 2/HBoxContainer/StreamPlayer" method="_on_MusicButton_toggled"]
 
 

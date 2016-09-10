@@ -1,5 +1,7 @@
 extends Node2D
 
+signal pause(state)
+
 var player = null
 
 func _ready():
@@ -13,3 +15,6 @@ func _fixed_process(delta):
 			get_node("ResourceBars/HealthBar").set_value(hp)
 			var mp = (float(player.get_node("StatsModule").get("mp")) / float(player.get_node("StatsModule").get("max_mp")) * 100.0)
 			get_node("ResourceBars/ManaBar").set_value(mp)
+
+func _on_PauseButton_toggled(state):
+	emit_signal("pause", state)

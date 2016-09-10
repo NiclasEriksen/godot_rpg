@@ -549,6 +549,8 @@ amount = -1.0
 
 [connection signal="moved" from="Player_object" to="Camera2D" method="_on_Player_object_moved"]
 
+[connection signal="pause" from="CanvasLayer/HUD" to="." method="_on_HUD_pause"]
+
 [connection signal="rotated" from="Camera2D" to="ParallaxBackground" method="_on_Camera2D_rotated"]
 
 [connection signal="body_enter" from="PoisonExplode/Area2D" to="PoisonExplode" method="_on_Area2D_body_enter"]

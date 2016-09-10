@@ -6,6 +6,5 @@ func _ready():
 func _process(delta):
 	pass
 
-func _on_Button_2_toggled( pressed ):
+func _on_HUD_pause(pressed):
 	get_tree().set_pause(pressed)
-	
