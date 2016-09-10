@@ -45,6 +45,8 @@ func apply_stat(effect, attr, amount):
 
 
 func _input(event):
+	if get_node("StatsModule"):
+		max_vel = get_node("StatsModule").get("movement_speed")
 	if event.is_action_pressed("MOVE_UP"):
 		vel.y = vel.y - max_vel
 	elif event.is_action_released("MOVE_UP"):
@@ -76,9 +78,9 @@ func _process(delta):
 
 	if Input.is_action_pressed("MOVE_JUMP"):
 		self.jump()
-	
+
 	var r = 0
-	
+
 	if root:
 		r = get_angle_to(root.get_global_mouse_pos()) * (rot_spd * delta)
 		rotate(r)
@@ -119,7 +121,7 @@ func _process(delta):
 			if anim.is_playing():
 				# print("Stopping")
 				anim.stop(true)
-		
+
 
 func jump():
 	self.emit_signal("jump")
