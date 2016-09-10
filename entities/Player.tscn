@@ -102,21 +102,21 @@ transform/pos = Vector2( -8, -1 )
 transform/rot = -81.4371
 texture = ExtResource( 7 )
 centered = false
-offset = Vector2( -5, -1 )
+offset = Vector2( -2, -1 )
 region = true
-region_rect = Rect2( 12, 42, 8, 8 )
+region_rect = Rect2( 14, 45, 4, 6 )
 __meta__ = { "_edit_bone_":true, "_edit_ik_":true }
 
 [node name="RightArm" type="Sprite" parent="Torso/RightShoulder"]
 
 visibility/behind_parent = true
-transform/pos = Vector2( -1, 4 )
+transform/pos = Vector2( 0, 3 )
 transform/rot = 45.8559
 texture = ExtResource( 7 )
 centered = false
-offset = Vector2( -4, -2 )
+offset = Vector2( -2, -2 )
 region = true
-region_rect = Rect2( 40, 40, 10, 10 )
+region_rect = Rect2( 46, 43, 4, 9 )
 __meta__ = { "_edit_bone_":true }
 
 [node name="RightHand" type="Sprite" parent="Torso/RightShoulder/RightArm"]
@@ -125,10 +125,10 @@ transform/pos = Vector2( 0, 5 )
 transform/rot = 35.6
 texture = ExtResource( 7 )
 centered = false
-offset = Vector2( -4, -1 )
+offset = Vector2( -5, -1 )
 hframes = 2
 region = true
-region_rect = Rect2( 10, 74, 12, 9 )
+region_rect = Rect2( 11, 75, 9, 11 )
 __meta__ = { "_edit_bone_":true }
 
 [node name="end" type="Position2D" parent="Torso/RightShoulder/RightArm/RightHand"]
@@ -142,21 +142,21 @@ transform/pos = Vector2( 8, -1 )
 transform/rot = 81.4
 texture = ExtResource( 7 )
 centered = false
-offset = Vector2( -3, -1 )
+offset = Vector2( -2, -1 )
 region = true
-region_rect = Rect2( 12, 42, 8, 8 )
+region_rect = Rect2( 14, 45, 4, 6 )
 __meta__ = { "_edit_bone_":true, "_edit_ik_":true }
 
 [node name="LeftArm" type="Sprite" parent="Torso/LeftShoulder"]
 
 visibility/behind_parent = true
-transform/pos = Vector2( 1, 4 )
+transform/pos = Vector2( 0, 3 )
 transform/rot = -45.9
 texture = ExtResource( 7 )
 centered = false
-offset = Vector2( -4, -2 )
+offset = Vector2( -2, -2 )
 region = true
-region_rect = Rect2( 40, 40, 10, 10 )
+region_rect = Rect2( 46, 43, 4, 9 )
 __meta__ = { "_edit_bone_":true }
 
 [node name="LeftHand" type="Sprite" parent="Torso/LeftShoulder/LeftArm"]
@@ -168,7 +168,7 @@ centered = false
 offset = Vector2( -5, -1 )
 hframes = 2
 region = true
-region_rect = Rect2( 10, 74, 12, 9 )
+region_rect = Rect2( 11, 75, 9, 11 )
 __meta__ = { "_edit_bone_":true }
 
 [node name="end" type="Position2D" parent="Torso/LeftShoulder/LeftArm/LeftHand"]
