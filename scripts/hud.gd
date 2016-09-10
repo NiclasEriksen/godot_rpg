@@ -18,3 +18,6 @@ func _fixed_process(delta):
 
 func _on_PauseButton_toggled(state):
 	emit_signal("pause", state)
+
+func _on_HealthBar_value_changed(value):
+	get_node("ResourceBars/HealthBar/AnimationPlayer").play("change")
