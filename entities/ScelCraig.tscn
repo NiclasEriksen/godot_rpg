@@ -167,15 +167,6 @@ autoplay = ""
 
 [node name="StatsModule" parent="." instance=ExtResource( 10 )]
 
-level = 1
-max_hp = 10
-max_mp = 5
-phys_crit = 0.0
-spell_crit = 0.0
-hit_rate = 0
-armor = 0
-magic_resist = 0
-
 [connection signal="attack" from="." to="ArmAnimation" method="_on_Creature_attack"]
 
 [connection signal="moving" from="." to="AnimationTreePlayer" method="_on_Creature_moving"]

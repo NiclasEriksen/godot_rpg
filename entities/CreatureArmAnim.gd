@@ -21,3 +21,12 @@ func _on_Creature_attack():
 	else:
 		l_arm.play("creature_punch_left")
 		prev_arm = "left"
+
+
+func _on_Player_attack():
+	if prev_arm == "left":
+		r_arm.play("creature_punch_right")
+		prev_arm = "right"
+	else:
+		l_arm.play("creature_punch_left")
+		prev_arm = "left"

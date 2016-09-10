@@ -7,8 +7,8 @@
 [ext_resource path="res://resources/creatures/lumberjack_shoulder.tex" type="Texture" id=5]
 [ext_resource path="res://resources/creatures/lumberjack_arm.tex" type="Texture" id=6]
 [ext_resource path="res://resources/creatures/lumberjack_hand.tex" type="Texture" id=7]
-[ext_resource path="res://animations/creature_idle.tres" type="Animation" id=8]
-[ext_resource path="res://animations/creature_walk.tres" type="Animation" id=9]
+[ext_resource path="res://animations/creature_walk.tres" type="Animation" id=8]
+[ext_resource path="res://animations/creature_idle.tres" type="Animation" id=9]
 [ext_resource path="res://entities/CreatureAnimTree.gd" type="Script" id=10]
 [ext_resource path="res://entities/CreatureArmAnim.gd" type="Script" id=11]
 [ext_resource path="res://animations/creature_punch_right.tres" type="Animation" id=12]
@@ -126,7 +126,7 @@ __meta__ = { "_edit_bone_":true }
 playback/process_mode = 1
 base_path = NodePath("..")
 master_player = NodePath("")
-data = { "active":false, "connections":[ "anim 2", "state", 0, "anim", "state", 1, "state", "out", 0 ], "master":NodePath(""), "nodes":[ { "animation":ExtResource( 8 ), "filter":[  ], "id":"anim 2", "pos":Vector2( 517, 5 ), "type":"animation" }, { "id":"state", "pos":Vector2( 807, 57 ), "transitions":[ { "auto_advance":false }, { "auto_advance":false } ], "type":"transition", "xfade":0.3 }, { "animation":ExtResource( 9 ), "filter":[  ], "id":"anim", "pos":Vector2( 508, 120 ), "type":"animation" }, { "id":"out", "pos":Vector2( 1100, 76 ), "type":"output" } ] }
+data = { "active":false, "connections":[ "anim 2", "state", 0, "anim", "state", 1, "state", "out", 0 ], "master":NodePath(""), "nodes":[ { "id":"state", "pos":Vector2( 807, 57 ), "transitions":[ { "auto_advance":false }, { "auto_advance":false } ], "type":"transition", "xfade":0.3 }, { "animation":ExtResource( 8 ), "filter":[  ], "id":"anim", "pos":Vector2( 508, 120 ), "type":"animation" }, { "id":"out", "pos":Vector2( 1100, 76 ), "type":"output" }, { "animation":ExtResource( 9 ), "filter":[  ], "id":"anim 2", "pos":Vector2( 517, 5 ), "type":"animation" } ] }
 script/script = ExtResource( 10 )
 
 [node name="ArmAnimation" type="Node" parent="."]
