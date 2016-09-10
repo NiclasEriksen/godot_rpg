@@ -33,12 +33,16 @@ func _process(delta):
 	elif mp < 0 :
 		mp = 0
 
-func apply_effect(effect_list, originmodule): # Recieves a list of lists, like [["hp", -20], ["mp", 10]], and another optional statsmodule for calculating final effects.
-	for e in effect_list:
-		if get(e[0]) or get(e[0]) == 0:   # check if attribute exists
-			set(e[0], get(e[0]) + e[1])
-		else:
-			print("StatsModule does not recognize that attribute: ", e[0])
+func apply_effect(effectmodule, originmodule): # Recieves an EffectModule, and another optional statsmodule for calculating final effects.
+	# for e in effect_list:
+	# 	if get(e[0]) or get(e[0]) == 0:   # check if attribute exists
+	# 		set(e[0], get(e[0]) + e[1])
+	# 	else:
+	# 		print("StatsModule does not recognize that attribute: ", e[0])
+	if get(effectmodule.effect_stat) or get(effectmodule.effect_stat) == 0:
+		set(effectmodule.effect_stat, get(effectmodule.effect_stat) + effectmodule.amount)
+	else:
+		print("StatsModule does not recognize that attribute: ", effectmodule.effect_stat)
 
 func get_actual(stat):
 	pass

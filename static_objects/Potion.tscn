@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://static_objects/Potion.gd" type="Script" id=1]
 [ext_resource path="res://resources/equipment/pot_hp.tex" type="Texture" id=2]
+[ext_resource path="res://components/EffectModule.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -44,7 +45,6 @@ tracks/4/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "updat
 
 z/z = 50
 script/script = ExtResource( 1 )
-amount = 2
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -78,6 +78,11 @@ playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = ""
+
+[node name="EffectModule" parent="." instance=ExtResource( 3 )]
+
+effect_type = "life"
+amount = 2.0
 
 [connection signal="area_enter" from="Area2D" to="." method="_on_Area2D_area_enter"]
 

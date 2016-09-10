@@ -3,8 +3,6 @@ extends Node2D
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
-var attr = "hp"
-export(int) var amount = 2
 
 func _ready():
 	# Called every time the node is added to the scene.
@@ -18,7 +16,8 @@ func pick_up(picker):
 		get_node("Area2D").call_deferred("set_enable_monitoring", false)
 		# get_node("Area2D").set_enable_monitoring(false)	# Disable collision check
 		# picker.apply_stat("increase", attr, amount)
-		picker.get_node("StatsModule").apply_effect([["hp", amount]], null)
+		if get_node("EffectModule"):
+			picker.get_node("StatsModule").apply_effect(get_node("EffectModule"), null)
 
 
 func _on_Area2D_body_enter( body ):

@@ -1,6 +1,5 @@
 extends Sprite
 
-export(int) var damage = 2
 var targets = []
 
 func _ready():
@@ -10,12 +9,13 @@ func _ready():
 
 func do_damage(entity):
 	if entity.get_node("StatsModule"):
-		print("Hey?")
+		# print("Hey?")
 		# get_node("AnimationPlayer").play("pick_up")
 		# get_node("Area2D").call_deferred("set_enable_monitoring", false)
 		# get_node("Area2D").set_enable_monitoring(false)	# Disable collision check
 		# picker.apply_stat("increase", attr, amount)
-		entity.get_node("StatsModule").apply_effect([["hp", -2]], null)
+		if get_node("EffectModule"):
+			entity.get_node("StatsModule").apply_effect(get_node("EffectModule"), null)
 
 
 func _on_Area2D_body_enter(body):
