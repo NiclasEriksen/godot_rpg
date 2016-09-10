@@ -40,6 +40,7 @@ func apply_effect(effectmodule, originmodule): # Recieves an EffectModule, and a
 	# 	else:
 	# 		print("StatsModule does not recognize that attribute: ", e[0])
 	if get(effectmodule.effect_stat) or get(effectmodule.effect_stat) == 0:
+		# print(effectmodule.effect_stat, effectmodule.amount)
 		set(effectmodule.effect_stat, get(effectmodule.effect_stat) + effectmodule.amount)
 	else:
 		print("StatsModule does not recognize that attribute: ", effectmodule.effect_stat)

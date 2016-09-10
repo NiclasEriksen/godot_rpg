@@ -15,6 +15,13 @@ func _on_Creature_moving():
 	transition_node_set_current("state", 1)
 
 
-
 func _on_Creature_stopped():
+	transition_node_set_current("state", 0)
+
+
+func _on_Player_moved( pos, rot ):
+	transition_node_set_current("state", 1)
+
+
+func _on_Player_stopped():
 	transition_node_set_current("state", 0)
