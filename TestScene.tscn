@@ -4,7 +4,7 @@
 [ext_resource path="res://scripts/parallax.gd" type="Script" id=2]
 [ext_resource path="res://resources/bg.tex" type="Texture" id=3]
 [ext_resource path="res://scripts/navmesh.gd" type="Script" id=4]
-[ext_resource path="res://maps/Test3.tscn" type="PackedScene" id=5]
+[ext_resource path="res://maps/test4.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scripts/path_follow.gd" type="Script" id=6]
 [ext_resource path="res://resources/poison_particle.png" type="Texture" id=7]
 [ext_resource path="res://resources/creatures/player_body.tex" type="Texture" id=8]
@@ -56,7 +56,7 @@ tracks/0/keys = { "times":FloatArray( 0, 0.05, 0.1, 0.15, 0.2 ), "transitions":F
 offsets = FloatArray( 0, 1 )
 colors = ColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=6]
 
 length = 0.7
 loop = true
@@ -72,7 +72,7 @@ tracks/1/interp = 2
 tracks/1/imported = false
 tracks/1/keys = { "times":FloatArray( 0, 0.15, 0.6 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ Vector2( 1, 1 ), Vector2( 1.5, 1.5 ), Vector2( 1, 1 ) ] }
 
-[sub_resource type="CircleShape2D" id=8]
+[sub_resource type="CircleShape2D" id=7]
 
 custom_solver_bias = 0.0
 radius = 15.0
@@ -115,6 +115,7 @@ motion/mirroring = Vector2( 0, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 
+transform/pos = Vector2( 7.02246, 0 )
 texture = ExtResource( 3 )
 region = true
 region_rect = Rect2( 0, 0, 4000, 4000 )
@@ -123,7 +124,7 @@ region_rect = Rect2( 0, 0, 4000, 4000 )
 
 script/script = ExtResource( 4 )
 
-[node name="Map" parent="Navigation2D" instance=ExtResource( 5 )]
+[node name="Node2D" parent="Navigation2D" instance=ExtResource( 5 )]
 
 [node name="Mob 2" type="StaticBody2D" parent="."]
 
@@ -346,27 +347,27 @@ transform/pos = Vector2( 159, 319 )
 
 [node name="Potion" parent="." instance=ExtResource( 20 )]
 
-transform/pos = Vector2( -456, -265 )
+transform/pos = Vector2( 899.38, 486.428 )
 
 [node name="Potion1" parent="." instance=ExtResource( 20 )]
 
-transform/pos = Vector2( -1349, -476 )
+transform/pos = Vector2( 1294.38, 1265.92 )
 
 [node name="Potion3" parent="." instance=ExtResource( 20 )]
 
-transform/pos = Vector2( -461, -579 )
+transform/pos = Vector2( 648.585, 1373.31 )
 
 [node name="Potion4" parent="." instance=ExtResource( 20 )]
 
-transform/pos = Vector2( -452, -318 )
+transform/pos = Vector2( 229.201, 482.587 )
 
 [node name="Potion5" parent="." instance=ExtResource( 20 )]
 
-transform/pos = Vector2( -276, -588 )
+transform/pos = Vector2( 40.0215, 1195.76 )
 
 [node name="Potion6" parent="." instance=ExtResource( 20 )]
 
-transform/pos = Vector2( -1422, -608 )
+transform/pos = Vector2( 1315.74, 1417.97 )
 
 [node name="Potion7" parent="." instance=ExtResource( 20 )]
 
@@ -378,11 +379,11 @@ transform/pos = Vector2( -1017, -583 )
 
 [node name="Creature" parent="." instance=ExtResource( 21 )]
 
-transform/pos = Vector2( -136, -574 )
+transform/pos = Vector2( 549.929, 313.807 )
 
 [node name="Particles2D" type="Particles2D" parent="."]
 
-transform/pos = Vector2( -210, -277 )
+transform/pos = Vector2( 1204.5, 1546.35 )
 z/z = 6
 config/amount = 32
 config/lifetime = 2.0
@@ -422,7 +423,7 @@ script/script = ExtResource( 23 )
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/Poof = SubResource( 7 )
+anims/Poof = SubResource( 6 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -431,7 +432,7 @@ autoplay = "Poof"
 [node name="Area2D" type="Area2D" parent="PoisonExplode"]
 
 input/pickable = true
-shapes/0/shape = SubResource( 8 )
+shapes/0/shape = SubResource( 7 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = true
 gravity_vec = Vector2( 0, 1 )
@@ -441,7 +442,7 @@ angular_damp = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PoisonExplode/Area2D"]
 
-shape = SubResource( 8 )
+shape = SubResource( 7 )
 trigger = true
 _update_shape_index = 0
 
@@ -463,13 +464,25 @@ amount = -1.0
 
 [connection signal="stopped" from="Mob 2/SceletonCraig" to="Mob 2/SceletonCraig/AnimationTreePlayer" method="_on_Creature_stopped"]
 
+[connection signal="attack" from="Player_object" to="Player_object/ArmAnimation" method="_on_Player_attack"]
+
 [connection signal="jump" from="Player_object" to="Camera2D" method="_on_Player_object_jump"]
 
 [connection signal="moved" from="Player_object" to="Camera2D" method="_on_Player_object_moved"]
 
+[connection signal="moved" from="Player_object" to="Player_object/AnimationTreePlayer" method="_on_Player_moved"]
+
+[connection signal="stopped" from="Player_object" to="Player_object/AnimationTreePlayer" method="_on_Player_stopped"]
+
 [connection signal="pause" from="UILayer/HUD" to="." method="_on_HUD_pause"]
 
 [connection signal="rotated" from="Camera2D" to="ParallaxBackground" method="_on_Camera2D_rotated"]
+
+[connection signal="attack" from="Creature" to="Creature/ArmAnimation" method="_on_Creature_attack"]
+
+[connection signal="moving" from="Creature" to="Creature/AnimationTreePlayer" method="_on_Creature_moving"]
+
+[connection signal="stopped" from="Creature" to="Creature/AnimationTreePlayer" method="_on_Creature_stopped"]
 
 [connection signal="body_enter" from="PoisonExplode/Area2D" to="PoisonExplode" method="_on_Area2D_body_enter"]
 
