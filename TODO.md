@@ -9,3 +9,9 @@
 - [ ] Organize resources folder.
 - [ ] Implement dialogue systems.
 - [ ] Inventory systems.
+
+
+
+====================
+        GFX
+===================
