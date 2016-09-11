@@ -84,8 +84,6 @@ autoplay = ""
 effect_type = "life"
 amount = 2.0
 
-[connection signal="area_enter" from="Area2D" to="." method="_on_Area2D_area_enter"]
-
 [connection signal="body_enter" from="Area2D" to="." method="_on_Area2D_body_enter"]
 
 [connection signal="finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_finished"]
