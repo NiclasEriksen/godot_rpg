@@ -115,7 +115,7 @@ motion/mirroring = Vector2( 0, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 
-transform/pos = Vector2( 7.02246, 0 )
+transform/pos = Vector2( 7.02258, 0.00012207 )
 texture = ExtResource( 3 )
 region = true
 region_rect = Rect2( 0, 0, 4000, 4000 )
