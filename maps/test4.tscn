@@ -114,6 +114,6 @@ tile_data = IntArray(  )
 
 [node name="SpawnPoint" type="Position2D" parent="."]
 
-transform/pos = Vector2( 63.1571, 56.0073 )
+transform/pos = Vector2( 59.9452, 54.8393 )
 
 

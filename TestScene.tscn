@@ -124,7 +124,7 @@ region_rect = Rect2( 0, 0, 4000, 4000 )
 
 script/script = ExtResource( 4 )
 
-[node name="Node2D" parent="Navigation2D" instance=ExtResource( 5 )]
+[node name="Map" parent="Navigation2D" instance=ExtResource( 5 )]
 
 [node name="Mob 2" type="StaticBody2D" parent="."]
 
@@ -273,7 +273,9 @@ shadow/item_mask = 1
 
 [node name="SceletonCraig" parent="Mob 2" instance=ExtResource( 13 )]
 
+transform/pos = Vector2( 533.186, 830.09 )
 transform/rot = 90.0
+transform/scale = Vector2( 1, 1 )
 
 [node name="Player_object" parent="." instance=ExtResource( 14 )]
 
