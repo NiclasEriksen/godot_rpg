@@ -281,7 +281,7 @@ transform/rot = 90.0
 
 [node name="Player_object" parent="." instance=ExtResource( 14 )]
 
-transform/pos = Vector2( 236.705, 370.022 )
+transform/pos = Vector2( -1132.76, -515.885 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
