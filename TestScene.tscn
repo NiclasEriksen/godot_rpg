@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=1]
+[gd_scene load_steps=34 format=1]
 
 [ext_resource path="res://scripts/thescript.gd" type="Script" id=1]
 [ext_resource path="res://scripts/parallax.gd" type="Script" id=2]
@@ -24,6 +24,7 @@
 [ext_resource path="res://resources/poison.png" type="Texture" id=22]
 [ext_resource path="res://scripts/aoe_damage.gd" type="Script" id=23]
 [ext_resource path="res://components/EffectModule.tscn" type="PackedScene" id=24]
+[ext_resource path="res://resources/sfx/dunk.wav" type="Sample" id=25]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -76,6 +77,10 @@ tracks/1/keys = { "times":FloatArray( 0, 0.15, 0.6 ), "transitions":FloatArray( 
 
 custom_solver_bias = 0.0
 radius = 15.0
+
+[sub_resource type="SampleLibrary" id=8]
+
+samples/dunk = { "db":0.0, "pitch":1.0, "sample":ExtResource( 25 ) }
 
 [node name="Game" type="Control"]
 
@@ -413,7 +418,7 @@ color/color_ramp = SubResource( 5 )
 
 [node name="PoisonExplode" type="Sprite" parent="."]
 
-transform/pos = Vector2( -273, -460 )
+transform/pos = Vector2( 201, 204 )
 z/z = 5
 texture = ExtResource( 22 )
 hframes = 13
@@ -458,6 +463,17 @@ autostart = true
 
 effect_type = "death"
 amount = -1.0
+
+[node name="SamplePlayer2D" type="SamplePlayer2D" parent="PoisonExplode"]
+
+params/volume_db = 0.0
+params/pitch_scale = 1.0
+params/attenuation/min_distance = 1.0
+params/attenuation/max_distance = 2048.0
+params/attenuation/distance_exp = 1.0
+config/polyphony = 1
+config/samples = SubResource( 8 )
+config/pitch_random = 0.1
 
 [connection signal="attack" from="Mob 2/SceletonCraig" to="Mob 2/SceletonCraig/ArmAnimation" method="_on_Creature_attack"]
 

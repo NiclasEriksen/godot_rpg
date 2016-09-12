@@ -27,6 +27,9 @@ func _on_Area2D_body_enter(body):
 
 
 func _on_poison_tick():
+	#get_node("SamplePlayer2D").play("dunk", 1)
+	get_node("SamplePlayer2D").play("dunk")
+	#get_node("SamplePlayer2D").play("dunk", 3)
 	for t in targets:
 		do_damage(t)
 
