@@ -21,6 +21,9 @@ digraph {
     Ability -> Player
     StatsModule -> Player
     StatsModule -> Mob
+    EffectModule -> Ability
+    EffectModule -> StaticObject
+    # EffectModule -> StatsModule [color="grey60", style=dashed]
     Animations -> Player
     Animations -> Mob
     Animations -> StaticObject

@@ -275,7 +275,6 @@ shadow/item_mask = 1
 
 transform/pos = Vector2( 533.186, 830.09 )
 transform/rot = 90.0
-transform/scale = Vector2( 1, 1 )
 
 [node name="Player_object" parent="." instance=ExtResource( 14 )]
 
@@ -470,9 +469,9 @@ amount = -1.0
 
 [connection signal="jump" from="Player_object" to="Camera2D" method="_on_Player_object_jump"]
 
-[connection signal="moved" from="Player_object" to="Camera2D" method="_on_Player_object_moved"]
-
 [connection signal="moved" from="Player_object" to="Player_object/AnimationTreePlayer" method="_on_Player_moved"]
+
+[connection signal="moved" from="Player_object" to="Camera2D" method="_on_Player_object_moved"]
 
 [connection signal="stopped" from="Player_object" to="Player_object/AnimationTreePlayer" method="_on_Player_stopped"]
 
