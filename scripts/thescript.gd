@@ -2,6 +2,10 @@ extends Control
 
 func _ready():
 	set_process(true)
+	if get_node("/root/globals").get_map():
+		var map = load(get_node("/root/globals").get_map())
+		get_node("Navigation2D").get_node("Map").free()
+		get_node("Navigation2D").add_child(map.instance())
 
 func _process(delta):
 	pass

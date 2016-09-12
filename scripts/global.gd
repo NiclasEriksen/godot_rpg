@@ -2,6 +2,7 @@
 extends Node
 
 var currentScene = null
+var map = null
 
 var PlayerName = "Niclas"
 var MAP_WIDTH = 40
@@ -17,6 +18,11 @@ func set_scene(scene):
 	currentScene = s.instance()
 	get_tree().get_root().add_child(currentScene)
 
+func set_map(mapname):
+	map = "res://maps/" + mapname
+
+func get_map():
+	return map
 
 func get_player_name():
 	return PlayerName

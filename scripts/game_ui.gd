@@ -14,4 +14,5 @@ func _input(event):
 	if event.is_action_released("QUIT"):
 		# get_tree().set_input_as_handled()
 		get_tree().set_pause(false)
+		# get_tree().get_root().get_node("Game").queue_free()
 		get_node("/root/globals").set_scene("res://MainMenu.tscn")

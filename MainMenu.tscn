@@ -65,6 +65,18 @@ shortcut = null
 text = "Test Scene [debug]"
 flat = true
 
+[node name="MapList" type="ItemList" parent="VBoxContainer"]
+
+rect/min_size = Vector2( 0, 80 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 50.0
+margin/right = 160.0
+margin/bottom = 130.0
+
 [node name="Options" type="Button" parent="VBoxContainer"]
 
 focus/ignore_mouse = false
@@ -73,9 +85,9 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 theme/theme = ExtResource( 2 )
 margin/left = 0.0
-margin/top = 50.0
+margin/top = 134.0
 margin/right = 160.0
-margin/bottom = 71.0
+margin/bottom = 155.0
 toggle_mode = false
 click_on_press = true
 enabled_focus_mode = 0
@@ -91,9 +103,9 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 theme/theme = ExtResource( 2 )
 margin/left = 0.0
-margin/top = 75.0
+margin/top = 159.0
 margin/right = 160.0
-margin/bottom = 96.0
+margin/bottom = 180.0
 toggle_mode = false
 click_on_press = true
 enabled_focus_mode = 0
@@ -101,9 +113,38 @@ shortcut = null
 text = "Quit"
 flat = true
 
+[node name="PopupDialog" type="PopupDialog" parent="."]
+
+rect/min_size = Vector2( 200, 100 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 200.0
+margin/bottom = 100.0
+popup/exclusive = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PopupDialog"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 200.0
+margin/bottom = 100.0
+bbcode/enabled = true
+bbcode/bbcode = "No map selected!"
+visible_characters = -1
+
 [connection signal="released" from="VBoxContainer/NewGame" to="VBoxContainer" method="_on_NewGame_released"]
 
 [connection signal="released" from="VBoxContainer/TestScene" to="VBoxContainer" method="_on_TestScene_released"]
+
+[connection signal="item_selected" from="VBoxContainer/MapList" to="VBoxContainer" method="_on_MapList_item_selected"]
 
 [connection signal="released" from="VBoxContainer/Quit" to="VBoxContainer" method="_on_Quit_released"]
 
