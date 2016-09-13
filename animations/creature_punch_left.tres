@@ -23,7 +23,7 @@ tracks/2/imported = false
 tracks/2/keys = { "times":FloatArray( 0, 0.2, 0.8 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ 87.0, 10.8929, 87.0 ] }
 tracks/3/type = "value"
 tracks/3/path = NodePath("../Torso/LeftShoulder/LeftArm/LeftHand:frame")
-tracks/3/interp = 1
+tracks/3/interp = 2
 tracks/3/imported = false
 tracks/3/keys = { "times":FloatArray( 0, 0.4, 0.8 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ 0, 3, 7 ] }
 
