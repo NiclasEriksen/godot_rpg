@@ -169,10 +169,8 @@ __meta__ = { "_edit_bone_":true }
 [node name="LeftHand" type="Sprite" parent="Torso/LeftShoulder/LeftArm"]
 
 transform/pos = Vector2( 2.02656e-06, 5 )
-transform/rot = -91.0
 texture = ExtResource( 10 )
 offset = Vector2( 0, 2 )
-flip_h = true
 vframes = 2
 hframes = 8
 frame = 7
