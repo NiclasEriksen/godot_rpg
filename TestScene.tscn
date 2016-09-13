@@ -419,11 +419,11 @@ color/color_ramp = SubResource( 5 )
 [node name="PoisonExplode" type="Sprite" parent="."]
 
 transform/pos = Vector2( 201, 204 )
-transform/scale = Vector2( 1.14249, 1.14249 )
+transform/scale = Vector2( 1.37325, 1.37325 )
 z/z = 5
 texture = ExtResource( 22 )
 hframes = 13
-frame = 1
+frame = 6
 script/script = ExtResource( 23 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PoisonExplode"]
