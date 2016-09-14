@@ -50,3 +50,8 @@ func _on_TestScene_released():
 
 func _on_Quit_released():
 	get_tree().quit()
+
+
+func _on_MapList_item_activated( index ):
+	if get_node("/root/globals").get_map():
+		get_node("/root/globals").set_scene("res://TestScene.tscn")

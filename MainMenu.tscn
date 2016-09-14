@@ -145,6 +145,8 @@ visible_characters = -1
 
 [connection signal="released" from="VBoxContainer/TestScene" to="VBoxContainer" method="_on_TestScene_released"]
 
+[connection signal="item_activated" from="VBoxContainer/MapList" to="VBoxContainer" method="_on_MapList_item_activated"]
+
 [connection signal="item_selected" from="VBoxContainer/MapList" to="VBoxContainer" method="_on_MapList_item_selected"]
 
 [connection signal="released" from="VBoxContainer/Quit" to="VBoxContainer" method="_on_Quit_released"]
