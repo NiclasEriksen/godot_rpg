@@ -19,7 +19,13 @@ func set_scene(scene):
 	get_tree().get_root().add_child(currentScene)
 
 func set_map(mapname):
-	map = "res://maps/" + mapname
+	var mappath = "res://maps/" + mapname
+	if (File.new().file_exists(mappath)):
+		map = mappath
+		return true
+	else:
+		print("Map not found: ", mappath)
+		return false
 
 func get_map():
 	return map

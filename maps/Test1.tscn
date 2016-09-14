@@ -3,7 +3,7 @@
 [ext_resource path="res://resources/tileset.xml" type="TileSet" id=1]
 [ext_resource path="res://resources/tileset2.xml" type="TileSet" id=2]
 
-[node name="TileTest" type="Node2D"]
+[node name="Map" type="Node2D"]
 
 [node name="BG" type="TileMap" parent="."]
 

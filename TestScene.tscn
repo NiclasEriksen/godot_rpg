@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=1]
+[gd_scene load_steps=36 format=1]
 
 [ext_resource path="res://scripts/thescript.gd" type="Script" id=1]
 [ext_resource path="res://scripts/parallax.gd" type="Script" id=2]
@@ -25,6 +25,7 @@
 [ext_resource path="res://scripts/aoe_damage.gd" type="Script" id=23]
 [ext_resource path="res://components/EffectModule.tscn" type="PackedScene" id=24]
 [ext_resource path="res://resources/sfx/dunk.wav" type="Sample" id=25]
+[ext_resource path="res://resources/light_tex.tex" type="Texture" id=26]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -82,6 +83,11 @@ radius = 15.0
 
 samples/dunk = { "db":0.0, "pitch":1.0, "sample":ExtResource( 25 ) }
 
+[sub_resource type="CircleShape2D" id=9]
+
+custom_solver_bias = 0.0
+radius = 25.0
+
 [node name="Game" type="Control"]
 
 anchor/right = 1
@@ -125,11 +131,11 @@ texture = ExtResource( 3 )
 region = true
 region_rect = Rect2( 0, 0, 4000, 4000 )
 
-[node name="Navigation2D" type="Navigation2D" parent="."]
+[node name="Nav" type="Navigation2D" parent="."]
 
 script/script = ExtResource( 4 )
 
-[node name="Map" parent="Navigation2D" instance=ExtResource( 5 )]
+[node name="Map" parent="Nav" instance=ExtResource( 5 )]
 
 [node name="Mob 2" type="StaticBody2D" parent="."]
 
@@ -419,11 +425,9 @@ color/color_ramp = SubResource( 5 )
 [node name="PoisonExplode" type="Sprite" parent="."]
 
 transform/pos = Vector2( 609.972, 79.9719 )
-transform/scale = Vector2( 1.37325, 1.37325 )
 z/z = 5
 texture = ExtResource( 22 )
 hframes = 13
-frame = 6
 script/script = ExtResource( 23 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PoisonExplode"]
@@ -477,6 +481,29 @@ config/polyphony = 1
 config/samples = SubResource( 8 )
 config/pitch_random = 0.1
 
+[node name="MapChangeTrigger" type="Area2D" parent="."]
+
+transform/pos = Vector2( 268, 329 )
+input/pickable = true
+shapes/0/shape = SubResource( 9 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapChangeTrigger"]
+
+shape = SubResource( 9 )
+trigger = true
+_update_shape_index = 0
+
+[node name="Sprite" type="Sprite" parent="MapChangeTrigger"]
+
+transform/scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 26 )
+
 [connection signal="attack" from="Mob 2/SceletonCraig" to="Mob 2/SceletonCraig/ArmAnimation" method="_on_Creature_attack"]
 
 [connection signal="moving" from="Mob 2/SceletonCraig" to="Mob 2/SceletonCraig/AnimationTreePlayer" method="_on_Creature_moving"]
@@ -487,9 +514,9 @@ config/pitch_random = 0.1
 
 [connection signal="jump" from="Player_object" to="Camera2D" method="_on_Player_object_jump"]
 
-[connection signal="moved" from="Player_object" to="Camera2D" method="_on_Player_object_moved"]
-
 [connection signal="moved" from="Player_object" to="Player_object/Torso/LeftShoulder/LeftArm/LeftHand/Light2D/AnimationTreePlayer" method="_on_Player_moved"]
+
+[connection signal="moved" from="Player_object" to="Camera2D" method="_on_Player_object_moved"]
 
 [connection signal="stopped" from="Player_object" to="Player_object/Torso/LeftShoulder/LeftArm/LeftHand/Light2D/AnimationTreePlayer" method="_on_Player_stopped"]
 
@@ -508,5 +535,7 @@ config/pitch_random = 0.1
 [connection signal="body_exit" from="PoisonExplode/Area2D" to="PoisonExplode" method="_on_Area2D_body_exit"]
 
 [connection signal="timeout" from="PoisonExplode/Timer" to="PoisonExplode" method="_on_poison_tick"]
+
+[connection signal="body_enter" from="MapChangeTrigger" to="." method="_on_MapChangeTrigger_body_enter"]
 
 

@@ -25,7 +25,7 @@ func _ready():
 	set_fixed_process(true)
 	set_process_input(true)
 	root = get_tree().get_root().get_node("Game")
-	var spawn = get_tree().get_root().get_node("Game").get_node("Navigation2D").get_node("Map").get_node("SpawnPoint")
+	var spawn = get_tree().get_root().get_node("Game").get_node("Nav").get_node("Map").get_node("SpawnPoint")
 	if spawn:
 		self.set_pos(spawn.get_pos()) 
 
