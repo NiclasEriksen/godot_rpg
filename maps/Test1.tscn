@@ -103,4 +103,8 @@ collision/mask = 1
 occluder/light_mask = 1
 tile_data = IntArray( 458760, 536870956, 458767, 0, 458768, 1, 524296, 536870964 )
 
+[node name="SpawnPoint" type="Position2D" parent="."]
+
+transform/pos = Vector2( 477.46, 346.066 )
+
 

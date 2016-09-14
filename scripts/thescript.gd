@@ -16,8 +16,8 @@ func _ready():
 func _process(delta):
 	pass
 
-func change_map(mapname):
-	if globals.set_map(mapname):
+func load_map():
+	if globals.get_map():
 		map = load(globals.get_map())
 		for n in get_node("Nav").get_children():
 			n.free()
@@ -28,6 +28,13 @@ func change_map(mapname):
 			else:
 				print("More than one map loaded??!")
 	else:
+		print("No map specified in globals...")
+
+func change_map(mapname):
+	if globals.set_map(mapname):
+		SceneTransition.connect("start_load", self, "load_map", [])
+		SceneTransition.fade_to_map()
+	else:
 		print("Failed to set map: ", mapname)
 
 func _on_HUD_pause(pressed):
@@ -35,4 +42,5 @@ func _on_HUD_pause(pressed):
 
 
 func _on_MapChangeTrigger_body_enter(body):
-	change_map("Test3.tscn")
+	if body.get_name() == "Player_object":
+		change_map("Test3.tscn")
