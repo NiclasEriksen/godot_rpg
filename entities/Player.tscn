@@ -180,6 +180,7 @@ texture = ExtResource( 10 )
 offset = Vector2( 0, 2 )
 vframes = 2
 hframes = 8
+frame = 7
 region_rect = Rect2( 43, 75, 9, 11 )
 __meta__ = { "_edit_bone_":true }
 
@@ -225,7 +226,7 @@ params/linear_velocity = 20.0
 params/spin_velocity = 0.0
 params/orbit_velocity = 0.0
 params/gravity_direction = 0.0
-params/gravity_strength = 9.8
+params/gravity_strength = 0.0
 params/radial_accel = 0.0
 params/tangential_accel = 0.0
 params/damping = 0.0
