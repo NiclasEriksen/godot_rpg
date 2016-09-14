@@ -18,16 +18,16 @@ var sprint_factor = 1.5
 var rot_spd = 3
 var root = null
 var anim = null
-
+var already_stopped = false
 
 func _ready():
 	set_process(true)
-	set_fixed_process(true)
 	set_process_input(true)
 	root = get_tree().get_root().get_node("Game")
 	var spawn = get_tree().get_root().get_node("Game").get_node("Nav").get_node("Map").get_node("SpawnPoint")
 	if spawn:
-		self.set_pos(spawn.get_pos()) 
+		self.set_pos(spawn.get_pos())
+	emit_signal("moved", get_pos(), get_rot())
 
 
 func _input(event):
@@ -62,44 +62,26 @@ func _process(delta):
 	else:
 		attacking = false
 
-	if Input.is_action_pressed("MOVE_JUMP"):
-		self.jump()
+
+	if vel.x or vel.y:
+		already_stopped = false
+		emit_signal("moved", get_pos(), get_rot())
+	elif not already_stopped:
+		already_stopped = true
+		emit_signal("stopped")
+
+	var motion = vel * delta
+	motion = move(motion)
+	if (is_colliding()):
+		var n = get_collision_normal()
+		motion = n.slide(motion)
+		# vel = n.slide(vel)
+		move(motion)
 
 	var r = 0
-
 	if root:
 		r = get_angle_to(root.get_global_mouse_pos()) * (rot_spd * delta)
 		rotate(r)
-		# if Input.is_action_pressed("MOUSE_ROTATE"):
-		# 	r = get_angle_to(root.get_global_mouse_pos()) * (rot_spd * delta)
-		#	if Input.is_action_pressed("MOVE_LEFT"):
-		#		vel.x = max_vel
-		#	elif Input.is_action_pressed("MOVE_RIGHT"):
-		#		vel.x = -max_vel
-		#else:
-		#	if Input.is_action_pressed("MOVE_LEFT"):
-		#		rotate(rot_spd * delta)
-		#	if Input.is_action_pressed("MOVE_RIGHT"):
-		#		rotate(-(rot_spd * delta))
-		# print(vel.rotated(get_rot()), vel)
-		# self.move_and_slide(vel * 50 * delta)
-		# self.move(vel.rotated(get_rot()) * delta)
-		var motion = vel * delta
-		motion = move(motion)
-		if (is_colliding()):
-        	var n = get_collision_normal()
-        	motion = n.slide(motion)
-        	# vel = n.slide(vel)
-        	move(motion)
-
-
-func _fixed_process(delta):
-	if not get_pos() == last_pos:
-		emit_signal("moved", get_pos(), get_rot())
-	else:
-		emit_signal("stopped")
-	last_pos = get_pos()
-
 
 
 func jump():

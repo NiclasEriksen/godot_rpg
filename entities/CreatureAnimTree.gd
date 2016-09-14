@@ -10,18 +10,11 @@ func _ready():
 	set_active(true)
 	# oneshot_node_stop("oneshot")
 
-
-func _on_Creature_moving():
-	transition_node_set_current("state", 1)
-
-
-func _on_Creature_stopped():
-	transition_node_set_current("state", 0)
-
-
-func _on_Player_moved( pos, rot ):
-	transition_node_set_current("state", 1)
+func _on_Player_moved(pos, rot):
+	if not transition_node_get_current("state") == 1:
+		transition_node_set_current("state", 1)
 
 
 func _on_Player_stopped():
-	transition_node_set_current("state", 0)
+	if not transition_node_get_current("state") == 0:
+		transition_node_set_current("state", 0)

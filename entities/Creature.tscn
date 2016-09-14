@@ -159,8 +159,4 @@ autoplay = ""
 
 [connection signal="attack" from="." to="ArmAnimation" method="_on_Creature_attack"]
 
-[connection signal="moving" from="." to="AnimationTreePlayer" method="_on_Creature_moving"]
-
-[connection signal="stopped" from="." to="AnimationTreePlayer" method="_on_Creature_stopped"]
-
 

@@ -11,13 +11,13 @@
 [ext_resource path="res://resources/equipment/animation_sword_hit.png" type="Texture" id=9]
 [ext_resource path="res://resources/equipment/animation_flail_swing.png" type="Texture" id=10]
 [ext_resource path="res://resources/light1.tex" type="Texture" id=11]
-[ext_resource path="res://animations/creature_walk.tres" type="Animation" id=12]
-[ext_resource path="res://animations/creature_idle.tres" type="Animation" id=13]
-[ext_resource path="res://entities/CreatureAnimTree.gd" type="Script" id=14]
-[ext_resource path="res://entities/CreatureArmAnim.gd" type="Script" id=15]
-[ext_resource path="res://animations/creature_punch_right.tres" type="Animation" id=16]
-[ext_resource path="res://animations/creature_punch_left.tres" type="Animation" id=17]
-[ext_resource path="res://entities/equipment/AxeBloody.tscn" type="PackedScene" id=18]
+[ext_resource path="res://entities/CreatureArmAnim.gd" type="Script" id=12]
+[ext_resource path="res://animations/creature_punch_right.tres" type="Animation" id=13]
+[ext_resource path="res://animations/creature_punch_left.tres" type="Animation" id=14]
+[ext_resource path="res://animations/creature_idle.tres" type="Animation" id=15]
+[ext_resource path="res://animations/creature_walk.tres" type="Animation" id=16]
+[ext_resource path="res://entities/equipment/AxeBloody.tscn" type="PackedScene" id=17]
+[ext_resource path="res://entities/CreatureAnimTree.gd" type="Script" id=18]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -131,13 +131,12 @@ __meta__ = { "_edit_bone_":true }
 
 [node name="RightHand" type="Sprite" parent="Torso/RightShoulder/RightArm"]
 
-transform/pos = Vector2( 2.38419e-07, 5.00003 )
+transform/pos = Vector2( 0, 5 )
 transform/rot = 91.0
 texture = ExtResource( 9 )
 offset = Vector2( 1, 15 )
 vframes = 4
 hframes = 8
-frame = 11
 region_rect = Rect2( 11, 75, 9, 11 )
 __meta__ = { "_edit_bone_":true }
 
@@ -175,12 +174,10 @@ __meta__ = { "_edit_bone_":true }
 
 [node name="LeftHand" type="Sprite" parent="Torso/LeftShoulder/LeftArm"]
 
-transform/pos = Vector2( 2.02656e-06, 5 )
+transform/pos = Vector2( 0, 5 )
 texture = ExtResource( 10 )
-offset = Vector2( 0, 2 )
-vframes = 2
+offset = Vector2( 0, 8 )
 hframes = 8
-frame = 7
 region_rect = Rect2( 43, 75, 9, 11 )
 __meta__ = { "_edit_bone_":true }
 
@@ -238,24 +235,16 @@ params/anim_speed_scale = 1.0
 params/anim_initial_pos = 0.0
 color/color_ramp = SubResource( 3 )
 
-[node name="AnimationTreePlayer" type="AnimationTreePlayer" parent="Torso/LeftShoulder/LeftArm/LeftHand/Light2D"]
-
-playback/process_mode = 1
-base_path = NodePath("..")
-master_player = NodePath("")
-data = { "active":false, "connections":[ "anim 2", "state", 0, "anim", "state", 1, "state", "out", 0 ], "master":NodePath(""), "nodes":[ { "id":"state", "pos":Vector2( 807, 57 ), "transitions":[ { "auto_advance":false }, { "auto_advance":false } ], "type":"transition", "xfade":0.3 }, { "animation":ExtResource( 12 ), "filter":[  ], "id":"anim", "pos":Vector2( 508, 120 ), "type":"animation" }, { "id":"out", "pos":Vector2( 1100, 76 ), "type":"output" }, { "animation":ExtResource( 13 ), "filter":[  ], "id":"anim 2", "pos":Vector2( 517, 5 ), "type":"animation" } ] }
-script/script = ExtResource( 14 )
-
 [node name="ArmAnimation" type="Node" parent="."]
 
-script/script = ExtResource( 15 )
+script/script = ExtResource( 12 )
 
 [node name="RightArmPlayer" type="AnimationPlayer" parent="ArmAnimation"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/creature_punch_right = ExtResource( 16 )
+anims/creature_punch_right = ExtResource( 13 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -266,7 +255,7 @@ autoplay = ""
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/creature_punch_left = ExtResource( 17 )
+anims/creature_punch_left = ExtResource( 14 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -277,23 +266,31 @@ autoplay = ""
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/creature_idle = ExtResource( 13 )
-anims/creature_walk = ExtResource( 12 )
+anims/creature_idle = ExtResource( 15 )
+anims/creature_walk = ExtResource( 16 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = ""
 
-[node name="Axe" parent="." instance=ExtResource( 18 )]
+[node name="Axe" parent="." instance=ExtResource( 17 )]
 
 visibility/visible = false
 transform/pos = Vector2( -15.9959, -0.842992 )
 transform/rot = 0.999998
 
+[node name="AnimationTreePlayer" type="AnimationTreePlayer" parent="."]
+
+playback/process_mode = 0
+base_path = NodePath("..")
+master_player = NodePath("")
+data = { "active":false, "connections":[ "anim", "scale", 0, "anim 2", "state", 0, "scale", "state", 1, "state", "out", 0 ], "master":NodePath(""), "nodes":[ { "id":"scale", "pos":Vector2( 629, 116 ), "scale":1.5, "type":"timescale" }, { "id":"state", "pos":Vector2( 807, 57 ), "transitions":[ { "auto_advance":false }, { "auto_advance":false } ], "type":"transition", "xfade":0.3 }, { "animation":ExtResource( 16 ), "filter":[  ], "id":"anim", "pos":Vector2( 508, 120 ), "type":"animation" }, { "id":"out", "pos":Vector2( 1100, 76 ), "type":"output" }, { "animation":ExtResource( 15 ), "filter":[  ], "id":"anim 2", "pos":Vector2( 517, 5 ), "type":"animation" } ] }
+script/script = ExtResource( 18 )
+
 [connection signal="attack" from="." to="ArmAnimation" method="_on_Player_attack"]
 
-[connection signal="moved" from="." to="Torso/LeftShoulder/LeftArm/LeftHand/Light2D/AnimationTreePlayer" method="_on_Player_moved"]
+[connection signal="moved" from="." to="AnimationTreePlayer" method="_on_Player_moved"]
 
-[connection signal="stopped" from="." to="Torso/LeftShoulder/LeftArm/LeftHand/Light2D/AnimationTreePlayer" method="_on_Player_stopped"]
+[connection signal="stopped" from="." to="AnimationTreePlayer" method="_on_Player_stopped"]
 
 
