@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=1]
+[gd_scene load_steps=35 format=1]
 
 [ext_resource path="res://scripts/thescript.gd" type="Script" id=1]
 [ext_resource path="res://scripts/parallax.gd" type="Script" id=2]
@@ -25,7 +25,7 @@
 [ext_resource path="res://scripts/aoe_damage.gd" type="Script" id=23]
 [ext_resource path="res://components/EffectModule.tscn" type="PackedScene" id=24]
 [ext_resource path="res://resources/sfx/dunk.wav" type="Sample" id=25]
-[ext_resource path="res://resources/light_tex.tex" type="Texture" id=26]
+[ext_resource path="res://static_objects/MapChangeTrigger.tscn" type="PackedScene" id=26]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -82,11 +82,6 @@ radius = 15.0
 [sub_resource type="SampleLibrary" id=8]
 
 samples/dunk = { "db":0.0, "pitch":1.0, "sample":ExtResource( 25 ) }
-
-[sub_resource type="CircleShape2D" id=9]
-
-custom_solver_bias = 0.0
-radius = 25.0
 
 [node name="Game" type="Control"]
 
@@ -481,28 +476,15 @@ config/polyphony = 1
 config/samples = SubResource( 8 )
 config/pitch_random = 0.1
 
-[node name="MapChangeTrigger" type="Area2D" parent="."]
+[node name="MapChangeTrigger" parent="." instance=ExtResource( 26 )]
 
-transform/pos = Vector2( 268, 329 )
-input/pickable = true
-shapes/0/shape = SubResource( 9 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/0/trigger = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
+transform/pos = Vector2( 398, 396 )
+map_name = "Test3.tscn"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MapChangeTrigger"]
+[node name="MapChangeTrigger1" parent="." instance=ExtResource( 26 )]
 
-shape = SubResource( 9 )
-trigger = true
-_update_shape_index = 0
-
-[node name="Sprite" type="Sprite" parent="MapChangeTrigger"]
-
-transform/scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 26 )
+transform/pos = Vector2( 90, 531 )
+map_name = "Test2.tscn"
 
 [connection signal="attack" from="Mob 2/SceletonCraig" to="Mob 2/SceletonCraig/ArmAnimation" method="_on_Creature_attack"]
 
@@ -536,6 +518,8 @@ texture = ExtResource( 26 )
 
 [connection signal="timeout" from="PoisonExplode/Timer" to="PoisonExplode" method="_on_poison_tick"]
 
-[connection signal="body_enter" from="MapChangeTrigger" to="." method="_on_MapChangeTrigger_body_enter"]
+[connection signal="change_map" from="MapChangeTrigger" to="." method="_on_MapChangeTrigger_change_map"]
+
+[connection signal="change_map" from="MapChangeTrigger1" to="." method="_on_MapChangeTrigger_change_map"]
 
 

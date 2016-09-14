@@ -41,6 +41,6 @@ func _on_HUD_pause(pressed):
 	get_tree().set_pause(pressed)
 
 
-func _on_MapChangeTrigger_body_enter(body):
+func _on_MapChangeTrigger_change_map(body, name):
 	if body.get_name() == "Player_object":
-		change_map("Test3.tscn")
+		change_map(name)
