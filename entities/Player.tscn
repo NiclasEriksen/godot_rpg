@@ -180,7 +180,6 @@ texture = ExtResource( 10 )
 offset = Vector2( 0, 2 )
 vframes = 2
 hframes = 8
-frame = 7
 region_rect = Rect2( 43, 75, 9, 11 )
 __meta__ = { "_edit_bone_":true }
 
@@ -221,7 +220,7 @@ config/time_scale = 2.0
 config/emitting = false
 config/local_space = false
 params/direction = 90.0
-params/spread = 10.0
+params/spread = 35.0
 params/linear_velocity = 20.0
 params/spin_velocity = 0.0
 params/orbit_velocity = 0.0
@@ -238,7 +237,7 @@ params/anim_speed_scale = 1.0
 params/anim_initial_pos = 0.0
 color/color_ramp = SubResource( 3 )
 
-[node name="AnimationTreePlayer" type="AnimationTreePlayer" parent="."]
+[node name="AnimationTreePlayer" type="AnimationTreePlayer" parent="Torso/LeftShoulder/LeftArm/LeftHand/Light2D"]
 
 playback/process_mode = 1
 base_path = NodePath("..")
@@ -292,8 +291,8 @@ transform/rot = 0.999998
 
 [connection signal="attack" from="." to="ArmAnimation" method="_on_Player_attack"]
 
-[connection signal="moved" from="." to="AnimationTreePlayer" method="_on_Player_moved"]
+[connection signal="moved" from="." to="Torso/LeftShoulder/LeftArm/LeftHand/Light2D/AnimationTreePlayer" method="_on_Player_moved"]
 
-[connection signal="stopped" from="." to="AnimationTreePlayer" method="_on_Player_stopped"]
+[connection signal="stopped" from="." to="Torso/LeftShoulder/LeftArm/LeftHand/Light2D/AnimationTreePlayer" method="_on_Player_stopped"]
 
 

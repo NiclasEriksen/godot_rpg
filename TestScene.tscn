@@ -418,7 +418,7 @@ color/color_ramp = SubResource( 5 )
 
 [node name="PoisonExplode" type="Sprite" parent="."]
 
-transform/pos = Vector2( 201, 204 )
+transform/pos = Vector2( 609.972, 79.9719 )
 transform/scale = Vector2( 1.37325, 1.37325 )
 z/z = 5
 texture = ExtResource( 22 )
@@ -487,11 +487,11 @@ config/pitch_random = 0.1
 
 [connection signal="jump" from="Player_object" to="Camera2D" method="_on_Player_object_jump"]
 
-[connection signal="moved" from="Player_object" to="Player_object/AnimationTreePlayer" method="_on_Player_moved"]
-
 [connection signal="moved" from="Player_object" to="Camera2D" method="_on_Player_object_moved"]
 
-[connection signal="stopped" from="Player_object" to="Player_object/AnimationTreePlayer" method="_on_Player_stopped"]
+[connection signal="moved" from="Player_object" to="Player_object/Torso/LeftShoulder/LeftArm/LeftHand/Light2D/AnimationTreePlayer" method="_on_Player_moved"]
+
+[connection signal="stopped" from="Player_object" to="Player_object/Torso/LeftShoulder/LeftArm/LeftHand/Light2D/AnimationTreePlayer" method="_on_Player_stopped"]
 
 [connection signal="pause" from="UILayer/HUD" to="." method="_on_HUD_pause"]
 
