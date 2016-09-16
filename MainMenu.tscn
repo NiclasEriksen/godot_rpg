@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=1]
+[gd_scene load_steps=5 format=1]
 
-[ext_resource path="res://scripts/menu_control.gd" type="Script" id=1]
-[ext_resource path="res://themes/button.tres" type="Theme" id=2]
+[ext_resource path="res://resources/ui/base_theme.tres" type="Theme" id=1]
+[ext_resource path="res://scripts/menu_control.gd" type="Script" id=2]
+[ext_resource path="res://themes/button.tres" type="Theme" id=3]
+[ext_resource path="res://resources/totally_not_source_pro.fnt" type="BitmapFont" id=4]
 
 [node name="TextureFrame" type="TextureFrame"]
 
@@ -9,36 +11,50 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
+theme/theme = ExtResource( 1 )
 margin/left = 0.0
 margin/top = 0.0
 margin/right = 40.0
 margin/bottom = 40.0
 stretch_mode = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Panel" type="Panel" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+theme/theme = ExtResource( 1 )
+margin/left = 650.0
+margin/top = 300.0
+margin/right = 830.0
+margin/bottom = 700.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 640.0
-margin/top = 324.0
-margin/right = 800.0
-margin/bottom = 540.0
+theme/theme = ExtResource( 1 )
+margin/left = 21.0
+margin/top = 100.0
+margin/right = 176.0
+margin/bottom = 369.0
 alignment = 0
-script/script = ExtResource( 1 )
+script/script = ExtResource( 2 )
 
-[node name="NewGame" type="Button" parent="VBoxContainer"]
+[node name="NewGame" type="Button" parent="Panel/VBoxContainer"]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 2
-theme/theme = ExtResource( 2 )
+theme/theme = ExtResource( 3 )
 margin/left = 0.0
 margin/top = 0.0
-margin/right = 160.0
-margin/bottom = 21.0
+margin/right = 155.0
+margin/bottom = 43.0
 disabled = true
 toggle_mode = false
 click_on_press = true
@@ -47,17 +63,17 @@ shortcut = null
 text = "New Game"
 flat = true
 
-[node name="TestScene" type="Button" parent="VBoxContainer"]
+[node name="TestScene" type="Button" parent="Panel/VBoxContainer"]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 2
-theme/theme = ExtResource( 2 )
+theme/theme = ExtResource( 3 )
 margin/left = 0.0
-margin/top = 25.0
-margin/right = 160.0
-margin/bottom = 46.0
+margin/top = 47.0
+margin/right = 155.0
+margin/bottom = 90.0
 toggle_mode = false
 click_on_press = true
 enabled_focus_mode = 0
@@ -65,7 +81,7 @@ shortcut = null
 text = "Test Scene [debug]"
 flat = true
 
-[node name="MapList" type="ItemList" parent="VBoxContainer"]
+[node name="MapList" type="ItemList" parent="Panel/VBoxContainer"]
 
 rect/min_size = Vector2( 0, 80 )
 focus/ignore_mouse = false
@@ -73,21 +89,22 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 50.0
-margin/right = 160.0
-margin/bottom = 130.0
+margin/top = 94.0
+margin/right = 155.0
+margin/bottom = 174.0
+custom_fonts/font = ExtResource( 4 )
 
-[node name="Options" type="Button" parent="VBoxContainer"]
+[node name="Options" type="Button" parent="Panel/VBoxContainer"]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-theme/theme = ExtResource( 2 )
+theme/theme = ExtResource( 3 )
 margin/left = 0.0
-margin/top = 134.0
-margin/right = 160.0
-margin/bottom = 155.0
+margin/top = 178.0
+margin/right = 155.0
+margin/bottom = 221.0
 toggle_mode = false
 click_on_press = true
 enabled_focus_mode = 0
@@ -95,23 +112,23 @@ shortcut = null
 text = "Options"
 flat = true
 
-[node name="Quit" type="Button" parent="VBoxContainer"]
+[node name="Quit" type="Button" parent="Panel/VBoxContainer"]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-theme/theme = ExtResource( 2 )
+theme/theme = ExtResource( 1 )
 margin/left = 0.0
-margin/top = 159.0
-margin/right = 160.0
-margin/bottom = 180.0
+margin/top = 225.0
+margin/right = 155.0
+margin/bottom = 269.0
 toggle_mode = false
 click_on_press = true
 enabled_focus_mode = 0
 shortcut = null
 text = "Quit"
-flat = true
+flat = false
 
 [node name="PopupDialog" type="PopupDialog" parent="."]
 
@@ -141,14 +158,14 @@ bbcode/enabled = true
 bbcode/bbcode = "No map selected!"
 visible_characters = -1
 
-[connection signal="released" from="VBoxContainer/NewGame" to="VBoxContainer" method="_on_NewGame_released"]
+[connection signal="released" from="Panel/VBoxContainer/NewGame" to="Panel/VBoxContainer" method="_on_NewGame_released"]
 
-[connection signal="released" from="VBoxContainer/TestScene" to="VBoxContainer" method="_on_TestScene_released"]
+[connection signal="released" from="Panel/VBoxContainer/TestScene" to="Panel/VBoxContainer" method="_on_TestScene_released"]
 
-[connection signal="item_activated" from="VBoxContainer/MapList" to="VBoxContainer" method="_on_MapList_item_activated"]
+[connection signal="item_activated" from="Panel/VBoxContainer/MapList" to="Panel/VBoxContainer" method="_on_MapList_item_activated"]
 
-[connection signal="item_selected" from="VBoxContainer/MapList" to="VBoxContainer" method="_on_MapList_item_selected"]
+[connection signal="item_selected" from="Panel/VBoxContainer/MapList" to="Panel/VBoxContainer" method="_on_MapList_item_selected"]
 
-[connection signal="released" from="VBoxContainer/Quit" to="VBoxContainer" method="_on_Quit_released"]
+[connection signal="released" from="Panel/VBoxContainer/Quit" to="Panel/VBoxContainer" method="_on_Quit_released"]
 
 
