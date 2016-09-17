@@ -18,7 +18,7 @@ Button/styles/focus = null
 Button/styles/hover = null
 Button/styles/normal = ExtResource( 2 )
 Button/styles/pressed = null
-Panel/styles/panel = ExtResource( 3 )
+Panel/styles/panel = ExtResource( 2 )
 Panel/styles/panelf = ExtResource( 3 )
 Panel/styles/panelnc = ExtResource( 3 )
 
