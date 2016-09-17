@@ -1,24 +1,48 @@
-[gd_resource type="Theme" load_steps=4 format=1]
+[gd_resource type="Theme" load_steps=6 format=1]
 
 [ext_resource path="res://resources/ubuntu.fnt" type="BitmapFont" id=1]
-[ext_resource path="res://resources/ui/pixelboxtexture.tres" type="StyleBox" id=2]
-[ext_resource path="res://resources/ui/mainmenubox.tres" type="StyleBox" id=3]
+[ext_resource path="res://resources/ui/pixelboxtexture_press.tres" type="StyleBox" id=2]
+[ext_resource path="res://resources/ui/pixelboxtexture.tres" type="StyleBox" id=3]
+[ext_resource path="res://resources/ui/pixelboxtexture_hover.tres" type="StyleBox" id=4]
+[ext_resource path="res://resources/ui/mainmenubox.tres" type="StyleBox" id=5]
 
 [resource]
 
 default_font = ExtResource( 1 )
-Button/colors/font_color = Color( 0.0898438, 0.0898438, 0.0898438, 1 )
+Button/colors/font_color = Color( 0.921875, 0.850079, 0.713013, 1 )
 Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
-Button/colors/font_color_hover = Color( 0.355469, 0.355469, 0.355469, 1 )
-Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/colors/font_color_hover = Color( 0.667969, 0.636209, 0.560989, 1 )
+Button/colors/font_color_pressed = Color( 1, 0.701961, 0, 1 )
 Button/constants/hseparation = 2
 Button/fonts/font = ExtResource( 1 )
 Button/styles/disabled = null
 Button/styles/focus = null
-Button/styles/hover = null
-Button/styles/normal = ExtResource( 2 )
-Button/styles/pressed = null
-Panel/styles/panel = ExtResource( 2 )
-Panel/styles/panelf = ExtResource( 3 )
-Panel/styles/panelnc = ExtResource( 3 )
+Button/styles/hover = ExtResource( 2 )
+Button/styles/normal = ExtResource( 3 )
+Button/styles/pressed = ExtResource( 4 )
+ItemList/colors/font_color = Color( 0.886719, 0.770981, 0.571518, 1 )
+ItemList/colors/font_color_selected = Color( 1, 0.75, 0, 1 )
+ItemList/colors/guide_color = Color( 0.199219, 0.125722, 0.0770416, 0.1 )
+ItemList/constants/hseparation = 0
+ItemList/constants/icon_margin = 0
+ItemList/constants/line_separation = 2
+ItemList/constants/vseparation = 2
+ItemList/fonts/font = ExtResource( 1 )
+ItemList/styles/bg = ExtResource( 3 )
+ItemList/styles/bg_focus = ExtResource( 4 )
+ItemList/styles/cursor = null
+ItemList/styles/cursor_unfocused = ExtResource( 4 )
+ItemList/styles/selected = null
+ItemList/styles/selected_focus = ExtResource( 2 )
+Panel/styles/panel = ExtResource( 3 )
+Panel/styles/panelf = ExtResource( 5 )
+Panel/styles/panelnc = ExtResource( 5 )
+VScrollBar/icons/decrement = null
+VScrollBar/icons/decrement_hilite = null
+VScrollBar/icons/increment = null
+VScrollBar/icons/increment_hilite = null
+VScrollBar/styles/grabber = null
+VScrollBar/styles/grabber_hilite = null
+VScrollBar/styles/scroll = null
+VScrollBar/styles/scroll_focus = null
 
