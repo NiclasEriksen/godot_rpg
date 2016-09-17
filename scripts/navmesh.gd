@@ -7,7 +7,7 @@ var closestPos = Vector2(0,0)
 
 func _ready():
 	font = load("res://resources/mono_font.fnt")
-	set_process_input(true)
+	# set_process_input(true)
 	# var n = get_node("Genmap1")
 	#var w = get_node("/root/globals").MAP_WIDTH
 	#var h = get_node("/root/globals").MAP_HEIGHT
@@ -45,7 +45,7 @@ func _input(event):
 		if(event.button_index == 2):
 			# var sp = get_parent().get_node("Player_object").get_node("Camera2D").get_translated_pos(Vector2(event.x, event.y))
 			var sp = get_global_mouse_pos()
-			path = get_simple_path(get_parent().get_node("Mob 2").get_pos(), sp)
+			#path = get_simple_path(get_parent().get_node("Mob 2").get_pos(), sp)
 			var new_curve = Curve2D.new()
 			for p in path:
 				# print(p)
