@@ -49,7 +49,6 @@ max_vel = 100
 
 [node name="Light2D1" type="Light2D" parent="."]
 
-visibility/visible = false
 enabled = true
 texture = ExtResource( 2 )
 offset = Vector2( 0, 0 )
@@ -90,6 +89,20 @@ config/pitch_random = 0.0
 script/script = ExtResource( 5 )
 
 [node name="StatsModule" parent="." instance=ExtResource( 6 )]
+
+base_strength = 0
+base_intelligence = 0
+base_agility = 0
+base_spirit = 0
+base_stamina = 0
+base_spell_power = 0.0
+base_phys_crit = 0.0
+base_spell_crit = 0.0
+base_hit_rate = 0
+base_armor = 0
+base_magic_resist = 0
+base_movement_speed = 90
+base_attack_speed = 2.0
 
 [node name="Torso" type="Sprite" parent="."]
 
