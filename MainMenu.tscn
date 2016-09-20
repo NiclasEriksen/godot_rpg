@@ -82,20 +82,16 @@ flat = false
 
 [node name="MapList" type="ItemList" parent="Panel/VBoxContainer"]
 
-anchor/left = 3
-anchor/top = 3
-anchor/right = 3
-anchor/bottom = 3
 rect/min_size = Vector2( 0, 80 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 theme/theme = ExtResource( 1 )
-margin/left = 117.0
-margin/top = 120.0
-margin/right = -117.0
-margin/bottom = 40.0
+margin/left = 0.0
+margin/top = 72.0
+margin/right = 234.0
+margin/bottom = 152.0
 
 [node name="Options" type="Button" parent="Panel/VBoxContainer"]
 

@@ -32,7 +32,7 @@ func _ready():
 
 func _input(event):
 	if get_node("StatsModule"):
-		max_vel = get_node("StatsModule").get("movement_speed")
+		max_vel = get_node("StatsModule").get_actual("movement_speed")
 	if event.is_action_pressed("MOVE_UP"):
 		vel.y = vel.y - max_vel
 	elif event.is_action_released("MOVE_UP"):

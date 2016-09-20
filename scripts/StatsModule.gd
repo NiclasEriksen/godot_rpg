@@ -16,7 +16,6 @@ export(float) var base_spell_crit = 0.0
 export(int) var base_hit_rate = 0
 export(int) var base_armor = 0
 export(int) var base_magic_resist = 0
-export(int) var movement_speed = 100	# Replace with base_movement_speed
 export(int) var base_movement_speed = 60
 export(int) var base_attack_speed = 2.0
 var hp = max_hp
@@ -52,6 +51,7 @@ var final_stats = {
 	armor=base_armor,
 	magic_resist=base_magic_resist,
 	attack_speed=base_attack_speed,
+	movement_speed=base_movement_speed,
 }
 
 #TODO
@@ -84,11 +84,6 @@ func check_negatives():
 
 
 func apply_effect(effectmodule, originmodule): # Recieves an EffectModule, and another optional statsmodule for calculating final effects.
-	# for e in effect_list:
-	#   if get(e[0]) or get(e[0]) == 0:   # check if attribute exists
-	#	   set(e[0], get(e[0]) + e[1])
-	#   else:
-	#	   print("StatsModule does not recognize that attribute: ", e[0])
 	if get(effectmodule.effect_stat) or get(effectmodule.effect_stat) == 0:
 		# print(effectmodule.effect_stat, effectmodule.amount)
 		set(effectmodule.effect_stat, get(effectmodule.effect_stat) + effectmodule.amount)
@@ -96,6 +91,10 @@ func apply_effect(effectmodule, originmodule): # Recieves an EffectModule, and a
 		print("StatsModule does not recognize that attribute: ", effectmodule.effect_stat)
 
 func get_actual(stat):
+	if final_stats.has(stat):
+		return final_stats[stat]
+
+func get_base(stat):
 	pass
 
 # Scaling and modifier functions #
