@@ -261,8 +261,10 @@ autostart = true
 
 [node name="EffectModule" parent="PoisonExplode" instance=ExtResource( 14 )]
 
-effect_type = "death"
 amount = -1.0
+is_buff = true
+buff_time = 1.0
+buff_tick_interval = 0.3
 
 [node name="SamplePlayer2D" type="SamplePlayer2D" parent="PoisonExplode"]
 

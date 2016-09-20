@@ -16,7 +16,7 @@ export(float) var base_spell_crit = 0.0
 export(int) var base_hit_rate = 0
 export(int) var base_armor = 0
 export(int) var base_magic_resist = 0
-export(int) var base_movement_speed = 60
+export(int) var base_movement_speed = 90
 export(int) var base_attack_speed = 2.0
 var hp = max_hp
 var mp = max_mp
@@ -54,6 +54,8 @@ var final_stats = {
 	movement_speed=base_movement_speed,
 }
 
+var active_effects = []
+
 #TODO
 # getset functions for all stats, reroute to functions that calculate final stats
 # get = final stat, set = set base stat (should not be used dynamically)
@@ -72,6 +74,15 @@ func _process(delta):
 	if mp > max_mp:
 		mp = max_mp
 	check_negatives()
+	for e in active_effects:
+		var buff_result = [false, false]
+		buff_result = e.buff_update(delta)
+		if not buff_result[0]:
+			active_effects.erase(e)
+			print("Removing buff.")
+		elif buff_result[1]:
+			print("Applying tick.")
+			apply_effect(e, null)
 
 func _fixed_process(delta):
 	pass
@@ -84,6 +95,11 @@ func check_negatives():
 
 
 func apply_effect(effectmodule, originmodule): # Recieves an EffectModule, and another optional statsmodule for calculating final effects.
+	if effectmodule.is_buff:
+		if not effectmodule in active_effects:
+			active_effects.append(effectmodule)
+			print("Added buff.")
+			return
 	if get(effectmodule.effect_stat) or get(effectmodule.effect_stat) == 0:
 		# print(effectmodule.effect_stat, effectmodule.amount)
 		set(effectmodule.effect_stat, get(effectmodule.effect_stat) + effectmodule.amount)
