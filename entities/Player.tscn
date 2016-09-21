@@ -49,24 +49,25 @@ max_vel = 100
 
 [node name="Light2D1" type="Light2D" parent="."]
 
+visibility/visible = false
 enabled = true
 texture = ExtResource( 2 )
 offset = Vector2( 0, 0 )
-scale = 0.5
-color = Color( 1, 0.796539, 0.558594, 1 )
+scale = 0.75
+color = Color( 1, 0.911774, 0.808594, 1 )
 energy = 1.0
-mode = 0
+mode = 2
 range/height = 0.0
 range/z_min = -1024
-range/z_max = 1
+range/z_max = 1024
 range/layer_min = 0
 range/layer_max = 0
-range/item_mask = 1025
+range/item_mask = 1
 shadow/enabled = true
 shadow/color = Color( 0, 0, 0, 1 )
 shadow/buffer_size = 2048
 shadow/esm_multiplier = 80.0
-shadow/item_mask = 1
+shadow/item_mask = 2
 script/script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

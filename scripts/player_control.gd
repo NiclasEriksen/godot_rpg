@@ -87,3 +87,7 @@ func _process(delta):
 func jump():
 	self.emit_signal("jump")
 	self.emit_signal("moved", get_pos(), get_rot())
+
+
+func _on_CanvasModulate_nightmode( state ):
+	get_node("Light2D1").set_hidden(not state)

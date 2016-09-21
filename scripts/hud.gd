@@ -1,6 +1,7 @@
 extends Node2D
 
 signal pause(state)
+signal nightmode(state)
 
 var player = null
 
@@ -21,3 +22,7 @@ func _on_PauseButton_toggled(state):
 
 func _on_HealthBar_value_changed(value):
 	get_node("ResourceBars/HealthBar/AnimationPlayer").play("change")
+
+
+func _on_NightButton_toggled( pressed ):
+	emit_signal("nightmode", pressed)
