@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://entities/projectiles/Fireball.gd" type="Script" id=1]
 [ext_resource path="res://resources/effects/fireball.png" type="Texture" id=2]
 [ext_resource path="res://resources/effects/FireExplosion.png" type="Texture" id=3]
+[ext_resource path="res://components/EffectModule.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -106,6 +107,13 @@ playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = ""
+
+[node name="EffectModule" parent="." instance=ExtResource( 4 )]
+
+effect_type = "fire"
+is_buff = false
+buff_time = 1.0
+buff_tick_interval = 0.3
 
 [connection signal="body_enter" from="Area2D" to="." method="_on_Area2D_body_enter"]
 

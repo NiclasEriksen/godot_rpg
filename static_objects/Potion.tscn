@@ -83,6 +83,9 @@ autoplay = ""
 
 effect_type = "life"
 amount = 2.0
+is_buff = false
+buff_time = 1.0
+buff_tick_interval = 0.3
 
 [connection signal="body_enter" from="Area2D" to="." method="_on_Area2D_body_enter"]
 
