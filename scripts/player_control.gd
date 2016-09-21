@@ -7,6 +7,7 @@ signal stopped
 signal jump
 signal attack
 onready var stats = get_node("StatsModule")
+var fireball = load("res://entities/projectiles/Fireball.tscn")
 var attacking = false
 var sprinting = false
 var last_pos = null
@@ -57,6 +58,13 @@ func _process(delta):
 	if Input.is_action_pressed("ATTACK"):
 		if not attacking:
 			emit_signal("attack")
+			var ol = root.get_node("ObjectLayer")
+			var fbi = fireball.instance()
+			fbi.set_rot(get_rot())
+			fbi.set_pos(get_pos())
+			fbi.set_velocity(300)
+			ol.add_child(fbi)
+			
 			# get_node("StatsModule").apply_effect([["mp", -1]], null)
 			attacking = true
 	else:
