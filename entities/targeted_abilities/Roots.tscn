@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=1]
+[gd_scene load_steps=9 format=1]
 
 [ext_resource path="res://entities/targeted_abilities/Roots.gd" type="Script" id=1]
 [ext_resource path="res://resources/effects/Root.png" type="Texture" id=2]
@@ -35,7 +35,34 @@ tracks/2/type = "value"
 tracks/2/path = NodePath("Growth:frame")
 tracks/2/interp = 1
 tracks/2/imported = false
-tracks/2/keys = { "times":FloatArray( 0, 0.6 ), "transitions":FloatArray( 1, 0.31864 ), "update":0, "values":[ 0, 12 ] }
+tracks/2/keys = { "times":FloatArray( 0, 0.6 ), "transitions":FloatArray( 1.8025, 0.31864 ), "update":0, "values":[ 0, 12 ] }
+
+[sub_resource type="Animation" id=4]
+
+resource/name = "Shrink"
+length = 0.6
+loop = false
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:visibility/visible")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "update":1, "values":[ false ] }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Growth:visibility/visible")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = { "times":FloatArray( 0, 0.6 ), "transitions":FloatArray( 1, 1 ), "update":1, "values":[ true, false ] }
+tracks/2/type = "value"
+tracks/2/path = NodePath("Growth:frame")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = { "times":FloatArray( 0, 0.6 ), "transitions":FloatArray( 2.14355, 1 ), "update":0, "values":[ 12, 0 ] }
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/imported = false
+tracks/3/keys = { "times":FloatArray( 0.6 ), "transitions":FloatArray( 1 ), "values":[ { "args":[  ], "method":"kill" } ] }
 
 [node name="Roots" type="Node2D"]
 
@@ -60,7 +87,6 @@ _update_shape_index = 0
 
 [node name="Sprite" type="Sprite" parent="."]
 
-visibility/visible = false
 texture = ExtResource( 2 )
 offset = Vector2( 0, -10 )
 
@@ -103,6 +129,7 @@ playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
 anims/Grow = SubResource( 3 )
+anims/Shrink = SubResource( 4 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]

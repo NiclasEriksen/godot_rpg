@@ -2,7 +2,8 @@
 extends Node2D
 
 var lifetime = 0.0
-var max_time = 5.0
+var max_time = 2.0
+var grown = false
 
 func _ready():
 	set_process(true)
@@ -10,10 +11,14 @@ func _ready():
 	print("Growing")
 
 func _process(delta):
-	lifetime += delta
-	if lifetime >= max_time:
-		print("Dying!")
-		queue_free()
+	if not grown:
+		lifetime += delta
+		if lifetime >= max_time:
+			get_node("AnimationPlayer").play("Shrink")
+			grown = true
+
+func kill():
+	queue_free()
 
 func impact(body):
 	get_node("Area2D").call_deferred("set_enable_monitoring", false)
