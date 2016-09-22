@@ -28,7 +28,9 @@ func impact(body):
 	#get_node("AnimationPlayer").play("Explode")
 	attached = true
 	if body.get_node("StatsModule"):
-		set_pos(body.get_pos())
+		body.set_pos(get_pos())
+		get_node("StunModule").buff_time = max_time - lifetime
+		get_node("EffectModule").buff_time = max_time - lifetime
 		body.get_node("StatsModule").apply_effect(get_node("StunModule"), null)
 		body.get_node("StatsModule").apply_effect(get_node("EffectModule"), null)
 		print("ANAMAI DEIMEIGED!")
