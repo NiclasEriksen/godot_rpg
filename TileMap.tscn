@@ -4,40 +4,40 @@
 [ext_resource path="res://resources/blank.png" type="Texture" id=2]
 [ext_resource path="res://resources/music/bgm01.ogg" type="AudioStream" id=3]
 
-[sub_resource type="ConvexPolygonShape2D" id=161]
+[sub_resource type="ConvexPolygonShape2D" id=1]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 3, 32, 3, 6, 9, 0, 32, 0, 32, 32 )
 
-[sub_resource type="OccluderPolygon2D" id=162]
+[sub_resource type="OccluderPolygon2D" id=2]
 
 closed = true
 cull_mode = 0
 polygon = Vector2Array( 32, 32, 32, 0, 9, 0, 3, 6, 3, 32 )
 
-[sub_resource type="NavigationPolygon" id=160]
+[sub_resource type="NavigationPolygon" id=3]
 
 vertices = Vector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
 polygons = [ IntArray( 0, 1, 2, 3, 0 ) ]
 outlines = [ Vector2Array( -16, -16, 16, -16, 16, 16, -16, 16, -16, -16 ) ]
 
-[sub_resource type="ConvexPolygonShape2D" id=163]
+[sub_resource type="ConvexPolygonShape2D" id=4]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 0, 32, 0, 0, 32, 0, 32, 32 )
 
-[sub_resource type="OccluderPolygon2D" id=164]
+[sub_resource type="OccluderPolygon2D" id=5]
 
 closed = true
 cull_mode = 0
 polygon = Vector2Array( 32, 32, 32, 0, 0, 0, 0, 32 )
 
-[sub_resource type="ConvexPolygonShape2D" id=165]
+[sub_resource type="ConvexPolygonShape2D" id=6]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 0, 0, 24, 0, 24, 28, 20, 32, 0, 32 )
 
-[sub_resource type="OccluderPolygon2D" id=166]
+[sub_resource type="OccluderPolygon2D" id=7]
 
 closed = true
 cull_mode = 0
@@ -56,7 +56,7 @@ region_rect = Rect2( 0, 0, 32, 32 )
 [node name="StaticBody2D" type="StaticBody2D" parent="wood_wall_l"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 161 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -75,7 +75,7 @@ trigger = false
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="wood_wall_l"]
 
-occluder = SubResource( 162 )
+occluder = SubResource( 2 )
 light_mask = 1
 
 [node name="blank" type="Sprite" parent="."]
@@ -86,7 +86,7 @@ region_rect = Rect2( 32, 32, 32, 32 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="blank"]
 
-navpoly = SubResource( 160 )
+navpoly = SubResource( 3 )
 enabled = true
 
 [node name="ground_stone" type="Sprite" parent="."]
@@ -99,7 +99,7 @@ region_rect = Rect2( 32, 32, 32, 32 )
 [node name="NavigationPolygonInstance1" type="NavigationPolygonInstance" parent="ground_stone"]
 
 transform/pos = Vector2( 16, 16 )
-navpoly = SubResource( 160 )
+navpoly = SubResource( 3 )
 enabled = true
 
 [node name="static_bush" type="Sprite" parent="."]
@@ -130,7 +130,7 @@ region_rect = Rect2( 0, 32, 32, 32 )
 
 [node name="NavigationPolygonInstance2" type="NavigationPolygonInstance" parent="ground_grass"]
 
-navpoly = SubResource( 160 )
+navpoly = SubResource( 3 )
 enabled = true
 
 [node name="wood_wall_m" type="Sprite" parent="."]
@@ -144,7 +144,7 @@ region_rect = Rect2( 32, 0, 32, 32 )
 [node name="StaticBody2D" type="StaticBody2D" parent="wood_wall_m"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 163 )
+shapes/0/shape = SubResource( 4 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -163,7 +163,7 @@ trigger = false
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="wood_wall_m"]
 
-occluder = SubResource( 164 )
+occluder = SubResource( 5 )
 light_mask = 1
 
 [node name="wood_wall_r" type="Sprite" parent="."]
@@ -177,7 +177,7 @@ region_rect = Rect2( 64, 0, 32, 32 )
 [node name="StaticBody2D" type="StaticBody2D" parent="wood_wall_r"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 165 )
+shapes/0/shape = SubResource( 6 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -196,7 +196,7 @@ trigger = false
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="wood_wall_r"]
 
-occluder = SubResource( 166 )
+occluder = SubResource( 7 )
 light_mask = 1
 
 

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resource_file type="TileSet" subresource_count="150" version="2.1" version_name="Godot Engine v2.1.stable.official">
-	<ext_resource path="res://resources/spritesheet.tex" type="Texture" index="2"></ext_resource>
-	<ext_resource path="res://resources/blank.png" type="Texture" index="1"></ext_resource>
 	<ext_resource path="res://resources/spritesheet2.png" type="Texture" index="0"></ext_resource>
-	<resource type="NavigationPolygon" path="local://6">
+	<ext_resource path="res://resources/blank.png" type="Texture" index="1"></ext_resource>
+	<ext_resource path="res://resources/spritesheet.tex" type="Texture" index="2"></ext_resource>
+	<resource type="NavigationPolygon" path="local://1">
 		<vector2_array name="vertices" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 		<array name="polygons" len="1" shared="false">
 			<int_array  len="4"> 				0, 1, 2, 3 </int_array>
@@ -13,12 +13,33 @@
 		</array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://5">
+	<resource type="ConvexPolygonShape2D" path="local://2">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			-10, -10, 10, -10, 10, 10, -10, 10 </vector2_array>
 
 	</resource>
-	<resource type="OccluderPolygon2D" path="local://8">
+	<resource type="OccluderPolygon2D" path="local://3">
+		<bool name="closed"> True </bool>
+		<int name="cull_mode"> 0 </int>
+		<vector2_array name="polygon" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
+
+	</resource>
+	<resource type="ConvexPolygonShape2D" path="local://4">
+		<real name="custom_solver_bias"> 0 </real>
+		<vector2_array name="points" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
+
+	</resource>
+	<resource type="NavigationPolygon" path="local://5">
+		<vector2_array name="vertices" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
+		<array name="polygons" len="1" shared="false">
+			<int_array  len="4"> 				0, 1, 2, 3 </int_array>
+		</array>
+		<array name="outlines" len="1" shared="false">
+			<vector2_array  len="4"> 				-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
+		</array>
+
+	</resource>
+	<resource type="OccluderPolygon2D" path="local://6">
 		<bool name="closed"> True </bool>
 		<int name="cull_mode"> 0 </int>
 		<vector2_array name="polygon" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
@@ -29,7 +50,7 @@
 		<vector2_array name="points" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="NavigationPolygon" path="local://10">
+	<resource type="NavigationPolygon" path="local://8">
 		<vector2_array name="vertices" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 		<array name="polygons" len="1" shared="false">
 			<int_array  len="4"> 				0, 1, 2, 3 </int_array>
@@ -39,18 +60,18 @@
 		</array>
 
 	</resource>
-	<resource type="OccluderPolygon2D" path="local://11">
+	<resource type="OccluderPolygon2D" path="local://9">
 		<bool name="closed"> True </bool>
 		<int name="cull_mode"> 0 </int>
 		<vector2_array name="polygon" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://9">
+	<resource type="ConvexPolygonShape2D" path="local://10">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="NavigationPolygon" path="local://13">
+	<resource type="NavigationPolygon" path="local://11">
 		<vector2_array name="vertices" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 		<array name="polygons" len="1" shared="false">
 			<int_array  len="4"> 				0, 1, 2, 3 </int_array>
@@ -60,18 +81,18 @@
 		</array>
 
 	</resource>
-	<resource type="OccluderPolygon2D" path="local://14">
+	<resource type="OccluderPolygon2D" path="local://12">
 		<bool name="closed"> True </bool>
 		<int name="cull_mode"> 0 </int>
 		<vector2_array name="polygon" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://12">
+	<resource type="ConvexPolygonShape2D" path="local://13">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="NavigationPolygon" path="local://16">
+	<resource type="NavigationPolygon" path="local://14">
 		<vector2_array name="vertices" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 		<array name="polygons" len="1" shared="false">
 			<int_array  len="4"> 				0, 1, 2, 3 </int_array>
@@ -81,18 +102,18 @@
 		</array>
 
 	</resource>
-	<resource type="OccluderPolygon2D" path="local://17">
+	<resource type="OccluderPolygon2D" path="local://15">
 		<bool name="closed"> True </bool>
 		<int name="cull_mode"> 0 </int>
 		<vector2_array name="polygon" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://15">
+	<resource type="ConvexPolygonShape2D" path="local://16">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="NavigationPolygon" path="local://19">
+	<resource type="NavigationPolygon" path="local://17">
 		<vector2_array name="vertices" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 		<array name="polygons" len="1" shared="false">
 			<int_array  len="4"> 				0, 1, 2, 3 </int_array>
@@ -102,18 +123,18 @@
 		</array>
 
 	</resource>
-	<resource type="OccluderPolygon2D" path="local://20">
+	<resource type="OccluderPolygon2D" path="local://18">
 		<bool name="closed"> True </bool>
 		<int name="cull_mode"> 0 </int>
 		<vector2_array name="polygon" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://18">
+	<resource type="ConvexPolygonShape2D" path="local://19">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="NavigationPolygon" path="local://22">
+	<resource type="NavigationPolygon" path="local://20">
 		<vector2_array name="vertices" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 		<array name="polygons" len="1" shared="false">
 			<int_array  len="4"> 				0, 1, 2, 3 </int_array>
@@ -123,39 +144,18 @@
 		</array>
 
 	</resource>
-	<resource type="OccluderPolygon2D" path="local://23">
+	<resource type="OccluderPolygon2D" path="local://21">
 		<bool name="closed"> True </bool>
 		<int name="cull_mode"> 0 </int>
 		<vector2_array name="polygon" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://21">
+	<resource type="ConvexPolygonShape2D" path="local://22">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="NavigationPolygon" path="local://25">
-		<vector2_array name="vertices" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
-		<array name="polygons" len="1" shared="false">
-			<int_array  len="4"> 				0, 1, 2, 3 </int_array>
-		</array>
-		<array name="outlines" len="1" shared="false">
-			<vector2_array  len="4"> 				-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
-		</array>
-
-	</resource>
-	<resource type="OccluderPolygon2D" path="local://26">
-		<bool name="closed"> True </bool>
-		<int name="cull_mode"> 0 </int>
-		<vector2_array name="polygon" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
-
-	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://24">
-		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
-
-	</resource>
-	<resource type="NavigationPolygon" path="local://3">
+	<resource type="NavigationPolygon" path="local://23">
 		<vector2_array name="vertices" len="4"> 			-16, 4, 16, 4, 16, 16, -16, 16 </vector2_array>
 		<array name="polygons" len="1" shared="false">
 			<int_array  len="4"> 				0, 1, 2, 3 </int_array>
@@ -165,18 +165,18 @@
 		</array>
 
 	</resource>
-	<resource type="OccluderPolygon2D" path="local://4">
+	<resource type="OccluderPolygon2D" path="local://24">
 		<bool name="closed"> True </bool>
 		<int name="cull_mode"> 0 </int>
 		<vector2_array name="polygon" len="4"> 			-11, -16, 11, -16, 11, 4, -11, 4 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://159">
+	<resource type="ConvexPolygonShape2D" path="local://25">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			-11, -16, 11, -16, 11, 4, -11, 4 </vector2_array>
 
 	</resource>
-	<resource type="NavigationPolygon" path="local://28">
+	<resource type="NavigationPolygon" path="local://26">
 		<vector2_array name="vertices" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 		<array name="polygons" len="1" shared="false">
 			<int_array  len="4"> 				0, 1, 2, 3 </int_array>
@@ -186,18 +186,18 @@
 		</array>
 
 	</resource>
-	<resource type="OccluderPolygon2D" path="local://29">
+	<resource type="OccluderPolygon2D" path="local://27">
 		<bool name="closed"> True </bool>
 		<int name="cull_mode"> 0 </int>
 		<vector2_array name="polygon" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://27">
+	<resource type="ConvexPolygonShape2D" path="local://28">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="NavigationPolygon" path="local://31">
+	<resource type="NavigationPolygon" path="local://29">
 		<vector2_array name="vertices" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 		<array name="polygons" len="1" shared="false">
 			<int_array  len="4"> 				0, 1, 2, 3 </int_array>
@@ -207,18 +207,18 @@
 		</array>
 
 	</resource>
-	<resource type="OccluderPolygon2D" path="local://32">
+	<resource type="OccluderPolygon2D" path="local://30">
 		<bool name="closed"> True </bool>
 		<int name="cull_mode"> 0 </int>
 		<vector2_array name="polygon" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://30">
+	<resource type="ConvexPolygonShape2D" path="local://31">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="NavigationPolygon" path="local://34">
+	<resource type="NavigationPolygon" path="local://32">
 		<vector2_array name="vertices" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 		<array name="polygons" len="1" shared="false">
 			<int_array  len="4"> 				0, 1, 2, 3 </int_array>
@@ -228,18 +228,18 @@
 		</array>
 
 	</resource>
-	<resource type="OccluderPolygon2D" path="local://35">
+	<resource type="OccluderPolygon2D" path="local://33">
 		<bool name="closed"> True </bool>
 		<int name="cull_mode"> 0 </int>
 		<vector2_array name="polygon" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://33">
+	<resource type="ConvexPolygonShape2D" path="local://34">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="NavigationPolygon" path="local://37">
+	<resource type="NavigationPolygon" path="local://35">
 		<vector2_array name="vertices" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 		<array name="polygons" len="1" shared="false">
 			<int_array  len="4"> 				0, 1, 2, 3 </int_array>
@@ -249,18 +249,18 @@
 		</array>
 
 	</resource>
-	<resource type="OccluderPolygon2D" path="local://38">
+	<resource type="OccluderPolygon2D" path="local://36">
 		<bool name="closed"> True </bool>
 		<int name="cull_mode"> 0 </int>
 		<vector2_array name="polygon" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://36">
+	<resource type="ConvexPolygonShape2D" path="local://37">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="NavigationPolygon" path="local://40">
+	<resource type="NavigationPolygon" path="local://38">
 		<vector2_array name="vertices" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 		<array name="polygons" len="1" shared="false">
 			<int_array  len="4"> 				0, 1, 2, 3 </int_array>
@@ -270,18 +270,18 @@
 		</array>
 
 	</resource>
-	<resource type="OccluderPolygon2D" path="local://41">
+	<resource type="OccluderPolygon2D" path="local://39">
 		<bool name="closed"> True </bool>
 		<int name="cull_mode"> 0 </int>
 		<vector2_array name="polygon" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://39">
+	<resource type="ConvexPolygonShape2D" path="local://40">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="NavigationPolygon" path="local://43">
+	<resource type="NavigationPolygon" path="local://41">
 		<vector2_array name="vertices" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 		<array name="polygons" len="1" shared="false">
 			<int_array  len="4"> 				0, 1, 2, 3 </int_array>
@@ -291,15 +291,30 @@
 		</array>
 
 	</resource>
-	<resource type="OccluderPolygon2D" path="local://44">
+	<resource type="OccluderPolygon2D" path="local://42">
 		<bool name="closed"> True </bool>
 		<int name="cull_mode"> 0 </int>
 		<vector2_array name="polygon" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://42">
+	<resource type="ConvexPolygonShape2D" path="local://43">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
+
+	</resource>
+	<resource type="NavigationPolygon" path="local://44">
+		<vector2_array name="vertices" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
+		<array name="polygons" len="1" shared="false">
+			<int_array  len="4"> 				0, 1, 2, 3 </int_array>
+		</array>
+		<array name="outlines" len="1" shared="false">
+			<vector2_array  len="4"> 				-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
+		</array>
+
+	</resource>
+	<resource type="ConvexPolygonShape2D" path="local://45">
+		<real name="custom_solver_bias"> 0 </real>
+		<vector2_array name="points" len="4"> 			-16, 1, 16, -4, 16, -2, -16, 3 </vector2_array>
 
 	</resource>
 	<resource type="NavigationPolygon" path="local://46">
@@ -312,9 +327,9 @@
 		</array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://153">
+	<resource type="ConvexPolygonShape2D" path="local://47">
 		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="4"> 			-16, 1, 16, -4, 16, -2, -16, 3 </vector2_array>
+		<vector2_array name="points" len="4"> 			-16, -4, 16, -4, 16, -2, -16, -2 </vector2_array>
 
 	</resource>
 	<resource type="NavigationPolygon" path="local://48">
@@ -327,9 +342,9 @@
 		</array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://154">
+	<resource type="ConvexPolygonShape2D" path="local://49">
 		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="4"> 			-16, -4, 16, -4, 16, -2, -16, -2 </vector2_array>
+		<vector2_array name="points" len="4"> 			-16, -4, 16, 2, 16, 4, -16, -2 </vector2_array>
 
 	</resource>
 	<resource type="NavigationPolygon" path="local://50">
@@ -342,12 +357,18 @@
 		</array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://155">
-		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="4"> 			-16, -4, 16, 2, 16, 4, -16, -2 </vector2_array>
+	<resource type="OccluderPolygon2D" path="local://51">
+		<bool name="closed"> True </bool>
+		<int name="cull_mode"> 0 </int>
+		<vector2_array name="polygon" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="NavigationPolygon" path="local://52">
+	<resource type="ConvexPolygonShape2D" path="local://52">
+		<real name="custom_solver_bias"> 0 </real>
+		<vector2_array name="points" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
+
+	</resource>
+	<resource type="NavigationPolygon" path="local://53">
 		<vector2_array name="vertices" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 		<array name="polygons" len="1" shared="false">
 			<int_array  len="4"> 				0, 1, 2, 3 </int_array>
@@ -357,18 +378,18 @@
 		</array>
 
 	</resource>
-	<resource type="OccluderPolygon2D" path="local://53">
+	<resource type="OccluderPolygon2D" path="local://54">
 		<bool name="closed"> True </bool>
 		<int name="cull_mode"> 0 </int>
 		<vector2_array name="polygon" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://51">
+	<resource type="ConvexPolygonShape2D" path="local://55">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="NavigationPolygon" path="local://55">
+	<resource type="NavigationPolygon" path="local://56">
 		<vector2_array name="vertices" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 		<array name="polygons" len="1" shared="false">
 			<int_array  len="4"> 				0, 1, 2, 3 </int_array>
@@ -378,18 +399,18 @@
 		</array>
 
 	</resource>
-	<resource type="OccluderPolygon2D" path="local://56">
+	<resource type="OccluderPolygon2D" path="local://57">
 		<bool name="closed"> True </bool>
 		<int name="cull_mode"> 0 </int>
 		<vector2_array name="polygon" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://54">
+	<resource type="ConvexPolygonShape2D" path="local://58">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="NavigationPolygon" path="local://58">
+	<resource type="NavigationPolygon" path="local://59">
 		<vector2_array name="vertices" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 		<array name="polygons" len="1" shared="false">
 			<int_array  len="4"> 				0, 1, 2, 3 </int_array>
@@ -399,18 +420,18 @@
 		</array>
 
 	</resource>
-	<resource type="OccluderPolygon2D" path="local://59">
+	<resource type="OccluderPolygon2D" path="local://60">
 		<bool name="closed"> True </bool>
 		<int name="cull_mode"> 0 </int>
 		<vector2_array name="polygon" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://57">
+	<resource type="ConvexPolygonShape2D" path="local://61">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="NavigationPolygon" path="local://61">
+	<resource type="NavigationPolygon" path="local://62">
 		<vector2_array name="vertices" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 		<array name="polygons" len="1" shared="false">
 			<int_array  len="4"> 				0, 1, 2, 3 </int_array>
@@ -420,18 +441,18 @@
 		</array>
 
 	</resource>
-	<resource type="OccluderPolygon2D" path="local://62">
+	<resource type="OccluderPolygon2D" path="local://63">
 		<bool name="closed"> True </bool>
 		<int name="cull_mode"> 0 </int>
 		<vector2_array name="polygon" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://60">
+	<resource type="ConvexPolygonShape2D" path="local://64">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="NavigationPolygon" path="local://64">
+	<resource type="NavigationPolygon" path="local://65">
 		<vector2_array name="vertices" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 		<array name="polygons" len="1" shared="false">
 			<int_array  len="4"> 				0, 1, 2, 3 </int_array>
@@ -441,15 +462,9 @@
 		</array>
 
 	</resource>
-	<resource type="OccluderPolygon2D" path="local://65">
-		<bool name="closed"> True </bool>
-		<int name="cull_mode"> 0 </int>
-		<vector2_array name="polygon" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
-
-	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://63">
+	<resource type="ConvexPolygonShape2D" path="local://66">
 		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
+		<vector2_array name="points" len="4"> 			-16, 0, 16, -5, 16, -3, -16, 2 </vector2_array>
 
 	</resource>
 	<resource type="NavigationPolygon" path="local://67">
@@ -462,9 +477,9 @@
 		</array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://156">
+	<resource type="ConvexPolygonShape2D" path="local://68">
 		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="4"> 			-16, 0, 16, -5, 16, -3, -16, 2 </vector2_array>
+		<vector2_array name="points" len="4"> 			-16, -4, 16, -4, 16, -2, -16, -2 </vector2_array>
 
 	</resource>
 	<resource type="NavigationPolygon" path="local://69">
@@ -477,9 +492,9 @@
 		</array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://157">
+	<resource type="ConvexPolygonShape2D" path="local://70">
 		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="4"> 			-16, -4, 16, -4, 16, -2, -16, -2 </vector2_array>
+		<vector2_array name="points" len="4"> 			-16, -4, 16, 2, 16, 4, -16, -2 </vector2_array>
 
 	</resource>
 	<resource type="NavigationPolygon" path="local://71">
@@ -492,12 +507,18 @@
 		</array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://158">
-		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="4"> 			-16, -4, 16, 2, 16, 4, -16, -2 </vector2_array>
+	<resource type="OccluderPolygon2D" path="local://72">
+		<bool name="closed"> True </bool>
+		<int name="cull_mode"> 0 </int>
+		<vector2_array name="polygon" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="NavigationPolygon" path="local://73">
+	<resource type="ConvexPolygonShape2D" path="local://73">
+		<real name="custom_solver_bias"> 0 </real>
+		<vector2_array name="points" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
+
+	</resource>
+	<resource type="NavigationPolygon" path="local://74">
 		<vector2_array name="vertices" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 		<array name="polygons" len="1" shared="false">
 			<int_array  len="4"> 				0, 1, 2, 3 </int_array>
@@ -507,18 +528,18 @@
 		</array>
 
 	</resource>
-	<resource type="OccluderPolygon2D" path="local://74">
+	<resource type="OccluderPolygon2D" path="local://75">
 		<bool name="closed"> True </bool>
 		<int name="cull_mode"> 0 </int>
 		<vector2_array name="polygon" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://72">
+	<resource type="ConvexPolygonShape2D" path="local://76">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="NavigationPolygon" path="local://76">
+	<resource type="NavigationPolygon" path="local://77">
 		<vector2_array name="vertices" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 		<array name="polygons" len="1" shared="false">
 			<int_array  len="4"> 				0, 1, 2, 3 </int_array>
@@ -528,18 +549,18 @@
 		</array>
 
 	</resource>
-	<resource type="OccluderPolygon2D" path="local://77">
+	<resource type="OccluderPolygon2D" path="local://78">
 		<bool name="closed"> True </bool>
 		<int name="cull_mode"> 0 </int>
 		<vector2_array name="polygon" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://75">
+	<resource type="ConvexPolygonShape2D" path="local://79">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="NavigationPolygon" path="local://79">
+	<resource type="NavigationPolygon" path="local://80">
 		<vector2_array name="vertices" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 		<array name="polygons" len="1" shared="false">
 			<int_array  len="4"> 				0, 1, 2, 3 </int_array>
@@ -549,18 +570,18 @@
 		</array>
 
 	</resource>
-	<resource type="OccluderPolygon2D" path="local://80">
+	<resource type="OccluderPolygon2D" path="local://81">
 		<bool name="closed"> True </bool>
 		<int name="cull_mode"> 0 </int>
 		<vector2_array name="polygon" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://78">
+	<resource type="ConvexPolygonShape2D" path="local://82">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="NavigationPolygon" path="local://82">
+	<resource type="NavigationPolygon" path="local://83">
 		<vector2_array name="vertices" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 		<array name="polygons" len="1" shared="false">
 			<int_array  len="4"> 				0, 1, 2, 3 </int_array>
@@ -570,18 +591,18 @@
 		</array>
 
 	</resource>
-	<resource type="OccluderPolygon2D" path="local://83">
+	<resource type="OccluderPolygon2D" path="local://84">
 		<bool name="closed"> True </bool>
 		<int name="cull_mode"> 0 </int>
 		<vector2_array name="polygon" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://81">
+	<resource type="ConvexPolygonShape2D" path="local://85">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="NavigationPolygon" path="local://85">
+	<resource type="NavigationPolygon" path="local://86">
 		<vector2_array name="vertices" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 		<array name="polygons" len="1" shared="false">
 			<int_array  len="4"> 				0, 1, 2, 3 </int_array>
@@ -591,18 +612,18 @@
 		</array>
 
 	</resource>
-	<resource type="OccluderPolygon2D" path="local://86">
+	<resource type="OccluderPolygon2D" path="local://87">
 		<bool name="closed"> True </bool>
 		<int name="cull_mode"> 0 </int>
 		<vector2_array name="polygon" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://84">
+	<resource type="ConvexPolygonShape2D" path="local://88">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="NavigationPolygon" path="local://88">
+	<resource type="NavigationPolygon" path="local://89">
 		<vector2_array name="vertices" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 		<array name="polygons" len="1" shared="false">
 			<int_array  len="4"> 				0, 1, 2, 3 </int_array>
@@ -612,18 +633,18 @@
 		</array>
 
 	</resource>
-	<resource type="OccluderPolygon2D" path="local://89">
+	<resource type="OccluderPolygon2D" path="local://90">
 		<bool name="closed"> True </bool>
 		<int name="cull_mode"> 0 </int>
 		<vector2_array name="polygon" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://87">
+	<resource type="ConvexPolygonShape2D" path="local://91">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="NavigationPolygon" path="local://97">
+	<resource type="NavigationPolygon" path="local://92">
 		<vector2_array name="vertices" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 		<array name="polygons" len="1" shared="false">
 			<int_array  len="4"> 				0, 1, 2, 3 </int_array>
@@ -633,18 +654,18 @@
 		</array>
 
 	</resource>
-	<resource type="OccluderPolygon2D" path="local://98">
+	<resource type="OccluderPolygon2D" path="local://93">
 		<bool name="closed"> True </bool>
 		<int name="cull_mode"> 0 </int>
 		<vector2_array name="polygon" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://96">
+	<resource type="ConvexPolygonShape2D" path="local://94">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="NavigationPolygon" path="local://100">
+	<resource type="NavigationPolygon" path="local://95">
 		<vector2_array name="vertices" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 		<array name="polygons" len="1" shared="false">
 			<int_array  len="4"> 				0, 1, 2, 3 </int_array>
@@ -654,18 +675,18 @@
 		</array>
 
 	</resource>
-	<resource type="OccluderPolygon2D" path="local://101">
+	<resource type="OccluderPolygon2D" path="local://96">
 		<bool name="closed"> True </bool>
 		<int name="cull_mode"> 0 </int>
 		<vector2_array name="polygon" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://99">
+	<resource type="ConvexPolygonShape2D" path="local://97">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="NavigationPolygon" path="local://103">
+	<resource type="NavigationPolygon" path="local://98">
 		<vector2_array name="vertices" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 		<array name="polygons" len="1" shared="false">
 			<int_array  len="4"> 				0, 1, 2, 3 </int_array>
@@ -675,18 +696,18 @@
 		</array>
 
 	</resource>
-	<resource type="OccluderPolygon2D" path="local://104">
+	<resource type="OccluderPolygon2D" path="local://99">
 		<bool name="closed"> True </bool>
 		<int name="cull_mode"> 0 </int>
 		<vector2_array name="polygon" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://102">
+	<resource type="ConvexPolygonShape2D" path="local://100">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="NavigationPolygon" path="local://106">
+	<resource type="NavigationPolygon" path="local://101">
 		<vector2_array name="vertices" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 		<array name="polygons" len="1" shared="false">
 			<int_array  len="4"> 				0, 1, 2, 3 </int_array>
@@ -696,18 +717,18 @@
 		</array>
 
 	</resource>
-	<resource type="OccluderPolygon2D" path="local://107">
+	<resource type="OccluderPolygon2D" path="local://102">
 		<bool name="closed"> True </bool>
 		<int name="cull_mode"> 0 </int>
 		<vector2_array name="polygon" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://105">
+	<resource type="ConvexPolygonShape2D" path="local://103">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="NavigationPolygon" path="local://109">
+	<resource type="NavigationPolygon" path="local://104">
 		<vector2_array name="vertices" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 		<array name="polygons" len="1" shared="false">
 			<int_array  len="4"> 				0, 1, 2, 3 </int_array>
@@ -717,18 +738,18 @@
 		</array>
 
 	</resource>
-	<resource type="OccluderPolygon2D" path="local://110">
+	<resource type="OccluderPolygon2D" path="local://105">
 		<bool name="closed"> True </bool>
 		<int name="cull_mode"> 0 </int>
 		<vector2_array name="polygon" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://108">
+	<resource type="ConvexPolygonShape2D" path="local://106">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="NavigationPolygon" path="local://112">
+	<resource type="NavigationPolygon" path="local://107">
 		<vector2_array name="vertices" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 		<array name="polygons" len="1" shared="false">
 			<int_array  len="4"> 				0, 1, 2, 3 </int_array>
@@ -738,18 +759,18 @@
 		</array>
 
 	</resource>
-	<resource type="OccluderPolygon2D" path="local://113">
+	<resource type="OccluderPolygon2D" path="local://108">
 		<bool name="closed"> True </bool>
 		<int name="cull_mode"> 0 </int>
 		<vector2_array name="polygon" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://111">
+	<resource type="ConvexPolygonShape2D" path="local://109">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="NavigationPolygon" path="local://121">
+	<resource type="NavigationPolygon" path="local://110">
 		<vector2_array name="vertices" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 		<array name="polygons" len="1" shared="false">
 			<int_array  len="4"> 				0, 1, 2, 3 </int_array>
@@ -759,18 +780,18 @@
 		</array>
 
 	</resource>
-	<resource type="OccluderPolygon2D" path="local://122">
+	<resource type="OccluderPolygon2D" path="local://111">
 		<bool name="closed"> True </bool>
 		<int name="cull_mode"> 0 </int>
 		<vector2_array name="polygon" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://120">
+	<resource type="ConvexPolygonShape2D" path="local://112">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="NavigationPolygon" path="local://124">
+	<resource type="NavigationPolygon" path="local://113">
 		<vector2_array name="vertices" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 		<array name="polygons" len="1" shared="false">
 			<int_array  len="4"> 				0, 1, 2, 3 </int_array>
@@ -780,18 +801,18 @@
 		</array>
 
 	</resource>
-	<resource type="OccluderPolygon2D" path="local://125">
+	<resource type="OccluderPolygon2D" path="local://114">
 		<bool name="closed"> True </bool>
 		<int name="cull_mode"> 0 </int>
 		<vector2_array name="polygon" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://123">
+	<resource type="ConvexPolygonShape2D" path="local://115">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="NavigationPolygon" path="local://127">
+	<resource type="NavigationPolygon" path="local://116">
 		<vector2_array name="vertices" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 		<array name="polygons" len="1" shared="false">
 			<int_array  len="4"> 				0, 1, 2, 3 </int_array>
@@ -801,18 +822,18 @@
 		</array>
 
 	</resource>
-	<resource type="OccluderPolygon2D" path="local://128">
+	<resource type="OccluderPolygon2D" path="local://117">
 		<bool name="closed"> True </bool>
 		<int name="cull_mode"> 0 </int>
 		<vector2_array name="polygon" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://126">
+	<resource type="ConvexPolygonShape2D" path="local://118">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="NavigationPolygon" path="local://130">
+	<resource type="NavigationPolygon" path="local://119">
 		<vector2_array name="vertices" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 		<array name="polygons" len="1" shared="false">
 			<int_array  len="4"> 				0, 1, 2, 3 </int_array>
@@ -822,18 +843,18 @@
 		</array>
 
 	</resource>
-	<resource type="OccluderPolygon2D" path="local://131">
+	<resource type="OccluderPolygon2D" path="local://120">
 		<bool name="closed"> True </bool>
 		<int name="cull_mode"> 0 </int>
 		<vector2_array name="polygon" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://129">
+	<resource type="ConvexPolygonShape2D" path="local://121">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="NavigationPolygon" path="local://133">
+	<resource type="NavigationPolygon" path="local://122">
 		<vector2_array name="vertices" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 		<array name="polygons" len="1" shared="false">
 			<int_array  len="4"> 				0, 1, 2, 3 </int_array>
@@ -843,18 +864,18 @@
 		</array>
 
 	</resource>
-	<resource type="OccluderPolygon2D" path="local://134">
+	<resource type="OccluderPolygon2D" path="local://123">
 		<bool name="closed"> True </bool>
 		<int name="cull_mode"> 0 </int>
 		<vector2_array name="polygon" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://132">
+	<resource type="ConvexPolygonShape2D" path="local://124">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="NavigationPolygon" path="local://136">
+	<resource type="NavigationPolygon" path="local://125">
 		<vector2_array name="vertices" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 		<array name="polygons" len="1" shared="false">
 			<int_array  len="4"> 				0, 1, 2, 3 </int_array>
@@ -864,18 +885,18 @@
 		</array>
 
 	</resource>
-	<resource type="OccluderPolygon2D" path="local://137">
+	<resource type="OccluderPolygon2D" path="local://126">
 		<bool name="closed"> True </bool>
 		<int name="cull_mode"> 0 </int>
 		<vector2_array name="polygon" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://135">
+	<resource type="ConvexPolygonShape2D" path="local://127">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="NavigationPolygon" path="local://139">
+	<resource type="NavigationPolygon" path="local://128">
 		<vector2_array name="vertices" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 		<array name="polygons" len="1" shared="false">
 			<int_array  len="4"> 				0, 1, 2, 3 </int_array>
@@ -885,18 +906,18 @@
 		</array>
 
 	</resource>
-	<resource type="OccluderPolygon2D" path="local://140">
+	<resource type="OccluderPolygon2D" path="local://129">
 		<bool name="closed"> True </bool>
 		<int name="cull_mode"> 0 </int>
 		<vector2_array name="polygon" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://138">
+	<resource type="ConvexPolygonShape2D" path="local://130">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="NavigationPolygon" path="local://142">
+	<resource type="NavigationPolygon" path="local://131">
 		<vector2_array name="vertices" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 		<array name="polygons" len="1" shared="false">
 			<int_array  len="4"> 				0, 1, 2, 3 </int_array>
@@ -906,18 +927,18 @@
 		</array>
 
 	</resource>
-	<resource type="OccluderPolygon2D" path="local://143">
+	<resource type="OccluderPolygon2D" path="local://132">
 		<bool name="closed"> True </bool>
 		<int name="cull_mode"> 0 </int>
 		<vector2_array name="polygon" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://141">
+	<resource type="ConvexPolygonShape2D" path="local://133">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="NavigationPolygon" path="local://145">
+	<resource type="NavigationPolygon" path="local://134">
 		<vector2_array name="vertices" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 		<array name="polygons" len="1" shared="false">
 			<int_array  len="4"> 				0, 1, 2, 3 </int_array>
@@ -927,18 +948,18 @@
 		</array>
 
 	</resource>
-	<resource type="OccluderPolygon2D" path="local://146">
+	<resource type="OccluderPolygon2D" path="local://135">
 		<bool name="closed"> True </bool>
 		<int name="cull_mode"> 0 </int>
 		<vector2_array name="polygon" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://144">
+	<resource type="ConvexPolygonShape2D" path="local://136">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="NavigationPolygon" path="local://148">
+	<resource type="NavigationPolygon" path="local://137">
 		<vector2_array name="vertices" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 		<array name="polygons" len="1" shared="false">
 			<int_array  len="4"> 				0, 1, 2, 3 </int_array>
@@ -948,39 +969,18 @@
 		</array>
 
 	</resource>
-	<resource type="OccluderPolygon2D" path="local://149">
+	<resource type="OccluderPolygon2D" path="local://138">
 		<bool name="closed"> True </bool>
 		<int name="cull_mode"> 0 </int>
 		<vector2_array name="polygon" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://147">
+	<resource type="ConvexPolygonShape2D" path="local://139">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 
 	</resource>
-	<resource type="NavigationPolygon" path="local://151">
-		<vector2_array name="vertices" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
-		<array name="polygons" len="1" shared="false">
-			<int_array  len="4"> 				0, 1, 2, 3 </int_array>
-		</array>
-		<array name="outlines" len="1" shared="false">
-			<vector2_array  len="4"> 				-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
-		</array>
-
-	</resource>
-	<resource type="OccluderPolygon2D" path="local://152">
-		<bool name="closed"> True </bool>
-		<int name="cull_mode"> 0 </int>
-		<vector2_array name="polygon" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
-
-	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://150">
-		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
-
-	</resource>
-	<resource type="NavigationPolygon" path="local://160">
+	<resource type="NavigationPolygon" path="local://140">
 		<vector2_array name="vertices" len="4"> 			-16, -16, 16, -16, 16, 16, -16, 16 </vector2_array>
 		<array name="polygons" len="1" shared="false">
 			<int_array  len="5"> 				0, 1, 2, 3, 0 </int_array>
@@ -990,35 +990,35 @@
 		</array>
 
 	</resource>
-	<resource type="OccluderPolygon2D" path="local://162">
+	<resource type="OccluderPolygon2D" path="local://141">
 		<bool name="closed"> True </bool>
 		<int name="cull_mode"> 0 </int>
 		<vector2_array name="polygon" len="5"> 			32, 32, 32, 0, 9, 0, 3, 6, 3, 32 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://161">
+	<resource type="ConvexPolygonShape2D" path="local://142">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="5"> 			3, 32, 3, 6, 9, 0, 32, 0, 32, 32 </vector2_array>
 
 	</resource>
-	<resource type="OccluderPolygon2D" path="local://164">
+	<resource type="OccluderPolygon2D" path="local://143">
 		<bool name="closed"> True </bool>
 		<int name="cull_mode"> 0 </int>
 		<vector2_array name="polygon" len="4"> 			32, 32, 32, 0, 0, 0, 0, 32 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://163">
+	<resource type="ConvexPolygonShape2D" path="local://144">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			0, 32, 0, 0, 32, 0, 32, 32 </vector2_array>
 
 	</resource>
-	<resource type="OccluderPolygon2D" path="local://166">
+	<resource type="OccluderPolygon2D" path="local://145">
 		<bool name="closed"> True </bool>
 		<int name="cull_mode"> 0 </int>
 		<vector2_array name="polygon" len="5"> 			0, 32, 20, 32, 24, 28, 24, 0, 0, 0 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://165">
+	<resource type="ConvexPolygonShape2D" path="local://146">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="5"> 			0, 0, 24, 0, 24, 28, 20, 32, 0, 32 </vector2_array>
 
@@ -1047,12 +1047,12 @@
 		<vector2 name="2/tex_offset"> 0, 0 </vector2>
 		<resource name="2/material"></resource>		<rect2 name="2/region"> 64, 0, 32, 32 </rect2>
 		<vector2 name="2/occluder_offset"> 16, 16 </vector2>
-		<resource name="2/occluder" resource_type="OccluderPolygon2D" path="local://4">  </resource>
+		<resource name="2/occluder" resource_type="OccluderPolygon2D" path="local://24">  </resource>
 		<vector2 name="2/navigation_offset"> 16, 16 </vector2>
-		<resource name="2/navigation" resource_type="NavigationPolygon" path="local://3">  </resource>
+		<resource name="2/navigation" resource_type="NavigationPolygon" path="local://23">  </resource>
 		<vector2 name="2/shape_offset"> 16, 16 </vector2>
 		<array name="2/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://159">  </resource>
+			<resource  resource_type="Shape2D" path="local://25">  </resource>
 		</array>
 		<string name="3/name"> "spritesheet23" </string>
 		<resource name="3/texture" external="0">  </resource>
@@ -1141,165 +1141,165 @@
 		<resource name="12/material"></resource>		<rect2 name="12/region"> 128, 32, 32, 32 </rect2>
 		<vector2 name="12/occluder_offset"> 16, 16 </vector2>
 		<resource name="12/occluder"></resource>		<vector2 name="12/navigation_offset"> 16, 16 </vector2>
-		<resource name="12/navigation" resource_type="NavigationPolygon" path="local://6">  </resource>
+		<resource name="12/navigation" resource_type="NavigationPolygon" path="local://1">  </resource>
 		<vector2 name="12/shape_offset"> 16, 16 </vector2>
 		<array name="12/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://5">  </resource>
+			<resource  resource_type="Shape2D" path="local://2">  </resource>
 		</array>
 		<string name="13/name"> "spritesheet213" </string>
 		<resource name="13/texture" external="0">  </resource>
 		<vector2 name="13/tex_offset"> 0, 0 </vector2>
 		<resource name="13/material"></resource>		<rect2 name="13/region"> 160, 32, 32, 32 </rect2>
 		<vector2 name="13/occluder_offset"> 16, 16 </vector2>
-		<resource name="13/occluder" resource_type="OccluderPolygon2D" path="local://8">  </resource>
+		<resource name="13/occluder" resource_type="OccluderPolygon2D" path="local://3">  </resource>
 		<vector2 name="13/navigation_offset"> 16, 16 </vector2>
 		<resource name="13/navigation"></resource>		<vector2 name="13/shape_offset"> 16, 16 </vector2>
 		<array name="13/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://7">  </resource>
+			<resource  resource_type="Shape2D" path="local://4">  </resource>
 		</array>
 		<string name="14/name"> "spritesheet214" </string>
 		<resource name="14/texture" external="0">  </resource>
 		<vector2 name="14/tex_offset"> 0, 0 </vector2>
 		<resource name="14/material"></resource>		<rect2 name="14/region"> 192, 32, 32, 32 </rect2>
 		<vector2 name="14/occluder_offset"> 16, 16 </vector2>
-		<resource name="14/occluder" resource_type="OccluderPolygon2D" path="local://11">  </resource>
+		<resource name="14/occluder" resource_type="OccluderPolygon2D" path="local://6">  </resource>
 		<vector2 name="14/navigation_offset"> 16, 16 </vector2>
-		<resource name="14/navigation" resource_type="NavigationPolygon" path="local://10">  </resource>
+		<resource name="14/navigation" resource_type="NavigationPolygon" path="local://5">  </resource>
 		<vector2 name="14/shape_offset"> 16, 16 </vector2>
 		<array name="14/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://9">  </resource>
+			<resource  resource_type="Shape2D" path="local://7">  </resource>
 		</array>
 		<string name="15/name"> "spritesheet215" </string>
 		<resource name="15/texture" external="0">  </resource>
 		<vector2 name="15/tex_offset"> 0, 0 </vector2>
 		<resource name="15/material"></resource>		<rect2 name="15/region"> 224, 32, 32, 32 </rect2>
 		<vector2 name="15/occluder_offset"> 16, 16 </vector2>
-		<resource name="15/occluder" resource_type="OccluderPolygon2D" path="local://14">  </resource>
+		<resource name="15/occluder" resource_type="OccluderPolygon2D" path="local://9">  </resource>
 		<vector2 name="15/navigation_offset"> 16, 16 </vector2>
-		<resource name="15/navigation" resource_type="NavigationPolygon" path="local://13">  </resource>
+		<resource name="15/navigation" resource_type="NavigationPolygon" path="local://8">  </resource>
 		<vector2 name="15/shape_offset"> 16, 16 </vector2>
 		<array name="15/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://12">  </resource>
+			<resource  resource_type="Shape2D" path="local://10">  </resource>
 		</array>
 		<string name="16/name"> "spritesheet216" </string>
 		<resource name="16/texture" external="0">  </resource>
 		<vector2 name="16/tex_offset"> 0, 0 </vector2>
 		<resource name="16/material"></resource>		<rect2 name="16/region"> 0, 64, 32, 32 </rect2>
 		<vector2 name="16/occluder_offset"> 16, 16 </vector2>
-		<resource name="16/occluder" resource_type="OccluderPolygon2D" path="local://17">  </resource>
+		<resource name="16/occluder" resource_type="OccluderPolygon2D" path="local://12">  </resource>
 		<vector2 name="16/navigation_offset"> 16, 16 </vector2>
-		<resource name="16/navigation" resource_type="NavigationPolygon" path="local://16">  </resource>
+		<resource name="16/navigation" resource_type="NavigationPolygon" path="local://11">  </resource>
 		<vector2 name="16/shape_offset"> 16, 16 </vector2>
 		<array name="16/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://15">  </resource>
+			<resource  resource_type="Shape2D" path="local://13">  </resource>
 		</array>
 		<string name="17/name"> "spritesheet217" </string>
 		<resource name="17/texture" external="0">  </resource>
 		<vector2 name="17/tex_offset"> 0, 0 </vector2>
 		<resource name="17/material"></resource>		<rect2 name="17/region"> 32, 64, 32, 32 </rect2>
 		<vector2 name="17/occluder_offset"> 16, 16 </vector2>
-		<resource name="17/occluder" resource_type="OccluderPolygon2D" path="local://20">  </resource>
+		<resource name="17/occluder" resource_type="OccluderPolygon2D" path="local://15">  </resource>
 		<vector2 name="17/navigation_offset"> 16, 16 </vector2>
-		<resource name="17/navigation" resource_type="NavigationPolygon" path="local://19">  </resource>
+		<resource name="17/navigation" resource_type="NavigationPolygon" path="local://14">  </resource>
 		<vector2 name="17/shape_offset"> 16, 16 </vector2>
 		<array name="17/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://18">  </resource>
+			<resource  resource_type="Shape2D" path="local://16">  </resource>
 		</array>
 		<string name="18/name"> "spritesheet218" </string>
 		<resource name="18/texture" external="0">  </resource>
 		<vector2 name="18/tex_offset"> 0, 0 </vector2>
 		<resource name="18/material"></resource>		<rect2 name="18/region"> 64, 64, 32, 32 </rect2>
 		<vector2 name="18/occluder_offset"> 16, 16 </vector2>
-		<resource name="18/occluder" resource_type="OccluderPolygon2D" path="local://23">  </resource>
+		<resource name="18/occluder" resource_type="OccluderPolygon2D" path="local://18">  </resource>
 		<vector2 name="18/navigation_offset"> 16, 16 </vector2>
-		<resource name="18/navigation" resource_type="NavigationPolygon" path="local://22">  </resource>
+		<resource name="18/navigation" resource_type="NavigationPolygon" path="local://17">  </resource>
 		<vector2 name="18/shape_offset"> 16, 16 </vector2>
 		<array name="18/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://21">  </resource>
+			<resource  resource_type="Shape2D" path="local://19">  </resource>
 		</array>
 		<string name="19/name"> "spritesheet219" </string>
 		<resource name="19/texture" external="0">  </resource>
 		<vector2 name="19/tex_offset"> 0, 0 </vector2>
 		<resource name="19/material"></resource>		<rect2 name="19/region"> 96, 64, 32, 32 </rect2>
 		<vector2 name="19/occluder_offset"> 16, 16 </vector2>
-		<resource name="19/occluder" resource_type="OccluderPolygon2D" path="local://26">  </resource>
+		<resource name="19/occluder" resource_type="OccluderPolygon2D" path="local://21">  </resource>
 		<vector2 name="19/navigation_offset"> 16, 16 </vector2>
-		<resource name="19/navigation" resource_type="NavigationPolygon" path="local://25">  </resource>
+		<resource name="19/navigation" resource_type="NavigationPolygon" path="local://20">  </resource>
 		<vector2 name="19/shape_offset"> 16, 16 </vector2>
 		<array name="19/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://24">  </resource>
+			<resource  resource_type="Shape2D" path="local://22">  </resource>
 		</array>
 		<string name="20/name"> "spritesheet220" </string>
 		<resource name="20/texture" external="0">  </resource>
 		<vector2 name="20/tex_offset"> 0, 0 </vector2>
 		<resource name="20/material"></resource>		<rect2 name="20/region"> 128, 64, 32, 32 </rect2>
 		<vector2 name="20/occluder_offset"> 16, 16 </vector2>
-		<resource name="20/occluder" resource_type="OccluderPolygon2D" path="local://29">  </resource>
+		<resource name="20/occluder" resource_type="OccluderPolygon2D" path="local://27">  </resource>
 		<vector2 name="20/navigation_offset"> 16, 16 </vector2>
-		<resource name="20/navigation" resource_type="NavigationPolygon" path="local://28">  </resource>
+		<resource name="20/navigation" resource_type="NavigationPolygon" path="local://26">  </resource>
 		<vector2 name="20/shape_offset"> 16, 16 </vector2>
 		<array name="20/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://27">  </resource>
+			<resource  resource_type="Shape2D" path="local://28">  </resource>
 		</array>
 		<string name="21/name"> "spritesheet221" </string>
 		<resource name="21/texture" external="0">  </resource>
 		<vector2 name="21/tex_offset"> 0, 0 </vector2>
 		<resource name="21/material"></resource>		<rect2 name="21/region"> 160, 64, 32, 32 </rect2>
 		<vector2 name="21/occluder_offset"> 16, 16 </vector2>
-		<resource name="21/occluder" resource_type="OccluderPolygon2D" path="local://32">  </resource>
+		<resource name="21/occluder" resource_type="OccluderPolygon2D" path="local://30">  </resource>
 		<vector2 name="21/navigation_offset"> 16, 16 </vector2>
-		<resource name="21/navigation" resource_type="NavigationPolygon" path="local://31">  </resource>
+		<resource name="21/navigation" resource_type="NavigationPolygon" path="local://29">  </resource>
 		<vector2 name="21/shape_offset"> 16, 16 </vector2>
 		<array name="21/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://30">  </resource>
+			<resource  resource_type="Shape2D" path="local://31">  </resource>
 		</array>
 		<string name="22/name"> "spritesheet222" </string>
 		<resource name="22/texture" external="0">  </resource>
 		<vector2 name="22/tex_offset"> 0, 0 </vector2>
 		<resource name="22/material"></resource>		<rect2 name="22/region"> 192, 64, 32, 32 </rect2>
 		<vector2 name="22/occluder_offset"> 16, 16 </vector2>
-		<resource name="22/occluder" resource_type="OccluderPolygon2D" path="local://35">  </resource>
+		<resource name="22/occluder" resource_type="OccluderPolygon2D" path="local://33">  </resource>
 		<vector2 name="22/navigation_offset"> 16, 16 </vector2>
-		<resource name="22/navigation" resource_type="NavigationPolygon" path="local://34">  </resource>
+		<resource name="22/navigation" resource_type="NavigationPolygon" path="local://32">  </resource>
 		<vector2 name="22/shape_offset"> 16, 16 </vector2>
 		<array name="22/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://33">  </resource>
+			<resource  resource_type="Shape2D" path="local://34">  </resource>
 		</array>
 		<string name="23/name"> "spritesheet223" </string>
 		<resource name="23/texture" external="0">  </resource>
 		<vector2 name="23/tex_offset"> 0, 0 </vector2>
 		<resource name="23/material"></resource>		<rect2 name="23/region"> 224, 64, 32, 32 </rect2>
 		<vector2 name="23/occluder_offset"> 16, 16 </vector2>
-		<resource name="23/occluder" resource_type="OccluderPolygon2D" path="local://38">  </resource>
+		<resource name="23/occluder" resource_type="OccluderPolygon2D" path="local://36">  </resource>
 		<vector2 name="23/navigation_offset"> 16, 16 </vector2>
-		<resource name="23/navigation" resource_type="NavigationPolygon" path="local://37">  </resource>
+		<resource name="23/navigation" resource_type="NavigationPolygon" path="local://35">  </resource>
 		<vector2 name="23/shape_offset"> 16, 16 </vector2>
 		<array name="23/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://36">  </resource>
+			<resource  resource_type="Shape2D" path="local://37">  </resource>
 		</array>
 		<string name="24/name"> "spritesheet224" </string>
 		<resource name="24/texture" external="0">  </resource>
 		<vector2 name="24/tex_offset"> 0, 0 </vector2>
 		<resource name="24/material"></resource>		<rect2 name="24/region"> 0, 96, 32, 32 </rect2>
 		<vector2 name="24/occluder_offset"> 16, 16 </vector2>
-		<resource name="24/occluder" resource_type="OccluderPolygon2D" path="local://41">  </resource>
+		<resource name="24/occluder" resource_type="OccluderPolygon2D" path="local://39">  </resource>
 		<vector2 name="24/navigation_offset"> 16, 16 </vector2>
-		<resource name="24/navigation" resource_type="NavigationPolygon" path="local://40">  </resource>
+		<resource name="24/navigation" resource_type="NavigationPolygon" path="local://38">  </resource>
 		<vector2 name="24/shape_offset"> 16, 16 </vector2>
 		<array name="24/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://39">  </resource>
+			<resource  resource_type="Shape2D" path="local://40">  </resource>
 		</array>
 		<string name="25/name"> "spritesheet225" </string>
 		<resource name="25/texture" external="0">  </resource>
 		<vector2 name="25/tex_offset"> 0, 0 </vector2>
 		<resource name="25/material"></resource>		<rect2 name="25/region"> 32, 96, 32, 32 </rect2>
 		<vector2 name="25/occluder_offset"> 16, 16 </vector2>
-		<resource name="25/occluder" resource_type="OccluderPolygon2D" path="local://44">  </resource>
+		<resource name="25/occluder" resource_type="OccluderPolygon2D" path="local://42">  </resource>
 		<vector2 name="25/navigation_offset"> 16, 16 </vector2>
-		<resource name="25/navigation" resource_type="NavigationPolygon" path="local://43">  </resource>
+		<resource name="25/navigation" resource_type="NavigationPolygon" path="local://41">  </resource>
 		<vector2 name="25/shape_offset"> 16, 16 </vector2>
 		<array name="25/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://42">  </resource>
+			<resource  resource_type="Shape2D" path="local://43">  </resource>
 		</array>
 		<string name="26/name"> "spritesheet226" </string>
 		<resource name="26/texture" external="0">  </resource>
@@ -1307,10 +1307,10 @@
 		<resource name="26/material"></resource>		<rect2 name="26/region"> 64, 96, 32, 32 </rect2>
 		<vector2 name="26/occluder_offset"> 16, 16 </vector2>
 		<resource name="26/occluder"></resource>		<vector2 name="26/navigation_offset"> 16, 16 </vector2>
-		<resource name="26/navigation" resource_type="NavigationPolygon" path="local://46">  </resource>
+		<resource name="26/navigation" resource_type="NavigationPolygon" path="local://44">  </resource>
 		<vector2 name="26/shape_offset"> 16, 16 </vector2>
 		<array name="26/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://153">  </resource>
+			<resource  resource_type="Shape2D" path="local://45">  </resource>
 		</array>
 		<string name="27/name"> "spritesheet227" </string>
 		<resource name="27/texture" external="0">  </resource>
@@ -1318,10 +1318,10 @@
 		<resource name="27/material"></resource>		<rect2 name="27/region"> 96, 96, 32, 32 </rect2>
 		<vector2 name="27/occluder_offset"> 16, 16 </vector2>
 		<resource name="27/occluder"></resource>		<vector2 name="27/navigation_offset"> 16, 16 </vector2>
-		<resource name="27/navigation" resource_type="NavigationPolygon" path="local://48">  </resource>
+		<resource name="27/navigation" resource_type="NavigationPolygon" path="local://46">  </resource>
 		<vector2 name="27/shape_offset"> 16, 16 </vector2>
 		<array name="27/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://154">  </resource>
+			<resource  resource_type="Shape2D" path="local://47">  </resource>
 		</array>
 		<string name="28/name"> "spritesheet228" </string>
 		<resource name="28/texture" external="0">  </resource>
@@ -1329,70 +1329,70 @@
 		<resource name="28/material"></resource>		<rect2 name="28/region"> 128, 96, 32, 32 </rect2>
 		<vector2 name="28/occluder_offset"> 16, 16 </vector2>
 		<resource name="28/occluder"></resource>		<vector2 name="28/navigation_offset"> 16, 16 </vector2>
-		<resource name="28/navigation" resource_type="NavigationPolygon" path="local://50">  </resource>
+		<resource name="28/navigation" resource_type="NavigationPolygon" path="local://48">  </resource>
 		<vector2 name="28/shape_offset"> 16, 16 </vector2>
 		<array name="28/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://155">  </resource>
+			<resource  resource_type="Shape2D" path="local://49">  </resource>
 		</array>
 		<string name="29/name"> "spritesheet229" </string>
 		<resource name="29/texture" external="0">  </resource>
 		<vector2 name="29/tex_offset"> 0, 0 </vector2>
 		<resource name="29/material"></resource>		<rect2 name="29/region"> 160, 96, 32, 32 </rect2>
 		<vector2 name="29/occluder_offset"> 16, 16 </vector2>
-		<resource name="29/occluder" resource_type="OccluderPolygon2D" path="local://53">  </resource>
+		<resource name="29/occluder" resource_type="OccluderPolygon2D" path="local://51">  </resource>
 		<vector2 name="29/navigation_offset"> 16, 16 </vector2>
-		<resource name="29/navigation" resource_type="NavigationPolygon" path="local://52">  </resource>
+		<resource name="29/navigation" resource_type="NavigationPolygon" path="local://50">  </resource>
 		<vector2 name="29/shape_offset"> 16, 16 </vector2>
 		<array name="29/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://51">  </resource>
+			<resource  resource_type="Shape2D" path="local://52">  </resource>
 		</array>
 		<string name="30/name"> "spritesheet230" </string>
 		<resource name="30/texture" external="0">  </resource>
 		<vector2 name="30/tex_offset"> 0, 0 </vector2>
 		<resource name="30/material"></resource>		<rect2 name="30/region"> 192, 96, 32, 32 </rect2>
 		<vector2 name="30/occluder_offset"> 16, 16 </vector2>
-		<resource name="30/occluder" resource_type="OccluderPolygon2D" path="local://56">  </resource>
+		<resource name="30/occluder" resource_type="OccluderPolygon2D" path="local://54">  </resource>
 		<vector2 name="30/navigation_offset"> 16, 16 </vector2>
-		<resource name="30/navigation" resource_type="NavigationPolygon" path="local://55">  </resource>
+		<resource name="30/navigation" resource_type="NavigationPolygon" path="local://53">  </resource>
 		<vector2 name="30/shape_offset"> 16, 16 </vector2>
 		<array name="30/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://54">  </resource>
+			<resource  resource_type="Shape2D" path="local://55">  </resource>
 		</array>
 		<string name="31/name"> "spritesheet231" </string>
 		<resource name="31/texture" external="0">  </resource>
 		<vector2 name="31/tex_offset"> 0, 0 </vector2>
 		<resource name="31/material"></resource>		<rect2 name="31/region"> 224, 96, 32, 32 </rect2>
 		<vector2 name="31/occluder_offset"> 16, 16 </vector2>
-		<resource name="31/occluder" resource_type="OccluderPolygon2D" path="local://59">  </resource>
+		<resource name="31/occluder" resource_type="OccluderPolygon2D" path="local://57">  </resource>
 		<vector2 name="31/navigation_offset"> 16, 16 </vector2>
-		<resource name="31/navigation" resource_type="NavigationPolygon" path="local://58">  </resource>
+		<resource name="31/navigation" resource_type="NavigationPolygon" path="local://56">  </resource>
 		<vector2 name="31/shape_offset"> 16, 16 </vector2>
 		<array name="31/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://57">  </resource>
+			<resource  resource_type="Shape2D" path="local://58">  </resource>
 		</array>
 		<string name="32/name"> "spritesheet232" </string>
 		<resource name="32/texture" external="0">  </resource>
 		<vector2 name="32/tex_offset"> 0, 0 </vector2>
 		<resource name="32/material"></resource>		<rect2 name="32/region"> 0, 128, 32, 32 </rect2>
 		<vector2 name="32/occluder_offset"> 16, 16 </vector2>
-		<resource name="32/occluder" resource_type="OccluderPolygon2D" path="local://62">  </resource>
+		<resource name="32/occluder" resource_type="OccluderPolygon2D" path="local://60">  </resource>
 		<vector2 name="32/navigation_offset"> 16, 16 </vector2>
-		<resource name="32/navigation" resource_type="NavigationPolygon" path="local://61">  </resource>
+		<resource name="32/navigation" resource_type="NavigationPolygon" path="local://59">  </resource>
 		<vector2 name="32/shape_offset"> 16, 16 </vector2>
 		<array name="32/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://60">  </resource>
+			<resource  resource_type="Shape2D" path="local://61">  </resource>
 		</array>
 		<string name="33/name"> "spritesheet233" </string>
 		<resource name="33/texture" external="0">  </resource>
 		<vector2 name="33/tex_offset"> 0, 0 </vector2>
 		<resource name="33/material"></resource>		<rect2 name="33/region"> 32, 128, 32, 32 </rect2>
 		<vector2 name="33/occluder_offset"> 16, 16 </vector2>
-		<resource name="33/occluder" resource_type="OccluderPolygon2D" path="local://65">  </resource>
+		<resource name="33/occluder" resource_type="OccluderPolygon2D" path="local://63">  </resource>
 		<vector2 name="33/navigation_offset"> 16, 16 </vector2>
-		<resource name="33/navigation" resource_type="NavigationPolygon" path="local://64">  </resource>
+		<resource name="33/navigation" resource_type="NavigationPolygon" path="local://62">  </resource>
 		<vector2 name="33/shape_offset"> 16, 16 </vector2>
 		<array name="33/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://63">  </resource>
+			<resource  resource_type="Shape2D" path="local://64">  </resource>
 		</array>
 		<string name="34/name"> "spritesheet234" </string>
 		<resource name="34/texture" external="0">  </resource>
@@ -1400,10 +1400,10 @@
 		<resource name="34/material"></resource>		<rect2 name="34/region"> 64, 128, 32, 32 </rect2>
 		<vector2 name="34/occluder_offset"> 16, 16 </vector2>
 		<resource name="34/occluder"></resource>		<vector2 name="34/navigation_offset"> 16, 16 </vector2>
-		<resource name="34/navigation" resource_type="NavigationPolygon" path="local://67">  </resource>
+		<resource name="34/navigation" resource_type="NavigationPolygon" path="local://65">  </resource>
 		<vector2 name="34/shape_offset"> 16, 16 </vector2>
 		<array name="34/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://156">  </resource>
+			<resource  resource_type="Shape2D" path="local://66">  </resource>
 		</array>
 		<string name="35/name"> "spritesheet235" </string>
 		<resource name="35/texture" external="0">  </resource>
@@ -1411,10 +1411,10 @@
 		<resource name="35/material"></resource>		<rect2 name="35/region"> 96, 128, 32, 32 </rect2>
 		<vector2 name="35/occluder_offset"> 16, 16 </vector2>
 		<resource name="35/occluder"></resource>		<vector2 name="35/navigation_offset"> 16, 16 </vector2>
-		<resource name="35/navigation" resource_type="NavigationPolygon" path="local://69">  </resource>
+		<resource name="35/navigation" resource_type="NavigationPolygon" path="local://67">  </resource>
 		<vector2 name="35/shape_offset"> 16, 16 </vector2>
 		<array name="35/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://157">  </resource>
+			<resource  resource_type="Shape2D" path="local://68">  </resource>
 		</array>
 		<string name="36/name"> "spritesheet236" </string>
 		<resource name="36/texture" external="0">  </resource>
@@ -1422,82 +1422,82 @@
 		<resource name="36/material"></resource>		<rect2 name="36/region"> 128, 128, 32, 32 </rect2>
 		<vector2 name="36/occluder_offset"> 16, 16 </vector2>
 		<resource name="36/occluder"></resource>		<vector2 name="36/navigation_offset"> 16, 16 </vector2>
-		<resource name="36/navigation" resource_type="NavigationPolygon" path="local://71">  </resource>
+		<resource name="36/navigation" resource_type="NavigationPolygon" path="local://69">  </resource>
 		<vector2 name="36/shape_offset"> 16, 16 </vector2>
 		<array name="36/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://158">  </resource>
+			<resource  resource_type="Shape2D" path="local://70">  </resource>
 		</array>
 		<string name="37/name"> "spritesheet237" </string>
 		<resource name="37/texture" external="0">  </resource>
 		<vector2 name="37/tex_offset"> 0, 0 </vector2>
 		<resource name="37/material"></resource>		<rect2 name="37/region"> 160, 128, 32, 32 </rect2>
 		<vector2 name="37/occluder_offset"> 16, 16 </vector2>
-		<resource name="37/occluder" resource_type="OccluderPolygon2D" path="local://74">  </resource>
+		<resource name="37/occluder" resource_type="OccluderPolygon2D" path="local://72">  </resource>
 		<vector2 name="37/navigation_offset"> 16, 16 </vector2>
-		<resource name="37/navigation" resource_type="NavigationPolygon" path="local://73">  </resource>
+		<resource name="37/navigation" resource_type="NavigationPolygon" path="local://71">  </resource>
 		<vector2 name="37/shape_offset"> 16, 16 </vector2>
 		<array name="37/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://72">  </resource>
+			<resource  resource_type="Shape2D" path="local://73">  </resource>
 		</array>
 		<string name="38/name"> "spritesheet238" </string>
 		<resource name="38/texture" external="0">  </resource>
 		<vector2 name="38/tex_offset"> 0, 0 </vector2>
 		<resource name="38/material"></resource>		<rect2 name="38/region"> 192, 128, 32, 32 </rect2>
 		<vector2 name="38/occluder_offset"> 16, 16 </vector2>
-		<resource name="38/occluder" resource_type="OccluderPolygon2D" path="local://77">  </resource>
+		<resource name="38/occluder" resource_type="OccluderPolygon2D" path="local://75">  </resource>
 		<vector2 name="38/navigation_offset"> 16, 16 </vector2>
-		<resource name="38/navigation" resource_type="NavigationPolygon" path="local://76">  </resource>
+		<resource name="38/navigation" resource_type="NavigationPolygon" path="local://74">  </resource>
 		<vector2 name="38/shape_offset"> 16, 16 </vector2>
 		<array name="38/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://75">  </resource>
+			<resource  resource_type="Shape2D" path="local://76">  </resource>
 		</array>
 		<string name="39/name"> "spritesheet239" </string>
 		<resource name="39/texture" external="0">  </resource>
 		<vector2 name="39/tex_offset"> 0, 0 </vector2>
 		<resource name="39/material"></resource>		<rect2 name="39/region"> 224, 128, 32, 32 </rect2>
 		<vector2 name="39/occluder_offset"> 16, 16 </vector2>
-		<resource name="39/occluder" resource_type="OccluderPolygon2D" path="local://80">  </resource>
+		<resource name="39/occluder" resource_type="OccluderPolygon2D" path="local://78">  </resource>
 		<vector2 name="39/navigation_offset"> 16, 16 </vector2>
-		<resource name="39/navigation" resource_type="NavigationPolygon" path="local://79">  </resource>
+		<resource name="39/navigation" resource_type="NavigationPolygon" path="local://77">  </resource>
 		<vector2 name="39/shape_offset"> 16, 16 </vector2>
 		<array name="39/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://78">  </resource>
+			<resource  resource_type="Shape2D" path="local://79">  </resource>
 		</array>
 		<string name="40/name"> "spritesheet240" </string>
 		<resource name="40/texture" external="0">  </resource>
 		<vector2 name="40/tex_offset"> 0, 0 </vector2>
 		<resource name="40/material"></resource>		<rect2 name="40/region"> 0, 160, 32, 32 </rect2>
 		<vector2 name="40/occluder_offset"> 16, 16 </vector2>
-		<resource name="40/occluder" resource_type="OccluderPolygon2D" path="local://83">  </resource>
+		<resource name="40/occluder" resource_type="OccluderPolygon2D" path="local://81">  </resource>
 		<vector2 name="40/navigation_offset"> 16, 16 </vector2>
-		<resource name="40/navigation" resource_type="NavigationPolygon" path="local://82">  </resource>
+		<resource name="40/navigation" resource_type="NavigationPolygon" path="local://80">  </resource>
 		<vector2 name="40/shape_offset"> 16, 16 </vector2>
 		<array name="40/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://81">  </resource>
+			<resource  resource_type="Shape2D" path="local://82">  </resource>
 		</array>
 		<string name="41/name"> "spritesheet241" </string>
 		<resource name="41/texture" external="0">  </resource>
 		<vector2 name="41/tex_offset"> 0, 0 </vector2>
 		<resource name="41/material"></resource>		<rect2 name="41/region"> 32, 160, 32, 32 </rect2>
 		<vector2 name="41/occluder_offset"> 16, 16 </vector2>
-		<resource name="41/occluder" resource_type="OccluderPolygon2D" path="local://86">  </resource>
+		<resource name="41/occluder" resource_type="OccluderPolygon2D" path="local://84">  </resource>
 		<vector2 name="41/navigation_offset"> 16, 16 </vector2>
-		<resource name="41/navigation" resource_type="NavigationPolygon" path="local://85">  </resource>
+		<resource name="41/navigation" resource_type="NavigationPolygon" path="local://83">  </resource>
 		<vector2 name="41/shape_offset"> 16, 16 </vector2>
 		<array name="41/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://84">  </resource>
+			<resource  resource_type="Shape2D" path="local://85">  </resource>
 		</array>
 		<string name="42/name"> "spritesheet242" </string>
 		<resource name="42/texture" external="0">  </resource>
 		<vector2 name="42/tex_offset"> 0, 0 </vector2>
 		<resource name="42/material"></resource>		<rect2 name="42/region"> 64, 160, 32, 32 </rect2>
 		<vector2 name="42/occluder_offset"> 16, 16 </vector2>
-		<resource name="42/occluder" resource_type="OccluderPolygon2D" path="local://89">  </resource>
+		<resource name="42/occluder" resource_type="OccluderPolygon2D" path="local://87">  </resource>
 		<vector2 name="42/navigation_offset"> 16, 16 </vector2>
-		<resource name="42/navigation" resource_type="NavigationPolygon" path="local://88">  </resource>
+		<resource name="42/navigation" resource_type="NavigationPolygon" path="local://86">  </resource>
 		<vector2 name="42/shape_offset"> 16, 16 </vector2>
 		<array name="42/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://87">  </resource>
+			<resource  resource_type="Shape2D" path="local://88">  </resource>
 		</array>
 		<string name="43/name"> "spritesheet243" </string>
 		<resource name="43/texture" external="0">  </resource>
@@ -1522,72 +1522,72 @@
 		<vector2 name="45/tex_offset"> 0, 0 </vector2>
 		<resource name="45/material"></resource>		<rect2 name="45/region"> 160, 160, 32, 32 </rect2>
 		<vector2 name="45/occluder_offset"> 16, 16 </vector2>
-		<resource name="45/occluder" resource_type="OccluderPolygon2D" path="local://98">  </resource>
+		<resource name="45/occluder" resource_type="OccluderPolygon2D" path="local://90">  </resource>
 		<vector2 name="45/navigation_offset"> 16, 16 </vector2>
-		<resource name="45/navigation" resource_type="NavigationPolygon" path="local://97">  </resource>
+		<resource name="45/navigation" resource_type="NavigationPolygon" path="local://89">  </resource>
 		<vector2 name="45/shape_offset"> 16, 16 </vector2>
 		<array name="45/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://96">  </resource>
+			<resource  resource_type="Shape2D" path="local://91">  </resource>
 		</array>
 		<string name="46/name"> "spritesheet246" </string>
 		<resource name="46/texture" external="0">  </resource>
 		<vector2 name="46/tex_offset"> 0, 0 </vector2>
 		<resource name="46/material"></resource>		<rect2 name="46/region"> 192, 160, 32, 32 </rect2>
 		<vector2 name="46/occluder_offset"> 16, 16 </vector2>
-		<resource name="46/occluder" resource_type="OccluderPolygon2D" path="local://101">  </resource>
+		<resource name="46/occluder" resource_type="OccluderPolygon2D" path="local://93">  </resource>
 		<vector2 name="46/navigation_offset"> 16, 16 </vector2>
-		<resource name="46/navigation" resource_type="NavigationPolygon" path="local://100">  </resource>
+		<resource name="46/navigation" resource_type="NavigationPolygon" path="local://92">  </resource>
 		<vector2 name="46/shape_offset"> 16, 16 </vector2>
 		<array name="46/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://99">  </resource>
+			<resource  resource_type="Shape2D" path="local://94">  </resource>
 		</array>
 		<string name="47/name"> "spritesheet247" </string>
 		<resource name="47/texture" external="0">  </resource>
 		<vector2 name="47/tex_offset"> 0, 0 </vector2>
 		<resource name="47/material"></resource>		<rect2 name="47/region"> 224, 160, 32, 32 </rect2>
 		<vector2 name="47/occluder_offset"> 16, 16 </vector2>
-		<resource name="47/occluder" resource_type="OccluderPolygon2D" path="local://104">  </resource>
+		<resource name="47/occluder" resource_type="OccluderPolygon2D" path="local://96">  </resource>
 		<vector2 name="47/navigation_offset"> 16, 16 </vector2>
-		<resource name="47/navigation" resource_type="NavigationPolygon" path="local://103">  </resource>
+		<resource name="47/navigation" resource_type="NavigationPolygon" path="local://95">  </resource>
 		<vector2 name="47/shape_offset"> 16, 16 </vector2>
 		<array name="47/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://102">  </resource>
+			<resource  resource_type="Shape2D" path="local://97">  </resource>
 		</array>
 		<string name="48/name"> "spritesheet248" </string>
 		<resource name="48/texture" external="0">  </resource>
 		<vector2 name="48/tex_offset"> 0, 0 </vector2>
 		<resource name="48/material"></resource>		<rect2 name="48/region"> 0, 192, 32, 32 </rect2>
 		<vector2 name="48/occluder_offset"> 16, 16 </vector2>
-		<resource name="48/occluder" resource_type="OccluderPolygon2D" path="local://107">  </resource>
+		<resource name="48/occluder" resource_type="OccluderPolygon2D" path="local://99">  </resource>
 		<vector2 name="48/navigation_offset"> 16, 16 </vector2>
-		<resource name="48/navigation" resource_type="NavigationPolygon" path="local://106">  </resource>
+		<resource name="48/navigation" resource_type="NavigationPolygon" path="local://98">  </resource>
 		<vector2 name="48/shape_offset"> 16, 16 </vector2>
 		<array name="48/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://105">  </resource>
+			<resource  resource_type="Shape2D" path="local://100">  </resource>
 		</array>
 		<string name="49/name"> "spritesheet249" </string>
 		<resource name="49/texture" external="0">  </resource>
 		<vector2 name="49/tex_offset"> 0, 0 </vector2>
 		<resource name="49/material"></resource>		<rect2 name="49/region"> 32, 192, 32, 32 </rect2>
 		<vector2 name="49/occluder_offset"> 16, 16 </vector2>
-		<resource name="49/occluder" resource_type="OccluderPolygon2D" path="local://110">  </resource>
+		<resource name="49/occluder" resource_type="OccluderPolygon2D" path="local://102">  </resource>
 		<vector2 name="49/navigation_offset"> 16, 16 </vector2>
-		<resource name="49/navigation" resource_type="NavigationPolygon" path="local://109">  </resource>
+		<resource name="49/navigation" resource_type="NavigationPolygon" path="local://101">  </resource>
 		<vector2 name="49/shape_offset"> 16, 16 </vector2>
 		<array name="49/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://108">  </resource>
+			<resource  resource_type="Shape2D" path="local://103">  </resource>
 		</array>
 		<string name="50/name"> "spritesheet250" </string>
 		<resource name="50/texture" external="0">  </resource>
 		<vector2 name="50/tex_offset"> 0, 0 </vector2>
 		<resource name="50/material"></resource>		<rect2 name="50/region"> 64, 192, 32, 32 </rect2>
 		<vector2 name="50/occluder_offset"> 16, 16 </vector2>
-		<resource name="50/occluder" resource_type="OccluderPolygon2D" path="local://113">  </resource>
+		<resource name="50/occluder" resource_type="OccluderPolygon2D" path="local://105">  </resource>
 		<vector2 name="50/navigation_offset"> 16, 16 </vector2>
-		<resource name="50/navigation" resource_type="NavigationPolygon" path="local://112">  </resource>
+		<resource name="50/navigation" resource_type="NavigationPolygon" path="local://104">  </resource>
 		<vector2 name="50/shape_offset"> 16, 16 </vector2>
 		<array name="50/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://111">  </resource>
+			<resource  resource_type="Shape2D" path="local://106">  </resource>
 		</array>
 		<string name="51/name"> "spritesheet251" </string>
 		<resource name="51/texture" external="0">  </resource>
@@ -1612,132 +1612,132 @@
 		<vector2 name="53/tex_offset"> 0, 0 </vector2>
 		<resource name="53/material"></resource>		<rect2 name="53/region"> 160, 192, 32, 32 </rect2>
 		<vector2 name="53/occluder_offset"> 16, 16 </vector2>
-		<resource name="53/occluder" resource_type="OccluderPolygon2D" path="local://122">  </resource>
+		<resource name="53/occluder" resource_type="OccluderPolygon2D" path="local://108">  </resource>
 		<vector2 name="53/navigation_offset"> 16, 16 </vector2>
-		<resource name="53/navigation" resource_type="NavigationPolygon" path="local://121">  </resource>
+		<resource name="53/navigation" resource_type="NavigationPolygon" path="local://107">  </resource>
 		<vector2 name="53/shape_offset"> 16, 16 </vector2>
 		<array name="53/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://120">  </resource>
+			<resource  resource_type="Shape2D" path="local://109">  </resource>
 		</array>
 		<string name="54/name"> "spritesheet254" </string>
 		<resource name="54/texture" external="0">  </resource>
 		<vector2 name="54/tex_offset"> 0, 0 </vector2>
 		<resource name="54/material"></resource>		<rect2 name="54/region"> 192, 192, 32, 32 </rect2>
 		<vector2 name="54/occluder_offset"> 16, 16 </vector2>
-		<resource name="54/occluder" resource_type="OccluderPolygon2D" path="local://125">  </resource>
+		<resource name="54/occluder" resource_type="OccluderPolygon2D" path="local://111">  </resource>
 		<vector2 name="54/navigation_offset"> 16, 16 </vector2>
-		<resource name="54/navigation" resource_type="NavigationPolygon" path="local://124">  </resource>
+		<resource name="54/navigation" resource_type="NavigationPolygon" path="local://110">  </resource>
 		<vector2 name="54/shape_offset"> 16, 16 </vector2>
 		<array name="54/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://123">  </resource>
+			<resource  resource_type="Shape2D" path="local://112">  </resource>
 		</array>
 		<string name="55/name"> "spritesheet255" </string>
 		<resource name="55/texture" external="0">  </resource>
 		<vector2 name="55/tex_offset"> 0, 0 </vector2>
 		<resource name="55/material"></resource>		<rect2 name="55/region"> 224, 192, 32, 32 </rect2>
 		<vector2 name="55/occluder_offset"> 16, 16 </vector2>
-		<resource name="55/occluder" resource_type="OccluderPolygon2D" path="local://128">  </resource>
+		<resource name="55/occluder" resource_type="OccluderPolygon2D" path="local://114">  </resource>
 		<vector2 name="55/navigation_offset"> 16, 16 </vector2>
-		<resource name="55/navigation" resource_type="NavigationPolygon" path="local://127">  </resource>
+		<resource name="55/navigation" resource_type="NavigationPolygon" path="local://113">  </resource>
 		<vector2 name="55/shape_offset"> 16, 16 </vector2>
 		<array name="55/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://126">  </resource>
+			<resource  resource_type="Shape2D" path="local://115">  </resource>
 		</array>
 		<string name="56/name"> "spritesheet256" </string>
 		<resource name="56/texture" external="0">  </resource>
 		<vector2 name="56/tex_offset"> 0, 0 </vector2>
 		<resource name="56/material"></resource>		<rect2 name="56/region"> 0, 224, 32, 32 </rect2>
 		<vector2 name="56/occluder_offset"> 16, 16 </vector2>
-		<resource name="56/occluder" resource_type="OccluderPolygon2D" path="local://131">  </resource>
+		<resource name="56/occluder" resource_type="OccluderPolygon2D" path="local://117">  </resource>
 		<vector2 name="56/navigation_offset"> 16, 16 </vector2>
-		<resource name="56/navigation" resource_type="NavigationPolygon" path="local://130">  </resource>
+		<resource name="56/navigation" resource_type="NavigationPolygon" path="local://116">  </resource>
 		<vector2 name="56/shape_offset"> 16, 16 </vector2>
 		<array name="56/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://129">  </resource>
+			<resource  resource_type="Shape2D" path="local://118">  </resource>
 		</array>
 		<string name="57/name"> "spritesheet257" </string>
 		<resource name="57/texture" external="0">  </resource>
 		<vector2 name="57/tex_offset"> 0, 0 </vector2>
 		<resource name="57/material"></resource>		<rect2 name="57/region"> 32, 224, 32, 32 </rect2>
 		<vector2 name="57/occluder_offset"> 16, 16 </vector2>
-		<resource name="57/occluder" resource_type="OccluderPolygon2D" path="local://134">  </resource>
+		<resource name="57/occluder" resource_type="OccluderPolygon2D" path="local://120">  </resource>
 		<vector2 name="57/navigation_offset"> 16, 16 </vector2>
-		<resource name="57/navigation" resource_type="NavigationPolygon" path="local://133">  </resource>
+		<resource name="57/navigation" resource_type="NavigationPolygon" path="local://119">  </resource>
 		<vector2 name="57/shape_offset"> 16, 16 </vector2>
 		<array name="57/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://132">  </resource>
+			<resource  resource_type="Shape2D" path="local://121">  </resource>
 		</array>
 		<string name="58/name"> "spritesheet258" </string>
 		<resource name="58/texture" external="0">  </resource>
 		<vector2 name="58/tex_offset"> 0, 0 </vector2>
 		<resource name="58/material"></resource>		<rect2 name="58/region"> 64, 224, 32, 32 </rect2>
 		<vector2 name="58/occluder_offset"> 16, 16 </vector2>
-		<resource name="58/occluder" resource_type="OccluderPolygon2D" path="local://137">  </resource>
+		<resource name="58/occluder" resource_type="OccluderPolygon2D" path="local://123">  </resource>
 		<vector2 name="58/navigation_offset"> 16, 16 </vector2>
-		<resource name="58/navigation" resource_type="NavigationPolygon" path="local://136">  </resource>
+		<resource name="58/navigation" resource_type="NavigationPolygon" path="local://122">  </resource>
 		<vector2 name="58/shape_offset"> 16, 16 </vector2>
 		<array name="58/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://135">  </resource>
+			<resource  resource_type="Shape2D" path="local://124">  </resource>
 		</array>
 		<string name="59/name"> "spritesheet259" </string>
 		<resource name="59/texture" external="0">  </resource>
 		<vector2 name="59/tex_offset"> 0, 0 </vector2>
 		<resource name="59/material"></resource>		<rect2 name="59/region"> 96, 224, 32, 32 </rect2>
 		<vector2 name="59/occluder_offset"> 16, 16 </vector2>
-		<resource name="59/occluder" resource_type="OccluderPolygon2D" path="local://140">  </resource>
+		<resource name="59/occluder" resource_type="OccluderPolygon2D" path="local://126">  </resource>
 		<vector2 name="59/navigation_offset"> 16, 16 </vector2>
-		<resource name="59/navigation" resource_type="NavigationPolygon" path="local://139">  </resource>
+		<resource name="59/navigation" resource_type="NavigationPolygon" path="local://125">  </resource>
 		<vector2 name="59/shape_offset"> 16, 16 </vector2>
 		<array name="59/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://138">  </resource>
+			<resource  resource_type="Shape2D" path="local://127">  </resource>
 		</array>
 		<string name="60/name"> "spritesheet260" </string>
 		<resource name="60/texture" external="0">  </resource>
 		<vector2 name="60/tex_offset"> 0, 0 </vector2>
 		<resource name="60/material"></resource>		<rect2 name="60/region"> 128, 224, 32, 32 </rect2>
 		<vector2 name="60/occluder_offset"> 16, 16 </vector2>
-		<resource name="60/occluder" resource_type="OccluderPolygon2D" path="local://143">  </resource>
+		<resource name="60/occluder" resource_type="OccluderPolygon2D" path="local://129">  </resource>
 		<vector2 name="60/navigation_offset"> 16, 16 </vector2>
-		<resource name="60/navigation" resource_type="NavigationPolygon" path="local://142">  </resource>
+		<resource name="60/navigation" resource_type="NavigationPolygon" path="local://128">  </resource>
 		<vector2 name="60/shape_offset"> 16, 16 </vector2>
 		<array name="60/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://141">  </resource>
+			<resource  resource_type="Shape2D" path="local://130">  </resource>
 		</array>
 		<string name="61/name"> "spritesheet261" </string>
 		<resource name="61/texture" external="0">  </resource>
 		<vector2 name="61/tex_offset"> 0, 0 </vector2>
 		<resource name="61/material"></resource>		<rect2 name="61/region"> 160, 224, 32, 32 </rect2>
 		<vector2 name="61/occluder_offset"> 16, 16 </vector2>
-		<resource name="61/occluder" resource_type="OccluderPolygon2D" path="local://146">  </resource>
+		<resource name="61/occluder" resource_type="OccluderPolygon2D" path="local://132">  </resource>
 		<vector2 name="61/navigation_offset"> 16, 16 </vector2>
-		<resource name="61/navigation" resource_type="NavigationPolygon" path="local://145">  </resource>
+		<resource name="61/navigation" resource_type="NavigationPolygon" path="local://131">  </resource>
 		<vector2 name="61/shape_offset"> 16, 16 </vector2>
 		<array name="61/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://144">  </resource>
+			<resource  resource_type="Shape2D" path="local://133">  </resource>
 		</array>
 		<string name="62/name"> "spritesheet262" </string>
 		<resource name="62/texture" external="0">  </resource>
 		<vector2 name="62/tex_offset"> 0, 0 </vector2>
 		<resource name="62/material"></resource>		<rect2 name="62/region"> 192, 224, 32, 32 </rect2>
 		<vector2 name="62/occluder_offset"> 16, 16 </vector2>
-		<resource name="62/occluder" resource_type="OccluderPolygon2D" path="local://149">  </resource>
+		<resource name="62/occluder" resource_type="OccluderPolygon2D" path="local://135">  </resource>
 		<vector2 name="62/navigation_offset"> 16, 16 </vector2>
-		<resource name="62/navigation" resource_type="NavigationPolygon" path="local://148">  </resource>
+		<resource name="62/navigation" resource_type="NavigationPolygon" path="local://134">  </resource>
 		<vector2 name="62/shape_offset"> 16, 16 </vector2>
 		<array name="62/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://147">  </resource>
+			<resource  resource_type="Shape2D" path="local://136">  </resource>
 		</array>
 		<string name="63/name"> "spritesheet263" </string>
 		<resource name="63/texture" external="0">  </resource>
 		<vector2 name="63/tex_offset"> 0, 0 </vector2>
 		<resource name="63/material"></resource>		<rect2 name="63/region"> 224, 224, 32, 32 </rect2>
 		<vector2 name="63/occluder_offset"> 16, 16 </vector2>
-		<resource name="63/occluder" resource_type="OccluderPolygon2D" path="local://152">  </resource>
+		<resource name="63/occluder" resource_type="OccluderPolygon2D" path="local://138">  </resource>
 		<vector2 name="63/navigation_offset"> 16, 16 </vector2>
-		<resource name="63/navigation" resource_type="NavigationPolygon" path="local://151">  </resource>
+		<resource name="63/navigation" resource_type="NavigationPolygon" path="local://137">  </resource>
 		<vector2 name="63/shape_offset"> 16, 16 </vector2>
 		<array name="63/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://150">  </resource>
+			<resource  resource_type="Shape2D" path="local://139">  </resource>
 		</array>
 		<string name="64/name"> "blank" </string>
 		<resource name="64/texture" external="1">  </resource>
@@ -1745,7 +1745,7 @@
 		<resource name="64/material"></resource>		<rect2 name="64/region"> 0, 0, 32, 32 </rect2>
 		<vector2 name="64/occluder_offset"> 16, 16 </vector2>
 		<resource name="64/occluder"></resource>		<vector2 name="64/navigation_offset"> 16, 16 </vector2>
-		<resource name="64/navigation" resource_type="NavigationPolygon" path="local://160">  </resource>
+		<resource name="64/navigation" resource_type="NavigationPolygon" path="local://140">  </resource>
 		<vector2 name="64/shape_offset"> 0, 0 </vector2>
 		<array name="64/shapes" len="0" shared="false">
 		</array>
@@ -1755,7 +1755,7 @@
 		<resource name="65/material"></resource>		<rect2 name="65/region"> 32, 32, 32, 32 </rect2>
 		<vector2 name="65/occluder_offset"> -0, -0 </vector2>
 		<resource name="65/occluder"></resource>		<vector2 name="65/navigation_offset"> -0, -0 </vector2>
-		<resource name="65/navigation" resource_type="NavigationPolygon" path="local://160">  </resource>
+		<resource name="65/navigation" resource_type="NavigationPolygon" path="local://140">  </resource>
 		<vector2 name="65/shape_offset"> 0, 0 </vector2>
 		<array name="65/shapes" len="0" shared="false">
 		</array>
@@ -1774,7 +1774,7 @@
 		<resource name="67/material"></resource>		<rect2 name="67/region"> 0, 32, 32, 32 </rect2>
 		<vector2 name="67/occluder_offset"> 16, 16 </vector2>
 		<resource name="67/occluder"></resource>		<vector2 name="67/navigation_offset"> 16, 16 </vector2>
-		<resource name="67/navigation" resource_type="NavigationPolygon" path="local://160">  </resource>
+		<resource name="67/navigation" resource_type="NavigationPolygon" path="local://140">  </resource>
 		<vector2 name="67/shape_offset"> 0, 0 </vector2>
 		<array name="67/shapes" len="0" shared="false">
 		</array>
@@ -1783,33 +1783,33 @@
 		<vector2 name="68/tex_offset"> 0, 0 </vector2>
 		<resource name="68/material"></resource>		<rect2 name="68/region"> 0, 0, 32, 32 </rect2>
 		<vector2 name="68/occluder_offset"> -0, -0 </vector2>
-		<resource name="68/occluder" resource_type="OccluderPolygon2D" path="local://162">  </resource>
+		<resource name="68/occluder" resource_type="OccluderPolygon2D" path="local://141">  </resource>
 		<vector2 name="68/navigation_offset"> -0, -0 </vector2>
 		<resource name="68/navigation"></resource>		<vector2 name="68/shape_offset"> -0, -0 </vector2>
 		<array name="68/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://161">  </resource>
+			<resource  resource_type="Shape2D" path="local://142">  </resource>
 		</array>
 		<string name="69/name"> "wood_wall_m" </string>
 		<resource name="69/texture" external="2">  </resource>
 		<vector2 name="69/tex_offset"> 0, 0 </vector2>
 		<resource name="69/material"></resource>		<rect2 name="69/region"> 32, 0, 32, 32 </rect2>
 		<vector2 name="69/occluder_offset"> -0, -0 </vector2>
-		<resource name="69/occluder" resource_type="OccluderPolygon2D" path="local://164">  </resource>
+		<resource name="69/occluder" resource_type="OccluderPolygon2D" path="local://143">  </resource>
 		<vector2 name="69/navigation_offset"> -0, -0 </vector2>
 		<resource name="69/navigation"></resource>		<vector2 name="69/shape_offset"> -0, -0 </vector2>
 		<array name="69/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://163">  </resource>
+			<resource  resource_type="Shape2D" path="local://144">  </resource>
 		</array>
 		<string name="70/name"> "wood_wall_r" </string>
 		<resource name="70/texture" external="2">  </resource>
 		<vector2 name="70/tex_offset"> 0, 0 </vector2>
 		<resource name="70/material"></resource>		<rect2 name="70/region"> 64, 0, 32, 32 </rect2>
 		<vector2 name="70/occluder_offset"> -0, -0 </vector2>
-		<resource name="70/occluder" resource_type="OccluderPolygon2D" path="local://166">  </resource>
+		<resource name="70/occluder" resource_type="OccluderPolygon2D" path="local://145">  </resource>
 		<vector2 name="70/navigation_offset"> -0, -0 </vector2>
 		<resource name="70/navigation"></resource>		<vector2 name="70/shape_offset"> -0, -0 </vector2>
 		<array name="70/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://165">  </resource>
+			<resource  resource_type="Shape2D" path="local://146">  </resource>
 		</array>
 
 	</main_resource>

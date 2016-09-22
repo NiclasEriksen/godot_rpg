@@ -67,7 +67,7 @@ shadow/enabled = true
 shadow/color = Color( 0, 0, 0, 1 )
 shadow/buffer_size = 2048
 shadow/esm_multiplier = 80.0
-shadow/item_mask = 2
+shadow/item_mask = 3
 script/script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

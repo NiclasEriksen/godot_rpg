@@ -45,4 +45,3 @@ func _process(delta):
 	# print(intensity)
 	# self.set_energy(1 + intensity * intensity_variation)
 	set_texture_offset(Vector2(ox, oy))
-

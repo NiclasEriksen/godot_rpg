@@ -8,6 +8,7 @@ signal jump
 signal attack
 onready var stats = get_node("StatsModule")
 var fireball = load("res://entities/projectiles/TripleFireBall.tscn")
+var roots = load("res://entities/targeted_abilities/Roots.tscn")
 var attacking = false
 var sprinting = false
 var last_pos = null
@@ -52,6 +53,15 @@ func _input(event):
 		# set_rot(get_rot() + 0.01)
 	elif event.is_action_released("MOVE_RIGHT"):
 		vel.x = vel.x - max_vel
+	if event.type == InputEvent.MOUSE_BUTTON:
+		if event.button_index == BUTTON_LEFT and event.pressed:
+			event = root.make_input_local(event)
+			var ol = root.get_node("ObjectLayer")
+			var r = roots.instance()
+			#r.set_pos(event.pos)
+			r.set_pos(event.pos)
+			ol.add_child(r)
+
 
 func _process(delta):
 	# var r = get_rot()
@@ -64,7 +74,7 @@ func _process(delta):
 			fbi.set_pos(get_pos())
 			#fbi.set_velocity(300)
 			ol.add_child(fbi)
-			
+
 			# get_node("StatsModule").apply_effect([["mp", -1]], null)
 			attacking = true
 	else:
