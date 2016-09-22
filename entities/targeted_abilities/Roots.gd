@@ -4,6 +4,7 @@ extends Node2D
 var lifetime = 0.0
 var max_time = 2.0
 var grown = false
+var attached = false
 
 func _ready():
 	set_process(true)
@@ -14,19 +15,24 @@ func _process(delta):
 	if not grown:
 		lifetime += delta
 		if lifetime >= max_time:
+			get_node("Area2D").call_deferred("set_enable_monitoring", false)
 			get_node("AnimationPlayer").play("Shrink")
 			grown = true
 
 func kill():
-	queue_free()
+	if not attached:
+		queue_free()
 
 func impact(body):
 	get_node("Area2D").call_deferred("set_enable_monitoring", false)
 	#get_node("AnimationPlayer").play("Explode")
+	attached = true
 	if body.get_node("StatsModule"):
+		set_pos(body.get_pos())
+		body.get_node("StatsModule").apply_effect(get_node("StunModule"), null)
 		body.get_node("StatsModule").apply_effect(get_node("EffectModule"), null)
 		print("ANAMAI DEIMEIGED!")
 
 func _on_Area2D_body_enter(body):
-	if body.is_in_group("enemies"):
+	if body.is_in_group("players"):
 		impact(body)

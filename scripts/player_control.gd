@@ -81,25 +81,32 @@ func _process(delta):
 		attacking = false
 
 
-	if vel.x or vel.y:
-		already_stopped = false
-		emit_signal("moved", get_pos(), get_rot())
-	elif not already_stopped:
-		already_stopped = true
-		emit_signal("stopped")
 
-	var motion = vel * delta
-	motion = move(motion)
-	if (is_colliding()):
-		var n = get_collision_normal()
-		motion = n.slide(motion)
-		# vel = n.slide(vel)
-		move(motion)
 
-	var r = 0
-	if root:
-		r = get_angle_to(root.get_global_mouse_pos()) * (rot_spd * delta)
-		rotate(r)
+	if not get_node("StatsModule").immobile:
+		if vel.x or vel.y:
+			already_stopped = false
+			emit_signal("moved", get_pos(), get_rot())
+		elif not already_stopped:
+			already_stopped = true
+			emit_signal("stopped")
+
+		var motion = vel * delta
+		motion = move(motion)
+		if (is_colliding()):
+			var n = get_collision_normal()
+			motion = n.slide(motion)
+			# vel = n.slide(vel)
+			move(motion)
+
+		var r = 0
+		if root:
+			r = get_angle_to(root.get_global_mouse_pos()) * (rot_spd * delta)
+			rotate(r)
+	else:
+		if not already_stopped:
+			already_stopped = true
+			emit_signal("stopped")
 
 
 func jump():

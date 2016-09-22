@@ -137,10 +137,20 @@ autoplay = ""
 
 [node name="EffectModule" parent="." instance=ExtResource( 4 )]
 
-effect_type = "fire"
-is_buff = false
-buff_time = 1.0
-buff_tick_interval = 0.3
+effect_type = "earth"
+amount = -1.0
+is_buff = true
+buff_time = 2.0
+buff_tick_interval = 0.5
+
+[node name="StunModule" parent="." instance=ExtResource( 4 )]
+
+effect_type = "stun"
+effect_stat = "movement_speed"
+amount = 0.0
+is_buff = true
+buff_time = 2.0
+buff_tick_interval = 0.0
 
 [connection signal="body_enter" from="Area2D" to="." method="_on_Area2D_body_enter"]
 

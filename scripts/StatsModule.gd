@@ -33,6 +33,7 @@ var hit_rate = base_hit_rate
 var armor = base_armor
 var magic_resist = base_magic_resist
 var attack_speed = base_attack_speed
+var immobile = false
 
 
 var final_stats = {
@@ -78,6 +79,8 @@ func _process(delta):
 		var buff_result = [false, false]
 		buff_result = e.buff_update(delta)
 		if not buff_result[0]:
+			if e.effect_type == "stun":
+				immobile = false
 			active_effects.erase(e)
 			print("Removing buff.")
 		elif buff_result[1]:
@@ -100,7 +103,9 @@ func apply_effect(effectmodule, originmodule): # Recieves an EffectModule, and a
 			active_effects.append(effectmodule)
 			print("Added buff.")
 			return
-	if get(effectmodule.effect_stat) or get(effectmodule.effect_stat) == 0:
+	if effectmodule.effect_type == "stun":
+		immobile = true
+	elif get(effectmodule.effect_stat) or get(effectmodule.effect_stat) == 0:
 		# print(effectmodule.effect_stat, effectmodule.amount)
 		set(effectmodule.effect_stat, get(effectmodule.effect_stat) + effectmodule.amount)
 	else:
