@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=1]
+[gd_scene load_steps=27 format=1]
 
 [ext_resource path="res://scripts/thescript.gd" type="Script" id=1]
 [ext_resource path="res://scripts/parallax.gd" type="Script" id=2]
@@ -22,6 +22,50 @@
 
 [sub_resource type="Animation" id=1]
 
+resource/name = "DialogOff"
+length = 0.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("text_interface_engine:visibility/visible")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 0.5 ), "transitions":FloatArray( 1 ), "update":1, "values":[ false ] }
+tracks/1/type = "value"
+tracks/1/path = NodePath("text_interface_engine:visibility/opacity")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = { "times":FloatArray( 0, 0.5 ), "transitions":FloatArray( 1.51572, 0.659754 ), "update":0, "values":[ 1.0, 0.0 ] }
+tracks/2/type = "value"
+tracks/2/path = NodePath("text_interface_engine:rect/scale")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = { "times":FloatArray( 0, 0.5 ), "transitions":FloatArray( 1.68179, 1 ), "update":0, "values":[ Vector2( 1, 1 ), Vector2( 1, 0 ) ] }
+
+[sub_resource type="Animation" id=2]
+
+resource/name = "DialogOn"
+length = 0.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("text_interface_engine:visibility/visible")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "update":1, "values":[ true ] }
+tracks/1/type = "value"
+tracks/1/path = NodePath("text_interface_engine:visibility/opacity")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = { "times":FloatArray( 0, 0.5 ), "transitions":FloatArray( 0.535887, 0.233258 ), "update":0, "values":[ 0.0, 1.0 ] }
+tracks/2/type = "value"
+tracks/2/path = NodePath("text_interface_engine:rect/scale")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "update":0, "values":[ Vector2( 1, 1 ) ] }
+
+[sub_resource type="Animation" id=3]
+
 length = 0.3
 loop = false
 step = 0.05
@@ -31,12 +75,12 @@ tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = { "times":FloatArray( 0, 0.05, 0.1, 0.15, 0.2 ), "transitions":FloatArray( 1, 1, 1, 1, 1 ), "update":0, "values":[ Vector2( 0, 0 ), Vector2( 5, 6 ), Vector2( 10, 0 ), Vector2( -8, -5 ), Vector2( 0, -10 ) ] }
 
-[sub_resource type="ColorRamp" id=2]
+[sub_resource type="ColorRamp" id=4]
 
 offsets = FloatArray( 0, 1 )
 colors = ColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=5]
 
 length = 0.5
 loop = true
@@ -52,12 +96,12 @@ tracks/1/interp = 2
 tracks/1/imported = false
 tracks/1/keys = { "times":FloatArray( 0, 0.15, 0.5 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ Vector2( 1, 1 ), Vector2( 1.5, 1.5 ), Vector2( 1, 1 ) ] }
 
-[sub_resource type="CircleShape2D" id=4]
+[sub_resource type="CircleShape2D" id=6]
 
 custom_solver_bias = 0.0
 radius = 15.0
 
-[sub_resource type="SampleLibrary" id=5]
+[sub_resource type="SampleLibrary" id=7]
 
 samples/dunk = { "db":0.0, "pitch":1.0, "sample":ExtResource( 17 ) }
 
@@ -137,6 +181,18 @@ margin/right = -200.0
 margin/bottom = -179.0
 FONT = ExtResource( 10 )
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UILayer"]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/DialogOff = SubResource( 1 )
+anims/DialogOn = SubResource( 2 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = ""
+
 [node name="Camera2D" type="Camera2D" parent="."]
 
 transform/pos = Vector2( 360, 235 )
@@ -149,6 +205,7 @@ limit/left = -10000000
 limit/top = -10000000
 limit/right = 10000000
 limit/bottom = 10000000
+limit/smoothed = false
 drag_margin/h_enabled = true
 drag_margin/v_enabled = true
 smoothing/enable = true
@@ -164,7 +221,7 @@ script/script = ExtResource( 11 )
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/ScreenShake = SubResource( 1 )
+anims/ScreenShake = SubResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -229,7 +286,7 @@ randomness/direction = 10.0
 randomness/linear_velocity = 1.0
 randomness/gravity_direction = 1.0
 randomness/initial_angle = 1.0
-color/color_ramp = SubResource( 2 )
+color/color_ramp = SubResource( 4 )
 
 [node name="PoisonExplode" type="Sprite" parent="."]
 
@@ -244,7 +301,7 @@ script/script = ExtResource( 15 )
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/Poof = SubResource( 3 )
+anims/Poof = SubResource( 5 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -253,7 +310,7 @@ autoplay = "Poof"
 [node name="Area2D" type="Area2D" parent="PoisonExplode"]
 
 input/pickable = true
-shapes/0/shape = SubResource( 4 )
+shapes/0/shape = SubResource( 6 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = true
 gravity_vec = Vector2( 0, 1 )
@@ -263,7 +320,7 @@ angular_damp = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PoisonExplode/Area2D"]
 
-shape = SubResource( 4 )
+shape = SubResource( 6 )
 trigger = true
 _update_shape_index = 0
 
@@ -289,7 +346,7 @@ params/attenuation/min_distance = 2.0
 params/attenuation/max_distance = 512.0
 params/attenuation/distance_exp = 0.366021
 config/polyphony = 1
-config/samples = SubResource( 5 )
+config/samples = SubResource( 7 )
 config/pitch_random = 0.1
 
 [node name="MapChangeTrigger" parent="." instance=ExtResource( 18 )]
@@ -310,15 +367,11 @@ script/script = ExtResource( 19 )
 
 [node name="ObjectLayer" type="Node" parent="."]
 
-[connection signal="attack" from="Player_object" to="Player_object/ArmAnimation" method="_on_Player_attack"]
-
 [connection signal="jump" from="Player_object" to="Camera2D" method="_on_Player_object_jump"]
 
 [connection signal="moved" from="Player_object" to="Camera2D" method="_on_Player_object_moved"]
 
-[connection signal="moved" from="Player_object" to="Player_object/AnimationTreePlayer" method="_on_Player_moved"]
-
-[connection signal="stopped" from="Player_object" to="Player_object/AnimationTreePlayer" method="_on_Player_stopped"]
+[connection signal="chat" from="UILayer/HUD" to="UILayer" method="_on_HUD_chat"]
 
 [connection signal="chat" from="UILayer/HUD" to="UILayer/text_interface_engine" method="_on_HUD_chat"]
 

@@ -16,3 +16,10 @@ func _input(event):
 		get_tree().set_pause(false)
 		# get_tree().get_root().get_node("Game").queue_free()
 		get_node("/root/globals").set_scene("res://MainMenu.tscn")
+
+
+func _on_HUD_chat(state, text):
+	if state:
+		get_node("AnimationPlayer").play("DialogOn")
+	else:
+		get_node("AnimationPlayer").play("DialogOff")

@@ -395,6 +395,7 @@ func _label_print(t): # Add text to the label
 func _on_HUD_chat(state, text):
 	# add_newline()
 	if state:
+		clear_text()
 		buff_text(text, 0.1)
 		#add_newline()
 		buff_text("\nNeste linje er kjappere?", 0.03)
@@ -402,5 +403,5 @@ func _on_HUD_chat(state, text):
 		buff_text("....", 1.0)
 		set_state(1)
 	else:
-		clear_text()
+		clear_buffer()
 		set_state(0)
