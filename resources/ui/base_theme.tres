@@ -1,10 +1,9 @@
-[gd_resource type="Theme" load_steps=6 format=1]
+[gd_resource type="Theme" load_steps=5 format=1]
 
 [ext_resource path="res://resources/ubuntu.fnt" type="BitmapFont" id=1]
 [ext_resource path="res://resources/ui/pixelboxtexture_press.tres" type="StyleBox" id=2]
 [ext_resource path="res://resources/ui/pixelboxtexture.tres" type="StyleBox" id=3]
 [ext_resource path="res://resources/ui/pixelboxtexture_hover.tres" type="StyleBox" id=4]
-[ext_resource path="res://resources/ui/mainmenubox.tres" type="StyleBox" id=5]
 
 [resource]
 
@@ -42,8 +41,8 @@ Label/constants/shadow_offset_x = 1
 Label/constants/shadow_offset_y = 1
 Label/fonts/font = null
 Panel/styles/panel = ExtResource( 3 )
-Panel/styles/panelf = ExtResource( 5 )
-Panel/styles/panelnc = ExtResource( 5 )
+Panel/styles/panelf = ExtResource( 3 )
+Panel/styles/panelnc = ExtResource( 3 )
 PanelContainer/styles/panel = ExtResource( 3 )
 PopupPanel/styles/panel = ExtResource( 3 )
 ReferenceFrame/styles/border = ExtResource( 3 )
