@@ -45,7 +45,7 @@ func _on_TestScene_released():
 	if get_node("/root/globals").get_map():
 		get_node("/root/globals").set_scene("res://TestScene.tscn")
 	else:
-		get_parent().get_node("Panel").get_node("PopupDialog").popup_centered()
+		get_tree().get_root().get_node("MainMenu").get_node("PopupDialog").popup_centered()
 
 
 func _on_Quit_released():

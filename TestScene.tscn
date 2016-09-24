@@ -171,14 +171,12 @@ script/script = ExtResource( 7 )
 
 [node name="text_interface_engine" parent="UILayer" instance=ExtResource( 9 )]
 
-anchor/left = 3
-anchor/top = 3
-anchor/right = 3
-anchor/bottom = 3
-margin/left = 200.0
-margin/top = 71.0
-margin/right = -200.0
-margin/bottom = -179.0
+visibility/visible = false
+rect/min_size = Vector2( 400, 250 )
+margin/left = 520.0
+margin/top = 379.0
+margin/right = 920.0
+margin/bottom = 629.0
 FONT = ExtResource( 10 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="UILayer"]
@@ -371,9 +369,9 @@ script/script = ExtResource( 19 )
 
 [connection signal="moved" from="Player_object" to="Camera2D" method="_on_Player_object_moved"]
 
-[connection signal="chat" from="UILayer/HUD" to="UILayer" method="_on_HUD_chat"]
-
 [connection signal="chat" from="UILayer/HUD" to="UILayer/text_interface_engine" method="_on_HUD_chat"]
+
+[connection signal="chat" from="UILayer/HUD" to="UILayer" method="_on_HUD_chat"]
 
 [connection signal="nightmode" from="UILayer/HUD" to="CanvasModulate" method="_on_HUD_nightmode"]
 

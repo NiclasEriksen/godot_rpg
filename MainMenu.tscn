@@ -4,7 +4,7 @@
 [ext_resource path="res://scripts/menu_control.gd" type="Script" id=2]
 [ext_resource path="res://resources/ui/el-natural.png" type="Texture" id=3]
 
-[node name="TextureFrame" type="TextureFrame"]
+[node name="MainMenu" type="TextureFrame"]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true

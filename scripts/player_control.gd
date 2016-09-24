@@ -85,9 +85,12 @@ func _process(delta):
 
 	if not get_node("StatsModule").immobile:
 		if vel.x or vel.y:
+			if already_stopped:
+				get_node("FSM (Finite state machine)").setState("walking")
 			already_stopped = false
 			emit_signal("moved", get_pos(), get_rot())
 		elif not already_stopped:
+			get_node("FSM (Finite state machine)").setState("idle")
 			already_stopped = true
 			emit_signal("stopped")
 
