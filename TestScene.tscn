@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=1]
+[gd_scene load_steps=25 format=1]
 
 [ext_resource path="res://scripts/thescript.gd" type="Script" id=1]
 [ext_resource path="res://scripts/parallax.gd" type="Script" id=2]
@@ -8,15 +8,17 @@
 [ext_resource path="res://entities/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scripts/game_ui.gd" type="Script" id=7]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scripts/camera.gd" type="Script" id=9]
-[ext_resource path="res://static_objects/Potion.tscn" type="PackedScene" id=10]
-[ext_resource path="res://resources/poison_particle.png" type="Texture" id=11]
-[ext_resource path="res://resources/poison.png" type="Texture" id=12]
-[ext_resource path="res://scripts/aoe_damage.gd" type="Script" id=13]
-[ext_resource path="res://components/EffectModule.tscn" type="PackedScene" id=14]
-[ext_resource path="res://resources/sfx/dunk.wav" type="Sample" id=15]
-[ext_resource path="res://static_objects/MapChangeTrigger.tscn" type="PackedScene" id=16]
-[ext_resource path="res://scripts/darkness.gd" type="Script" id=17]
+[ext_resource path="res://components/text_interface_engine.scn" type="PackedScene" id=9]
+[ext_resource path="res://resources/mono_font.fnt" type="BitmapFont" id=10]
+[ext_resource path="res://scripts/camera.gd" type="Script" id=11]
+[ext_resource path="res://static_objects/Potion.tscn" type="PackedScene" id=12]
+[ext_resource path="res://resources/poison_particle.png" type="Texture" id=13]
+[ext_resource path="res://resources/poison.png" type="Texture" id=14]
+[ext_resource path="res://scripts/aoe_damage.gd" type="Script" id=15]
+[ext_resource path="res://components/EffectModule.tscn" type="PackedScene" id=16]
+[ext_resource path="res://resources/sfx/dunk.wav" type="Sample" id=17]
+[ext_resource path="res://static_objects/MapChangeTrigger.tscn" type="PackedScene" id=18]
+[ext_resource path="res://scripts/darkness.gd" type="Script" id=19]
 
 [sub_resource type="Animation" id=1]
 
@@ -57,7 +59,7 @@ radius = 15.0
 
 [sub_resource type="SampleLibrary" id=5]
 
-samples/dunk = { "db":0.0, "pitch":1.0, "sample":ExtResource( 15 ) }
+samples/dunk = { "db":0.0, "pitch":1.0, "sample":ExtResource( 17 ) }
 
 [node name="Game" type="Control"]
 
@@ -123,6 +125,18 @@ script/script = ExtResource( 7 )
 
 [node name="HUD" parent="UILayer" instance=ExtResource( 8 )]
 
+[node name="text_interface_engine" parent="UILayer" instance=ExtResource( 9 )]
+
+anchor/left = 3
+anchor/top = 3
+anchor/right = 3
+anchor/bottom = 3
+margin/left = 200.0
+margin/top = 71.0
+margin/right = -200.0
+margin/bottom = -179.0
+FONT = ExtResource( 10 )
+
 [node name="Camera2D" type="Camera2D" parent="."]
 
 transform/pos = Vector2( 360, 235 )
@@ -143,7 +157,7 @@ drag_margin/left = 0.0
 drag_margin/top = 0.0
 drag_margin/right = 0.0
 drag_margin/bottom = 0.0
-script/script = ExtResource( 9 )
+script/script = ExtResource( 11 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D"]
 
@@ -156,35 +170,35 @@ playback/speed = 1.0
 blend_times = [  ]
 autoplay = ""
 
-[node name="Potion" parent="." instance=ExtResource( 10 )]
+[node name="Potion" parent="." instance=ExtResource( 12 )]
 
 transform/pos = Vector2( 899.38, 486.428 )
 
-[node name="Potion1" parent="." instance=ExtResource( 10 )]
+[node name="Potion1" parent="." instance=ExtResource( 12 )]
 
 transform/pos = Vector2( 1294.38, 1265.92 )
 
-[node name="Potion3" parent="." instance=ExtResource( 10 )]
+[node name="Potion3" parent="." instance=ExtResource( 12 )]
 
 transform/pos = Vector2( 648.585, 1373.31 )
 
-[node name="Potion4" parent="." instance=ExtResource( 10 )]
+[node name="Potion4" parent="." instance=ExtResource( 12 )]
 
 transform/pos = Vector2( 229.201, 482.587 )
 
-[node name="Potion5" parent="." instance=ExtResource( 10 )]
+[node name="Potion5" parent="." instance=ExtResource( 12 )]
 
 transform/pos = Vector2( 40.0215, 1195.76 )
 
-[node name="Potion6" parent="." instance=ExtResource( 10 )]
+[node name="Potion6" parent="." instance=ExtResource( 12 )]
 
 transform/pos = Vector2( 1315.74, 1417.97 )
 
-[node name="Potion7" parent="." instance=ExtResource( 10 )]
+[node name="Potion7" parent="." instance=ExtResource( 12 )]
 
 transform/pos = Vector2( -1049, -418 )
 
-[node name="Potion2" parent="." instance=ExtResource( 10 )]
+[node name="Potion2" parent="." instance=ExtResource( 12 )]
 
 transform/pos = Vector2( -1017, -583 )
 
@@ -194,7 +208,7 @@ transform/pos = Vector2( 1204.5, 1546.35 )
 z/z = 6
 config/amount = 32
 config/lifetime = 2.0
-config/texture = ExtResource( 11 )
+config/texture = ExtResource( 13 )
 params/direction = 0.0
 params/spread = 30.0
 params/linear_velocity = -10.0
@@ -221,9 +235,9 @@ color/color_ramp = SubResource( 2 )
 
 transform/pos = Vector2( 609.972, 79.9719 )
 z/z = 5
-texture = ExtResource( 12 )
+texture = ExtResource( 14 )
 hframes = 13
-script/script = ExtResource( 13 )
+script/script = ExtResource( 15 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PoisonExplode"]
 
@@ -260,7 +274,7 @@ wait_time = 0.5
 one_shot = false
 autostart = true
 
-[node name="EffectModule" parent="PoisonExplode" instance=ExtResource( 14 )]
+[node name="EffectModule" parent="PoisonExplode" instance=ExtResource( 16 )]
 
 amount = -1.0
 is_buff = true
@@ -278,12 +292,12 @@ config/polyphony = 1
 config/samples = SubResource( 5 )
 config/pitch_random = 0.1
 
-[node name="MapChangeTrigger" parent="." instance=ExtResource( 16 )]
+[node name="MapChangeTrigger" parent="." instance=ExtResource( 18 )]
 
 transform/pos = Vector2( 398, 396 )
 map_name = "Test3.tscn"
 
-[node name="MapChangeTrigger1" parent="." instance=ExtResource( 16 )]
+[node name="MapChangeTrigger1" parent="." instance=ExtResource( 18 )]
 
 transform/pos = Vector2( 90, 531 )
 map_name = "Test2.tscn"
@@ -292,13 +306,21 @@ map_name = "Test2.tscn"
 
 visibility/visible = false
 color = Color( 0, 0, 0, 1 )
-script/script = ExtResource( 17 )
+script/script = ExtResource( 19 )
 
 [node name="ObjectLayer" type="Node" parent="."]
+
+[connection signal="attack" from="Player_object" to="Player_object/ArmAnimation" method="_on_Player_attack"]
 
 [connection signal="jump" from="Player_object" to="Camera2D" method="_on_Player_object_jump"]
 
 [connection signal="moved" from="Player_object" to="Camera2D" method="_on_Player_object_moved"]
+
+[connection signal="moved" from="Player_object" to="Player_object/AnimationTreePlayer" method="_on_Player_moved"]
+
+[connection signal="stopped" from="Player_object" to="Player_object/AnimationTreePlayer" method="_on_Player_stopped"]
+
+[connection signal="chat" from="UILayer/HUD" to="UILayer/text_interface_engine" method="_on_HUD_chat"]
 
 [connection signal="nightmode" from="UILayer/HUD" to="CanvasModulate" method="_on_HUD_nightmode"]
 

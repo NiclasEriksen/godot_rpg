@@ -2,6 +2,7 @@ extends Node2D
 
 signal pause(state)
 signal nightmode(state)
+signal chat(state, text)
 
 var player = null
 
@@ -26,3 +27,6 @@ func _on_HealthBar_value_changed(value):
 
 func _on_NightButton_toggled( pressed ):
 	emit_signal("nightmode", pressed)
+
+func _on_ChatButton_toggled(state):
+	emit_signal("chat", state, "Hey there! Supersexy dialog system ftw. Yey.")
