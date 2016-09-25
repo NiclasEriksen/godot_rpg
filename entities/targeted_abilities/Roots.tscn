@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=1]
 
 [ext_resource path="res://entities/targeted_abilities/Roots.gd" type="Script" id=1]
-[ext_resource path="res://resources/effects/Root.png" type="Texture" id=2]
-[ext_resource path="res://resources/effects/RootAnim.png" type="Texture" id=3]
+[ext_resource path="res://resources/effects/root_static.png" type="Texture" id=2]
+[ext_resource path="res://resources/effects/roots.png" type="Texture" id=3]
 [ext_resource path="res://components/EffectModule.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
@@ -88,7 +88,7 @@ _update_shape_index = 0
 [node name="Sprite" type="Sprite" parent="."]
 
 texture = ExtResource( 2 )
-offset = Vector2( 0, -10 )
+offset = Vector2( 0, -3 )
 
 [node name="Particles2D" type="Particles2D" parent="."]
 
@@ -119,8 +119,9 @@ color/color_ramp = SubResource( 2 )
 
 visibility/visible = false
 texture = ExtResource( 3 )
-offset = Vector2( 0, -10 )
-hframes = 13
+offset = Vector2( 0, -3 )
+vframes = 3
+hframes = 4
 frame = 12
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
