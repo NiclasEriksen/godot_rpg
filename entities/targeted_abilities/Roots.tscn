@@ -1,9 +1,11 @@
 [gd_scene load_steps=9 format=1]
 
 [ext_resource path="res://entities/targeted_abilities/Roots.gd" type="Script" id=1]
-[ext_resource path="res://resources/effects/root_static.png" type="Texture" id=2]
-[ext_resource path="res://resources/effects/roots.png" type="Texture" id=3]
+[ext_resource path="res://resources/effects/Root.png" type="Texture" id=2]
+[ext_resource path="res://resources/effects/RootAnim.png" type="Texture" id=3]
 [ext_resource path="res://components/EffectModule.tscn" type="PackedScene" id=4]
+
+
 
 [sub_resource type="CircleShape2D" id=1]
 
