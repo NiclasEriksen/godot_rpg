@@ -5,6 +5,8 @@ var map = null
 func _ready():
 	set_process(true)
 	globals = get_node("/root/globals")
+	var nc = get_node("/root/notifications")
+	nc.notifications.clear()
 	if globals:
 		if globals.get_map():
 			map = load(globals.get_map())
