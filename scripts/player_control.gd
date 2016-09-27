@@ -7,7 +7,7 @@ signal stopped
 signal jump
 signal attack
 onready var stats = get_node("StatsModule")
-onready var state = Idle.new()
+onready var state = Idle.new(self)
 var fireball = load("res://entities/projectiles/TripleFireBall.tscn")
 var roots = load("res://entities/targeted_abilities/Roots.tscn")
 var attacking = false
@@ -169,7 +169,6 @@ class Immobile:
 
 class Stunned:
 	extends Immobile
-	var player
 
 	func _init(player):
 		self.player = player
