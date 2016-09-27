@@ -3,6 +3,8 @@ extends Node
 
 var currentScene = null
 var map = null
+onready var cur1 = load("res://resources/ui/cursor1.png")
+onready var cur2 = load("res://resources/ui/cursor2.png")
 
 var PlayerName = "Niclas"
 var MAP_WIDTH = 40
@@ -11,6 +13,14 @@ var MAP_HEIGHT = 30
 func _ready():
 	# print(currentScene, "hei")
 	currentScene = get_tree().get_root().get_child(get_tree().get_root().get_child_count() -1)
+	set_process_input(true)
+
+func _input(event):
+	if event.type == InputEvent.MOUSE_BUTTON:
+		if event.is_pressed():
+			Input.set_custom_mouse_cursor(cur2)
+		else:
+			Input.set_custom_mouse_cursor(cur1)
 
 func set_scene(scene):
 	currentScene.queue_free()
