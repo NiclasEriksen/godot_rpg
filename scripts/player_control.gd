@@ -7,6 +7,7 @@ signal stopped
 signal jump
 signal attack
 onready var stats = get_node("StatsModule")
+onready var state = Idle.new()
 var fireball = load("res://entities/projectiles/TripleFireBall.tscn")
 var roots = load("res://entities/targeted_abilities/Roots.tscn")
 var attacking = false
@@ -26,15 +27,15 @@ func _ready():
 	set_process(true)
 	set_process_input(true)
 	root = get_tree().get_root().get_node("Game")
-	var spawn = get_tree().get_root().get_node("Game").get_node("Nav").get_node("Map").get_node("SpawnPoint")
+	var spawn = root.get_node("Nav").get_node("Map").get_node("SpawnPoint")
 	if spawn:
 		self.set_pos(spawn.get_pos())
 	emit_signal("moved", get_pos(), get_rot())
 
 
 func _input(event):
-	if get_node("StatsModule"):
-		max_vel = get_node("StatsModule").get_actual("movement_speed")
+	if stats:
+		max_vel = stats.get_actual("movement_speed")
 	if event.is_action_pressed("MOVE_UP"):
 		vel.y = vel.y - max_vel
 	elif event.is_action_released("MOVE_UP"):
@@ -80,10 +81,7 @@ func _process(delta):
 	else:
 		attacking = false
 
-
-
-
-	if not get_node("StatsModule").immobile:
+	if not stats.immobile:
 		if vel.x or vel.y:
 			if already_stopped:
 				get_node("FSM (Finite state machine)").setState("walking")
@@ -119,3 +117,68 @@ func jump():
 
 func _on_CanvasModulate_nightmode( state ):
 	get_node("Light2D1").set_hidden(not state)
+
+
+class Idle:
+	var player
+
+	func _init(player):
+		self.player = player
+
+	func update(delta):
+		pass
+
+	func input(event):
+		pass
+
+	func exit():
+		pass
+
+
+class Moving:
+	var player
+
+	func _init(player):
+		self.player = player
+
+	func update(delta):
+		pass
+
+	func input(event):
+		pass
+
+	func exit():
+		pass
+
+
+class Immobile:
+	var player
+
+	func _init(player):
+		self.player = player
+
+	func update(delta):
+		pass
+
+	func input(event):
+		pass
+
+	func exit():
+		pass
+
+
+class Stunned:
+	extends Immobile
+	var player
+
+	func _init(player):
+		self.player = player
+
+	func update(delta):
+		pass
+
+	func input(event):
+		pass
+
+	func exit():
+		pass
