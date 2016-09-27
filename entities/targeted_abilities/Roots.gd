@@ -9,7 +9,6 @@ var attached = false
 func _ready():
 	set_process(true)
 	get_node("AnimationPlayer").play("Grow")
-	print("Growing")
 
 func _process(delta):
 	if not grown:

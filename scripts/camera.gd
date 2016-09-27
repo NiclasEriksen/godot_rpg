@@ -7,6 +7,13 @@ signal rotated(angle)
 
 func _ready():
 	set_process_input(true)
+	var nc = get_node("/root/notifications")
+	if nc:
+		nc.add_observer(self, "explosion", "notification")
+
+func notification(observer, type, data):
+	if type == "explosion":
+		shake()
 
 func shake():
 	var ap = get_node("AnimationPlayer")
@@ -30,7 +37,3 @@ func _on_Player_object_moved(pos, rot):
 	self.set_pos(pos)
 	self.set_rot(rot + PI)
 	emit_signal("rotated", -rot)
-
-
-func _on_Player_object_jump():
-	shake()

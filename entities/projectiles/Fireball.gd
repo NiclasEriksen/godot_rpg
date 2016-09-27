@@ -12,6 +12,7 @@ var period = 1.0
 var initial_angle = 0
 var max_time = 3.0
 var spd = 0
+onready var nc = get_node("/root/notifications")
 
 func _ready():
 	set_process(true)
@@ -38,6 +39,8 @@ func set_oscillation(amount):
 	osc_amount = amount
 
 func impact(body):
+	if nc:
+		nc.post_notification("explosion", null)
 	get_node("Area2D").call_deferred("set_enable_monitoring", false)
 	spd = 0
 	get_node("AnimationPlayer").play("Explode")

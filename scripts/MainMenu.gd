@@ -8,12 +8,8 @@ extends Node
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
-	print("test")
 	set_process(true)
 
 func _process(delta):
 	if(Input.is_mouse_button_pressed(BUTTON_LEFT)):
-		print("Starting")
 		get_node("/root/MainMenu").setScene("res://TestScene.tscn")
-
-
