@@ -5,18 +5,27 @@ signal nightmode(state)
 signal chat(state, text)
 
 var player = null
+onready var nc = get_node("/root/notifications")
+var hp_bar_scn = preload("res://components/HPBar.tscn")
 
 func _ready():
-	set_fixed_process(true)
+	set_process(true)
 	player = get_tree().get_root().get_node("Game").get_node("Player_object")
+	nc.add_observer(self, "player_hp", "update_resource")
 
-func _fixed_process(delta):
-	if player:
-		if player.get_node("StatsModule"):
-			var hp = (float(player.get_node("StatsModule").get("hp")) / float(player.get_node("StatsModule").get("max_hp")) * 100.0)
-			get_node("ResourceBars/HealthBar").set_value(hp)
-			var mp = (float(player.get_node("StatsModule").get("mp")) / float(player.get_node("StatsModule").get("max_mp")) * 100.0)
-			get_node("ResourceBars/ManaBar").set_value(mp)
+func add_hpbar(owner):
+	var hpb = hp_bar_scn.instance()
+	hpb.register(owner)
+	get_node("HPBars").add_child(hpb)
+
+func update_resource(obs, type, data):
+	if type == "player_hp":
+		get_node("ResourceBars/HealthBar").set_value(data)
+	elif type == "player_mp":
+		get_node("ResourceBars/ManaBar").set_value(data)
+
+func _process(delta):
+	pass
 
 func _on_PauseButton_toggled(state):
 	emit_signal("pause", state)

@@ -5,6 +5,7 @@ signal attack
 signal moving
 signal stopped
 onready var stats = get_node("StatsModule")
+onready var root = get_tree().get_root().get_node("Game")
 var last_pos = null
 var moving = false
 
@@ -18,6 +19,8 @@ func _ready():
 	# set_pos(Vector2(100, 100))
 	set_process_input(true)
 	set_fixed_process(true)
+	root.get_node("UILayer").get_node("HUD").add_hpbar(self)
+
 
 func _fixed_process(delta):
 	if not get_pos() == last_pos:

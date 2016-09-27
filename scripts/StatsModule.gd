@@ -7,8 +7,8 @@ export(int) var base_intelligence = 0
 export(int) var base_agility = 0
 export(int) var base_spirit = 0
 export(int) var base_stamina = 0
-export(int) var max_hp = 10 # Replace with base
-export(int) var max_mp = 5  # Replace with base
+export(int) var max_hp = 10.0 # Replace with base
+export(int) var max_mp = 5.0  # Replace with base
 export(float) var base_damage = 1.0
 export(float) var base_spell_power = 0.0
 export(float) var base_phys_crit = 0.0
@@ -66,6 +66,8 @@ var active_effects = []
 
 
 func _ready():
+	self.hp = self.max_hp
+	self.mp = self.max_mp
 	set_process(true)
 	set_fixed_process(true)
 

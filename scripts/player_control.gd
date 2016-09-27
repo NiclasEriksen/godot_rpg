@@ -22,6 +22,9 @@ var rot_spd = 3
 var root = null
 var anim = null
 var already_stopped = false
+var last_hp = 0.0
+
+onready var nc = get_node("/root/notifications")
 
 func _ready():
 	set_process(true)
@@ -66,6 +69,10 @@ func _input(event):
 
 func _process(delta):
 	# var r = get_rot()
+	var hp = stats.get("hp")
+	if not hp == last_hp:
+		var max_hp = stats.get("max_hp")
+		nc.post_notification("player_hp", hp / max_hp * 100)
 	if Input.is_action_pressed("ATTACK"):
 		if not attacking:
 			emit_signal("attack")

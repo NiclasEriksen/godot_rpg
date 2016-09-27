@@ -21,7 +21,7 @@ custom_solver_bias = 0.0
 radius = 10.3131
 height = 10.0119
 
-[node name="Creature" type="KinematicBody2D"]
+[node name="Creature" type="KinematicBody2D" groups=[ "enemies" ]]
 
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
@@ -156,6 +156,21 @@ blend_times = [  ]
 autoplay = ""
 
 [node name="StatsModule" parent="." instance=ExtResource( 14 )]
+
+base_strength = 0
+base_intelligence = 0
+base_agility = 0
+base_spirit = 0
+base_stamina = 0
+max_hp = 50
+base_spell_power = 0.0
+base_phys_crit = 0.0
+base_spell_crit = 0.0
+base_hit_rate = 0
+base_armor = 0
+base_magic_resist = 0
+base_movement_speed = 90
+base_attack_speed = 2.0
 
 [connection signal="attack" from="." to="ArmAnimation" method="_on_Creature_attack"]
 

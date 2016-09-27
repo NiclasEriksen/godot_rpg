@@ -111,6 +111,7 @@ autoplay = ""
 [node name="EffectModule" parent="." instance=ExtResource( 4 )]
 
 effect_type = "fire"
+amount = -3.0
 is_buff = false
 buff_time = 1.0
 buff_tick_interval = 0.3
