@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=1]
+[gd_scene load_steps=28 format=1]
 
 [ext_resource path="res://scripts/player_control.gd" type="Script" id=1]
 [ext_resource path="res://resources/light2.png" type="Texture" id=2]
@@ -8,23 +8,22 @@
 [ext_resource path="res://components/StatsModule.tscn" type="PackedScene" id=6]
 [ext_resource path="res://resources/creatures/lumberjack2.png" type="Texture" id=7]
 [ext_resource path="res://scripts/sprite.tres.gd" type="Script" id=8]
-[ext_resource path="res://resources/equipment/animation_sword_hit.png" type="Texture" id=9]
-[ext_resource path="res://entities/CreatureArmAnim.gd" type="Script" id=10]
-[ext_resource path="res://animations/creature_punch_right.tres" type="Animation" id=11]
-[ext_resource path="res://animations/creature_punch_left.tres" type="Animation" id=12]
-[ext_resource path="res://animations/creature_idle.tres" type="Animation" id=13]
-[ext_resource path="res://animations/creature_walk.tres" type="Animation" id=14]
-[ext_resource path="res://entities/equipment/AxeBloody.tscn" type="PackedScene" id=15]
-[ext_resource path="res://entities/CreatureAnimTree.gd" type="Script" id=16]
-[ext_resource path="res://scripts/WeaponControl.gd" type="Script" id=17]
-[ext_resource path="res://resources/equipment/animation_flail_swing.png" type="Texture" id=18]
-[ext_resource path="res://resources/light1.tex" type="Texture" id=19]
-[ext_resource path="res://addons/net.kivano.fsm/content/fsm.gd" type="Script" id=20]
-[ext_resource path="res://addons/net.kivano.fsm/icon.png" type="Texture" id=21]
-[ext_resource path="res://entities/PlayerStates/idle/idle.tscn" type="PackedScene" id=22]
-[ext_resource path="res://entities/PlayerStates/idle/idle.gd" type="Script" id=23]
+[ext_resource path="res://resources/creatures/darkbluegreenspikes2.png" type="Texture" id=9]
+[ext_resource path="res://resources/equipment/animation_sword_hit.png" type="Texture" id=10]
+[ext_resource path="res://entities/CreatureArmAnim.gd" type="Script" id=11]
+[ext_resource path="res://animations/creature_punch_right.tres" type="Animation" id=12]
+[ext_resource path="res://animations/creature_punch_left.tres" type="Animation" id=13]
+[ext_resource path="res://animations/creature_idle.tres" type="Animation" id=14]
+[ext_resource path="res://animations/creature_walk.tres" type="Animation" id=15]
+[ext_resource path="res://entities/equipment/AxeBloody.tscn" type="PackedScene" id=16]
+[ext_resource path="res://entities/CreatureAnimTree.gd" type="Script" id=17]
+[ext_resource path="res://scripts/WeaponControl.gd" type="Script" id=18]
+[ext_resource path="res://resources/equipment/animation_flail_swing.png" type="Texture" id=19]
+[ext_resource path="res://resources/light1.tex" type="Texture" id=20]
+[ext_resource path="res://addons/net.kivano.fsm/content/fsm.gd" type="Script" id=21]
+[ext_resource path="res://addons/net.kivano.fsm/icon.png" type="Texture" id=22]
+[ext_resource path="res://entities/PlayerStates/idle/idle.tscn" type="PackedScene" id=23]
 [ext_resource path="res://entities/PlayerStates/walking/walking.tscn" type="PackedScene" id=24]
-[ext_resource path="res://entities/PlayerStates/walking/walking.gd" type="Script" id=25]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -121,9 +120,21 @@ region_rect = Rect2( 0, 0, 32, 32 )
 script/script = ExtResource( 8 )
 __meta__ = { "_edit_bone_":true }
 
+[node name="ChestArmor" type="Sprite" parent="Torso"]
+
+texture = ExtResource( 9 )
+region = true
+region_rect = Rect2( 0, 0, 32, 32 )
+
 [node name="Head" type="Sprite" parent="Torso"]
 
 texture = ExtResource( 7 )
+region = true
+region_rect = Rect2( 32, 0, 32, 32 )
+
+[node name="HelmArmor" type="Sprite" parent="Torso/Head"]
+
+texture = ExtResource( 9 )
 region = true
 region_rect = Rect2( 32, 0, 32, 32 )
 
@@ -154,7 +165,7 @@ __meta__ = { "_edit_bone_":true }
 
 transform/pos = Vector2( 0, 5 )
 transform/rot = 91.0
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 offset = Vector2( 1, 15 )
 vframes = 4
 hframes = 8
@@ -174,6 +185,24 @@ remote_path = NodePath("../../../../../Axe")
 [node name="RightEquipped" type="RemoteTransform2D" parent="Torso/RightShoulder/RightArm/RightHand"]
 
 remote_path = NodePath("")
+
+[node name="HandArmor" type="Sprite" parent="Torso/RightShoulder/RightArm/RightHand"]
+
+texture = ExtResource( 9 )
+region = true
+region_rect = Rect2( 64, 64, 32, 32 )
+
+[node name="ArmArmor" type="Sprite" parent="Torso/RightShoulder/RightArm"]
+
+texture = ExtResource( 9 )
+region = true
+region_rect = Rect2( 64, 32, 32, 32 )
+
+[node name="ShoulderArmor" type="Sprite" parent="Torso/RightShoulder"]
+
+texture = ExtResource( 9 )
+region = true
+region_rect = Rect2( 64, 0, 32, 32 )
 
 [node name="LeftShoulder" type="Sprite" parent="Torso"]
 
@@ -218,16 +247,35 @@ __meta__ = { "_edit_bone_":true }
 
 remote_path = NodePath("../../../../../EquippedLeft")
 
+[node name="HandArmor" type="Sprite" parent="Torso/LeftShoulder/LeftArm/LeftHand"]
+
+texture = ExtResource( 9 )
+region = true
+region_rect = Rect2( 64, 64, 32, 32 )
+
+[node name="ArmArmor" type="Sprite" parent="Torso/LeftShoulder/LeftArm"]
+
+texture = ExtResource( 9 )
+region = true
+region_rect = Rect2( 64, 32, 32, 32 )
+
+[node name="ShoulderArmor" type="Sprite" parent="Torso/LeftShoulder"]
+
+transform/scale = Vector2( 1, 1 )
+texture = ExtResource( 9 )
+region = true
+region_rect = Rect2( 64, 0, 32, 32 )
+
 [node name="ArmAnimation" type="Node" parent="."]
 
-script/script = ExtResource( 10 )
+script/script = ExtResource( 11 )
 
 [node name="RightArmPlayer" type="AnimationPlayer" parent="ArmAnimation"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/creature_punch_right = ExtResource( 11 )
+anims/creature_punch_right = ExtResource( 12 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -238,7 +286,7 @@ autoplay = ""
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/creature_punch_left = ExtResource( 12 )
+anims/creature_punch_left = ExtResource( 13 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -249,14 +297,14 @@ autoplay = ""
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/creature_idle = ExtResource( 13 )
-anims/creature_walk = ExtResource( 14 )
+anims/creature_idle = ExtResource( 14 )
+anims/creature_walk = ExtResource( 15 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = ""
 
-[node name="Axe" parent="." instance=ExtResource( 15 )]
+[node name="Axe" parent="." instance=ExtResource( 16 )]
 
 visibility/visible = false
 transform/pos = Vector2( -15.9959, -0.842992 )
@@ -267,21 +315,21 @@ transform/rot = 0.999998
 playback/process_mode = 0
 base_path = NodePath("..")
 master_player = NodePath("")
-data = { "active":false, "connections":[ "anim", "scale", 0, "anim 2", "state", 0, "scale", "state", 1, "state", "out", 0 ], "master":NodePath(""), "nodes":[ { "id":"scale", "pos":Vector2( 629, 116 ), "scale":1.5, "type":"timescale" }, { "id":"state", "pos":Vector2( 807, 57 ), "transitions":[ { "auto_advance":false }, { "auto_advance":false } ], "type":"transition", "xfade":0.3 }, { "animation":ExtResource( 14 ), "filter":[  ], "id":"anim", "pos":Vector2( 508, 120 ), "type":"animation" }, { "id":"out", "pos":Vector2( 1100, 76 ), "type":"output" }, { "animation":ExtResource( 13 ), "filter":[  ], "id":"anim 2", "pos":Vector2( 517, 5 ), "type":"animation" } ] }
-script/script = ExtResource( 16 )
+data = { "active":false, "connections":[ "anim", "scale", 0, "anim 2", "state", 0, "scale", "state", 1, "state", "out", 0 ], "master":NodePath(""), "nodes":[ { "id":"scale", "pos":Vector2( 629, 116 ), "scale":1.5, "type":"timescale" }, { "id":"state", "pos":Vector2( 807, 57 ), "transitions":[ { "auto_advance":false }, { "auto_advance":false } ], "type":"transition", "xfade":0.3 }, { "animation":ExtResource( 15 ), "filter":[  ], "id":"anim", "pos":Vector2( 508, 120 ), "type":"animation" }, { "id":"out", "pos":Vector2( 1100, 76 ), "type":"output" }, { "animation":ExtResource( 14 ), "filter":[  ], "id":"anim 2", "pos":Vector2( 517, 5 ), "type":"animation" } ] }
+script/script = ExtResource( 17 )
 
 [node name="EquippedLeft" type="Node2D" parent="."]
 
 transform/pos = Vector2( 16.9959, -0.842992 )
 transform/rot = 90.0
 z/z = 2
-script/script = ExtResource( 17 )
+script/script = ExtResource( 18 )
 equipped = null
 
 [node name="Flail" type="Sprite" parent="EquippedLeft"]
 
 transform/rot = 90.0
-texture = ExtResource( 18 )
+texture = ExtResource( 19 )
 offset = Vector2( -4, 8 )
 hframes = 8
 frame = 7
@@ -293,7 +341,7 @@ __meta__ = { "_edit_bone_":true }
 visibility/behind_parent = true
 transform/pos = Vector2( -3, 6 )
 enabled = true
-texture = ExtResource( 19 )
+texture = ExtResource( 20 )
 offset = Vector2( 0, 0 )
 scale = 0.05
 color = Color( 1, 0, 0, 1 )
@@ -339,8 +387,8 @@ color/color_ramp = SubResource( 3 )
 
 [node name="FSM (Finite state machine)" type="Node" parent="."]
 
-script/script = ExtResource( 20 )
-__meta__ = { "_editor_icon":ExtResource( 21 ) }
+script/script = ExtResource( 21 )
+__meta__ = { "_editor_icon":ExtResource( 22 ) }
 path2LogicRoot = NodePath("..")
 onlyActiveStateOnTheScene = true
 transitionsHardcodedInStates = true
@@ -350,13 +398,9 @@ updateMode = 1
 "Create new State/Subdirectory for states" = "PlayerStates"
 "Create new State/Create state with name:" = null
 
-[node name="idle" type="Node" parent="FSM (Finite state machine)" instance=ExtResource( 22 )]
+[node name="idle" parent="FSM (Finite state machine)" instance=ExtResource( 23 )]
 
-script/script = ExtResource( 23 )
-
-[node name="walking" type="Node" parent="FSM (Finite state machine)" instance=ExtResource( 24 )]
-
-script/script = ExtResource( 25 )
+[node name="walking" parent="FSM (Finite state machine)" instance=ExtResource( 24 )]
 
 [connection signal="attack" from="." to="ArmAnimation" method="_on_Player_attack"]
 
