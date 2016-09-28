@@ -73,6 +73,7 @@ func _process(delta):
 	if not hp == last_hp:
 		var max_hp = stats.get("max_hp")
 		nc.post_notification("player_hp", hp / max_hp * 100)
+		self.last_hp = hp
 	if Input.is_action_pressed("ATTACK"):
 		if not attacking:
 			emit_signal("attack")

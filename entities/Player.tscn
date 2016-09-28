@@ -101,6 +101,7 @@ base_intelligence = 0
 base_agility = 0
 base_spirit = 0
 base_stamina = 0
+max_hp = 20
 base_spell_power = 0.0
 base_phys_crit = 0.0
 base_spell_crit = 0.0
@@ -261,7 +262,6 @@ region_rect = Rect2( 64, 32, 32, 32 )
 
 [node name="ShoulderArmor" type="Sprite" parent="Torso/LeftShoulder"]
 
-transform/scale = Vector2( 1, 1 )
 texture = ExtResource( 9 )
 region = true
 region_rect = Rect2( 64, 0, 32, 32 )

@@ -24,6 +24,8 @@ func _input(event):
 
 func set_scene(scene):
 	currentScene.queue_free()
+	var nc = get_node("/root/notifications")
+	nc.notifications.clear()
 	var s = ResourceLoader.load(scene)
 	currentScene = s.instance()
 	get_tree().get_root().add_child(currentScene)
