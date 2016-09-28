@@ -19,7 +19,16 @@ func _ready():
 	# set_pos(Vector2(100, 100))
 	set_process_input(true)
 	set_fixed_process(true)
+	set_process(true)
 	root.get_node("UILayer").get_node("HUD").add_hpbar(self)
+
+
+func die():
+	queue_free()
+
+func _process(delta):
+	if stats.get("hp") <= 0:
+		die()
 
 
 func _fixed_process(delta):
@@ -31,4 +40,5 @@ func _fixed_process(delta):
 
 func _input(event):
 	if event.is_action_pressed("ATTACK"):
-		emit_signal("attack")
+		pass
+		#emit_signal("attack")

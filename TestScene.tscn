@@ -430,7 +430,36 @@ script/script = ExtResource( 20 )
 
 [node name="Creature" parent="ObjectLayer" instance=ExtResource( 21 )]
 
-transform/pos = Vector2( 155.452, 346.066 )
+transform/pos = Vector2( 187, 187 )
+
+[node name="Creature 2" parent="ObjectLayer" instance=ExtResource( 21 )]
+
+transform/pos = Vector2( 140, 178 )
+
+[node name="Creature 3" parent="ObjectLayer" instance=ExtResource( 21 )]
+
+transform/pos = Vector2( 213, 149 )
+transform/scale = Vector2( 1, 1 )
+
+[node name="Creature 4" parent="ObjectLayer" instance=ExtResource( 21 )]
+
+transform/pos = Vector2( 142, 225 )
+
+[node name="Creature 5" parent="ObjectLayer" instance=ExtResource( 21 )]
+
+transform/pos = Vector2( 253, 214 )
+
+[node name="Creature 6" parent="ObjectLayer" instance=ExtResource( 21 )]
+
+transform/pos = Vector2( 85, 262 )
+
+[node name="Creature 7" parent="ObjectLayer" instance=ExtResource( 21 )]
+
+transform/pos = Vector2( 77, 210 )
+
+[node name="Creature 8" parent="ObjectLayer" instance=ExtResource( 21 )]
+
+transform/pos = Vector2( 185, 214 )
 
 [connection signal="jump" from="Player_object" to="Camera2D" method="_on_Player_object_jump"]
 

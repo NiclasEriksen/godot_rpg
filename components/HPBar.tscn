@@ -43,14 +43,15 @@ range/min = 0.0
 range/max = 100.0
 range/step = 1.0
 range/page = 0.0
-range/value = 0.0
+range/value = 100.0
 range/exp_edit = false
 range/rounded = false
 texture/under = ExtResource( 1 )
 texture/over = ExtResource( 2 )
 texture/progress = ExtResource( 3 )
 mode = 4
-radial_fill/fill_degrees = 360.0
+radial_fill/initial_angle = 300.0
+radial_fill/fill_degrees = 120.0
 radial_fill/center_offset = Vector2( 0, 0 )
 script/script = ExtResource( 4 )
 
