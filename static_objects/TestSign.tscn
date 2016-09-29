@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=1]
 
-[ext_resource path="res://resources/SimpleSign.png" type="Texture" id=1]
+[ext_resource path="res://resources/static_objects/SimpleSign.png" type="Texture" id=1]
+
 
 [node name="TestSign" type="Node2D"]
 
