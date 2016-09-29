@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=1]
+[gd_scene load_steps=29 format=1]
 
 [ext_resource path="res://scripts/player_control.gd" type="Script" id=1]
 [ext_resource path="res://resources/lights/light2.png" type="Texture" id=2]
@@ -24,6 +24,7 @@
 [ext_resource path="res://addons/net.kivano.fsm/icon.png" type="Texture" id=22]
 [ext_resource path="res://entities/PlayerStates/idle/idle.tscn" type="PackedScene" id=23]
 [ext_resource path="res://entities/PlayerStates/walking/walking.tscn" type="PackedScene" id=24]
+[ext_resource path="res://components/GearTextureLoader.tscn" type="PackedScene" id=25]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -133,7 +134,7 @@ texture = ExtResource( 7 )
 region = true
 region_rect = Rect2( 32, 0, 32, 32 )
 
-[node name="HelmArmor" type="Sprite" parent="Torso/Head"]
+[node name="HeadArmor" type="Sprite" parent="Torso/Head"]
 
 texture = ExtResource( 9 )
 region = true
@@ -401,6 +402,8 @@ updateMode = 1
 [node name="idle" parent="FSM (Finite state machine)" instance=ExtResource( 23 )]
 
 [node name="walking" parent="FSM (Finite state machine)" instance=ExtResource( 24 )]
+
+[node name="GearTextureLoader" parent="." instance=ExtResource( 25 )]
 
 [connection signal="attack" from="." to="ArmAnimation" method="_on_Player_attack"]
 

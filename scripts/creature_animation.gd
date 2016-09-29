@@ -32,5 +32,5 @@ func _on_Creature_attack():
 func _on_HandAnimation_finished():
 	# stop(true)
 	if not get_current_animation() == "Rest":
-		print("Resting")
+		# print("Resting")
 		play("Rest")

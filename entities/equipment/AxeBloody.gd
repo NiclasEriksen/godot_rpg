@@ -14,4 +14,4 @@ func _ready():
 
 
 func _on_Area2D_body_enter( body ):
-	print(body)
+	pass

@@ -19,7 +19,6 @@ func add_hpbar(owner):
 	get_node("HPBars").add_child(hpb)
 
 func update_resource(obs, type, data):
-	print("wat")
 	if type == "player_hp":
 		get_node("ResourceBars/HealthBar").set_value(data)
 	elif type == "player_mp":
