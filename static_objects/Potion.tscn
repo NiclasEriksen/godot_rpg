@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://static_objects/Potion.gd" type="Script" id=1]
-[ext_resource path="res://resources/equipment/pot_hp.tex" type="Texture" id=2]
+[ext_resource path="res://resources/static_objects/pot_hp.tex" type="Texture" id=2]
 [ext_resource path="res://components/EffectModule.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
