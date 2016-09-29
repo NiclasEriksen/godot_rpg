@@ -4,10 +4,10 @@
 
 [resource]
 
-content_margin/left = 25.0
-content_margin/right = 25.0
-content_margin/top = 25.0
-content_margin/bottom = 25.0
+content_margin/left = 35.0
+content_margin/right = 35.0
+content_margin/top = 35.0
+content_margin/bottom = 35.0
 texture = ExtResource( 1 )
 margin/left = 60.0
 margin/right = 10.0

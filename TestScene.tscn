@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=1]
+[gd_scene load_steps=33 format=1]
 
 [ext_resource path="res://scripts/thescript.gd" type="Script" id=1]
 [ext_resource path="res://scripts/parallax.gd" type="Script" id=2]
@@ -10,25 +10,26 @@
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=8]
 [ext_resource path="res://resources/ui/speechbubble_large.tres" type="StyleBox" id=9]
 [ext_resource path="res://components/text_interface_engine.scn" type="PackedScene" id=10]
-[ext_resource path="res://resources/FFFFORWA.TTF" type="DynamicFontData" id=11]
-[ext_resource path="res://scripts/camera.gd" type="Script" id=12]
-[ext_resource path="res://static_objects/Potion.tscn" type="PackedScene" id=13]
-[ext_resource path="res://resources/poison_particle.png" type="Texture" id=14]
-[ext_resource path="res://resources/poison.png" type="Texture" id=15]
-[ext_resource path="res://scripts/aoe_damage.gd" type="Script" id=16]
-[ext_resource path="res://components/EffectModule.tscn" type="PackedScene" id=17]
-[ext_resource path="res://resources/sfx/dunk.wav" type="Sample" id=18]
-[ext_resource path="res://static_objects/MapChangeTrigger.tscn" type="PackedScene" id=19]
-[ext_resource path="res://scripts/darkness.gd" type="Script" id=20]
-[ext_resource path="res://entities/Creature.tscn" type="PackedScene" id=21]
+[ext_resource path="res://resources/fonts/FFFFORWA.TTF" type="DynamicFontData" id=11]
+[ext_resource path="res://resources/fonts/bitty.tres" type="DynamicFont" id=12]
+[ext_resource path="res://scripts/camera.gd" type="Script" id=13]
+[ext_resource path="res://static_objects/Potion.tscn" type="PackedScene" id=14]
+[ext_resource path="res://resources/particles/poison_particle.png" type="Texture" id=15]
+[ext_resource path="res://resources/effects/poison.png" type="Texture" id=16]
+[ext_resource path="res://scripts/aoe_damage.gd" type="Script" id=17]
+[ext_resource path="res://components/EffectModule.tscn" type="PackedScene" id=18]
+[ext_resource path="res://resources/sfx/dunk.wav" type="Sample" id=19]
+[ext_resource path="res://static_objects/MapChangeTrigger.tscn" type="PackedScene" id=20]
+[ext_resource path="res://scripts/darkness.gd" type="Script" id=21]
+[ext_resource path="res://entities/Creature.tscn" type="PackedScene" id=22]
 
 [sub_resource type="GDScript" id=1]
 
 script/source = "extends Panel\nvar tie\n# class member variables go here, for example:\n# var a = 2\n# var b = \"textvar\"\n\nfunc _ready():\n\ttie = get_node(\"text_interface_engine\")\n\nfunc show_dialog():\n\tget_node(\"AnimationPlayer\").play(\"DialogOn\")\n\ttie.set_state(1)\n\nfunc hide_dialog():\n\tget_node(\"AnimationPlayer\").play(\"DialogOff\")\n\ttie.clear_buffer()\n\ttie.set_state(0)\n\n\n\nfunc _on_HUD_chat(state, text):\n\t# add_newline()\n\tif state:\n\t\ttie.clear_text()\n\t\ttie.buff_text(text, 0.1)\n\t\t#add_newline()\n\t\ttie.buff_text(\"\\nNeste linje er kjappere\?\", 0.03)\n\t\ttie.buff_text(\"\\nOK\", 0.1)\n\t\ttie.buff_text(\"....\", 1.0)\n\t\tshow_dialog()\n\telse:\n\t\thide_dialog()\n\nfunc _on_TextureButton_pressed():\n\thide_dialog()\n"
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=11]
 
-font/size = 16
+font/size = 14
 extra_spacing/top = 3
 font/use_mipmaps = false
 font/use_filter = false
@@ -44,7 +45,7 @@ Label/constants/line_spacing = 3
 Label/constants/shadow_as_outline = 0
 Label/constants/shadow_offset_x = 1
 Label/constants/shadow_offset_y = 1
-Label/fonts/font = SubResource( 2 )
+Label/fonts/font = SubResource( 11 )
 
 [sub_resource type="Animation" id=4]
 
@@ -127,7 +128,7 @@ radius = 15.0
 
 [sub_resource type="SampleLibrary" id=10]
 
-samples/dunk = { "db":0.0, "pitch":1.0, "sample":ExtResource( 18 ) }
+samples/dunk = { "db":0.0, "pitch":1.0, "sample":ExtResource( 19 ) }
 
 [node name="Game" type="Control"]
 
@@ -220,12 +221,13 @@ anchor/left = 3
 anchor/top = 3
 anchor/right = 3
 anchor/bottom = 3
-rect/min_size = Vector2( 380, 230 )
+rect/min_size = Vector2( 360, 200 )
 theme/theme = SubResource( 3 )
-margin/left = 190.0
-margin/top = 115.0
-margin/right = -190.0
-margin/bottom = -115.0
+margin/left = 180.0
+margin/top = 100.0
+margin/right = -180.0
+margin/bottom = -100.0
+FONT = ExtResource( 12 )
 
 [node name="TextureButton" type="TextureButton" parent="UILayer/Panel"]
 
@@ -275,7 +277,7 @@ drag_margin/left = 0.0
 drag_margin/top = 0.0
 drag_margin/right = 0.0
 drag_margin/bottom = 0.0
-script/script = ExtResource( 12 )
+script/script = ExtResource( 13 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D"]
 
@@ -288,35 +290,35 @@ playback/speed = 1.0
 blend_times = [  ]
 autoplay = ""
 
-[node name="Potion" parent="." instance=ExtResource( 13 )]
+[node name="Potion" parent="." instance=ExtResource( 14 )]
 
 transform/pos = Vector2( 899.38, 486.428 )
 
-[node name="Potion1" parent="." instance=ExtResource( 13 )]
+[node name="Potion1" parent="." instance=ExtResource( 14 )]
 
 transform/pos = Vector2( 1294.38, 1265.92 )
 
-[node name="Potion3" parent="." instance=ExtResource( 13 )]
+[node name="Potion3" parent="." instance=ExtResource( 14 )]
 
 transform/pos = Vector2( 648.585, 1373.31 )
 
-[node name="Potion4" parent="." instance=ExtResource( 13 )]
+[node name="Potion4" parent="." instance=ExtResource( 14 )]
 
 transform/pos = Vector2( 229.201, 482.587 )
 
-[node name="Potion5" parent="." instance=ExtResource( 13 )]
+[node name="Potion5" parent="." instance=ExtResource( 14 )]
 
 transform/pos = Vector2( 40.0215, 1195.76 )
 
-[node name="Potion6" parent="." instance=ExtResource( 13 )]
+[node name="Potion6" parent="." instance=ExtResource( 14 )]
 
 transform/pos = Vector2( 1315.74, 1417.97 )
 
-[node name="Potion7" parent="." instance=ExtResource( 13 )]
+[node name="Potion7" parent="." instance=ExtResource( 14 )]
 
 transform/pos = Vector2( -1049, -418 )
 
-[node name="Potion2" parent="." instance=ExtResource( 13 )]
+[node name="Potion2" parent="." instance=ExtResource( 14 )]
 
 transform/pos = Vector2( -1017, -583 )
 
@@ -326,7 +328,7 @@ transform/pos = Vector2( 1204.5, 1546.35 )
 z/z = 6
 config/amount = 32
 config/lifetime = 2.0
-config/texture = ExtResource( 14 )
+config/texture = ExtResource( 15 )
 params/direction = 0.0
 params/spread = 30.0
 params/linear_velocity = -10.0
@@ -353,9 +355,9 @@ color/color_ramp = SubResource( 7 )
 
 transform/pos = Vector2( 609.972, 79.9719 )
 z/z = 5
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 hframes = 13
-script/script = ExtResource( 16 )
+script/script = ExtResource( 17 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PoisonExplode"]
 
@@ -392,7 +394,7 @@ wait_time = 0.5
 one_shot = false
 autostart = true
 
-[node name="EffectModule" parent="PoisonExplode" instance=ExtResource( 17 )]
+[node name="EffectModule" parent="PoisonExplode" instance=ExtResource( 18 )]
 
 amount = -1.0
 is_buff = true
@@ -410,12 +412,12 @@ config/polyphony = 1
 config/samples = SubResource( 10 )
 config/pitch_random = 0.1
 
-[node name="MapChangeTrigger" parent="." instance=ExtResource( 19 )]
+[node name="MapChangeTrigger" parent="." instance=ExtResource( 20 )]
 
 transform/pos = Vector2( 398, 396 )
 map_name = "Test3.tscn"
 
-[node name="MapChangeTrigger1" parent="." instance=ExtResource( 19 )]
+[node name="MapChangeTrigger1" parent="." instance=ExtResource( 20 )]
 
 transform/pos = Vector2( 90, 531 )
 map_name = "Test2.tscn"
@@ -424,40 +426,39 @@ map_name = "Test2.tscn"
 
 visibility/visible = false
 color = Color( 0, 0, 0, 1 )
-script/script = ExtResource( 20 )
+script/script = ExtResource( 21 )
 
 [node name="ObjectLayer" type="Node" parent="."]
 
-[node name="Creature" parent="ObjectLayer" instance=ExtResource( 21 )]
+[node name="Creature" parent="ObjectLayer" instance=ExtResource( 22 )]
 
 transform/pos = Vector2( 187, 187 )
 
-[node name="Creature 2" parent="ObjectLayer" instance=ExtResource( 21 )]
+[node name="Creature 2" parent="ObjectLayer" instance=ExtResource( 22 )]
 
 transform/pos = Vector2( 140, 178 )
 
-[node name="Creature 3" parent="ObjectLayer" instance=ExtResource( 21 )]
+[node name="Creature 3" parent="ObjectLayer" instance=ExtResource( 22 )]
 
 transform/pos = Vector2( 213, 149 )
-transform/scale = Vector2( 1, 1 )
 
-[node name="Creature 4" parent="ObjectLayer" instance=ExtResource( 21 )]
+[node name="Creature 4" parent="ObjectLayer" instance=ExtResource( 22 )]
 
 transform/pos = Vector2( 142, 225 )
 
-[node name="Creature 5" parent="ObjectLayer" instance=ExtResource( 21 )]
+[node name="Creature 5" parent="ObjectLayer" instance=ExtResource( 22 )]
 
 transform/pos = Vector2( 253, 214 )
 
-[node name="Creature 6" parent="ObjectLayer" instance=ExtResource( 21 )]
+[node name="Creature 6" parent="ObjectLayer" instance=ExtResource( 22 )]
 
 transform/pos = Vector2( 85, 262 )
 
-[node name="Creature 7" parent="ObjectLayer" instance=ExtResource( 21 )]
+[node name="Creature 7" parent="ObjectLayer" instance=ExtResource( 22 )]
 
 transform/pos = Vector2( 77, 210 )
 
-[node name="Creature 8" parent="ObjectLayer" instance=ExtResource( 21 )]
+[node name="Creature 8" parent="ObjectLayer" instance=ExtResource( 22 )]
 
 transform/pos = Vector2( 185, 214 )
 
