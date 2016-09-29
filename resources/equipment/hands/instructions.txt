@@ -1,0 +1,2 @@
+Handwear (gloves, gauntlets, rings, bracelets, rolexes etc)
+Should be a single 32x32 transparent PNG file, with the texture centered and facing downwards.

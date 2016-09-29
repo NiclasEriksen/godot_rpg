@@ -1,0 +1,13 @@
+A chest armor consists of three pieces; torso, shoulders and arms.
+They should reside in a 96x32 transparent PNG file, with the first 32x32 square being the torso, the second square is shoulders and the third is arms.
+The sprites in each square should be centered and facing downwards.
+There will be an option to add left/right specific sprites for shoulders and arms, for that you add another strip of sprites beneath the first one, like this:
+[T][S][A] <- S and A will be added to both arms if image dimensions are 96x32
+[ ][S][A] <- If there is an additional row, S and A here will be assigned to right shoulder and arm.
+
+So the dimensions will be:
+96x32 for a mirrored (left+right) texture.
+96x64 for separate sprites on left/right arms and shoulders.
+
+The first 32x32 square in the second row will be ignored (no need for two torsos, you freak.)
+

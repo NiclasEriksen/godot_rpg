@@ -1,0 +1,2 @@
+Headwear (helmets, hats, monocles, dead cats) should be in a single 32x32 transparent PNG file.
+The texture should be centered and facing downwards.
