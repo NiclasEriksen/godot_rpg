@@ -1,0 +1,15 @@
+{
+    "name": "Debug Armor 9000",
+    "description": "For testing purposes, you idiot.",
+    "itemlevel": 1,
+    "rarity": "common",
+    "material": "steel",
+    "weight": 1,
+    "texture": "test1",
+    "icon": "debug",
+	"stats": {
+        "hp": 10,
+        "armor": 3,
+    },
+    "special": null
+}
