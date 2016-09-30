@@ -1,6 +1,7 @@
 extends Node
 
 var base_dir = "resources/equipment/"
+var debug_tex = base_dir + "debug.png"
 var valid_types = ["chest", "head", "hands"]
 onready var owner = get_parent()
 var body = {
@@ -18,11 +19,42 @@ func _ready():
     pass
     # print(generate_list("chest"))
 
-func wear_gear(type, texture):
-    pass
+func wear_gear(target, type, texture):
+    if type == "chest":
+        var t = target.get_node(body["torso"])
+        var sl = target.get_node(body["shoulder_left"])
+        var sr = target.get_node(body["shoulder_right"])
+        var al = target.get_node(body["arm_left"])
+        var ar = target.get_node(body["arm_right"])
+        t.set_texture(texture)
+        sl.set_texture(texture)
+        sr.set_texture(texture)
+        al.set_texture(texture)
+        ar.set_texture(texture)
+        t.set_region(true)
+        t.set_region_rect(Rect2(0, 0, 32, 32))
+        sl.set_region(true)
+        sl.set_region_rect(Rect2(32, 0, 32, 32))
+        sr.set_region(true)
+        sr.set_region_rect(Rect2(32, 0, 32, 32))
+        al.set_region(true)
+        al.set_region_rect(Rect2(64, 0, 32, 32))
+        ar.set_region(true)
+        ar.set_region_rect(Rect2(64, 0, 32, 32))
+    elif type == "head":
+        target.get_node(body["head"]).set_texture(texture)
+    elif type == "hands":
+        target.get_node(body["hand_left"]).set_texture(texture)
+        target.get_node(body["hand_right"]).set_texture(texture)
+
 
 func get_texture(type, name):   # Loads and returns a texture
-    pass
+    var file = File.new()
+    var full_path = base_dir + type + "/" + name + ".png"
+    if file.file_exists(full_path):
+        return load(full_path)
+    else:
+        return load(debug_tex)
 
 func generate_list(type):
     var dir = Directory.new()
