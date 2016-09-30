@@ -1,6 +1,8 @@
 extends Control
 var globals = null
 var map = null
+var items = {}
+const itemloader = preload("res://scripts/ItemLoader.gd")
 
 func _ready():
 	set_process(true)
@@ -12,6 +14,7 @@ func _ready():
 			get_node("Nav").add_child(map.instance())
 	else:
 		print("Globals not loaded, PANICK!")
+
 
 func _process(delta):
 	pass
