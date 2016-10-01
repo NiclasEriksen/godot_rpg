@@ -29,6 +29,8 @@ onready var nc = get_node("/root/notifications")
 func _ready():
 	set_process(true)
 	set_process_input(true)
+	print(get_node("/root/globals").items)
+	get_node("/root/globals").items["armor"]["Debug Armor 9000"].equip(self)
 	root = get_tree().get_root().get_node("Game")
 	var spawn = root.get_node("Nav").get_node("Map").get_node("SpawnPoint")
 	if spawn:

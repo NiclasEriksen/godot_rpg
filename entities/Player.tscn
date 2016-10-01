@@ -130,6 +130,7 @@ region_rect = Rect2( 0, 0, 32, 32 )
 
 [node name="Head" type="Sprite" parent="Torso"]
 
+z/z = 1
 texture = ExtResource( 7 )
 region = true
 region_rect = Rect2( 32, 0, 32, 32 )

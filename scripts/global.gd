@@ -5,6 +5,8 @@ var currentScene = null
 var map = null
 onready var cur1 = load("res://resources/ui/cursor1.png")
 onready var cur2 = load("res://resources/ui/cursor2.png")
+onready var itemloader = preload("res://scripts/ItemLoader.gd").new()
+onready var items = itemloader.load_items()
 
 var PlayerName = "Niclas"
 var MAP_WIDTH = 40
