@@ -60,13 +60,18 @@ func _input(event):
 	elif event.is_action_released("MOVE_RIGHT"):
 		vel.x = vel.x - max_vel
 	if event.type == InputEvent.MOUSE_BUTTON:
+		var ol = root.get_node("ObjectLayer")
+		event = root.make_input_local(event)
 		if event.button_index == BUTTON_LEFT and event.pressed:
-			event = root.make_input_local(event)
-			var ol = root.get_node("ObjectLayer")
 			var r = roots.instance()
-			#r.set_pos(event.pos)
 			r.set_pos(event.pos)
 			ol.add_child(r)
+		elif event.button_index == BUTTON_RIGHT and event.pressed:
+			var fbi = fireball.instance()
+			fbi.set_rot(get_pos().angle_to_point(event.pos))
+			fbi.set_pos(get_pos())
+			fbi.set_target_pos(event.pos)
+			ol.add_child(fbi)
 
 
 func _process(delta):
@@ -79,12 +84,6 @@ func _process(delta):
 	if Input.is_action_pressed("ATTACK"):
 		if not attacking:
 			emit_signal("attack")
-			var ol = root.get_node("ObjectLayer")
-			var fbi = fireball.instance()
-			fbi.set_rot(get_rot())
-			fbi.set_pos(get_pos())
-			#fbi.set_velocity(300)
-			ol.add_child(fbi)
 
 			# get_node("StatsModule").apply_effect([["mp", -1]], null)
 			attacking = true

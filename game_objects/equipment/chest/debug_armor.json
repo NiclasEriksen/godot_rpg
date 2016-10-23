@@ -5,7 +5,7 @@
     "rarity": "common",
     "material": "steel",
     "weight": 1,
-    "texture": "test1",
+    "texture": "darkbluegreenspikes",
     "icon": "debug",
 	"stats": {
         "hp": 10,

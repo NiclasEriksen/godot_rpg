@@ -4,7 +4,7 @@
 [ext_resource path="res://scripts/parallax.gd" type="Script" id=2]
 [ext_resource path="res://resources/bg.tex" type="Texture" id=3]
 [ext_resource path="res://scripts/navmesh.gd" type="Script" id=4]
-[ext_resource path="res://maps/test4.tscn" type="PackedScene" id=5]
+[ext_resource path="res://maps/Test4.tscn" type="PackedScene" id=5]
 [ext_resource path="res://entities/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scripts/game_ui.gd" type="Script" id=7]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=8]
@@ -27,7 +27,7 @@
 
 script/source = "extends Panel\nvar tie\n# class member variables go here, for example:\n# var a = 2\n# var b = \"textvar\"\n\nfunc _ready():\n\ttie = get_node(\"text_interface_engine\")\n\nfunc show_dialog():\n\tget_node(\"AnimationPlayer\").play(\"DialogOn\")\n\ttie.set_state(1)\n\nfunc hide_dialog():\n\tget_node(\"AnimationPlayer\").play(\"DialogOff\")\n\ttie.clear_buffer()\n\ttie.set_state(0)\n\n\n\nfunc _on_HUD_chat(state, text):\n\t# add_newline()\n\tif state:\n\t\ttie.clear_text()\n\t\ttie.buff_text(text, 0.1)\n\t\t#add_newline()\n\t\ttie.buff_text(\"\\nNeste linje er kjappere\?\", 0.03)\n\t\ttie.buff_text(\"\\nOK\", 0.1)\n\t\ttie.buff_text(\"....\", 1.0)\n\t\tshow_dialog()\n\telse:\n\t\thide_dialog()\n\nfunc _on_TextureButton_pressed():\n\thide_dialog()\n"
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=2]
 
 font/size = 14
 extra_spacing/top = 3
@@ -45,7 +45,7 @@ Label/constants/line_spacing = 3
 Label/constants/shadow_as_outline = 0
 Label/constants/shadow_offset_x = 1
 Label/constants/shadow_offset_y = 1
-Label/fonts/font = SubResource( 11 )
+Label/fonts/font = SubResource( 2 )
 
 [sub_resource type="Animation" id=4]
 
