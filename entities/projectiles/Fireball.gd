@@ -10,6 +10,7 @@ var osc_amount = 0
 var lifetime = 0.0
 var period = 1.0
 var min_period_dist = 32
+var phase = 0
 onready var initial_angle = get_rot()
 onready var initial_pos = get_pos()
 onready var trunk_pos = get_pos()
@@ -63,20 +64,31 @@ func set_target_pos(pos):
 	target = pos
 
 func oscillate():
-	var x = PI * (lifetime / period)
+	var x = PI * ((lifetime / period) + phase)
 	y = osc_amount * sin(x)
-	var scale_amount = 1
-	if y > 0:
-		scale_amount = 1 + (abs(y) / abs(osc_amount)) / 5
-	elif y < 0:
-		scale_amount = 1 - (abs(y) / abs(osc_amount)) / 5
-	get_node("Sprite").set_scale(Vector2(scale_amount, scale_amount))
+	if osc_amount:
+		get_node("Sprite").set_rot(PI + (PI * sin(x) / 6))
+	else:
+		get_node("Sprite").set_rot(PI)
+	# var scale_amount = 1
+	#
+	# if x >
+	#
+	# print(p)
+	# if y > 0:
+	# 	scale_amount = 1 + (abs(y) / abs(osc_amount))
+	# elif y < 0:
+	# 	scale_amount = 1 - (abs(y) / abs(osc_amount))
+	# get_node("Sprite").set_scale(Vector2(scale_amount, scale_amount))
 	# print(sin(x), " - ", scale_amount)
 
 
 func set_oscillation(amount):
 	oscillates = true
 	osc_amount = amount
+
+func set_phase(p):
+	phase = p
 
 func impact(body):
 	if nc:
